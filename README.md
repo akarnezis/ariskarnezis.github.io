@@ -1,7 +1,7 @@
 
-  # Personal Website
+  # Personal Research Website
 
-  This is a code bundle for Personal Website. The original project is available at https://www.figma.com/design/5OlX0HyqZvDXvLadvjsPmi/Personal-Research-Website.
+  This is a code bundle for Personal Research Website. The original project is available at https://www.figma.com/design/5OlX0HyqZvDXvLadvjsPmi/Personal-Research-Website.
 
   ## Running the code
 
