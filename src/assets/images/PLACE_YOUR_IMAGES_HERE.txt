@@ -1,0 +1,13 @@
+This is a placeholder file.
+
+To add your own images:
+1. Delete this file
+2. Upload your image files to this /assets/images/ directory
+3. Supported formats: .jpg, .jpeg, .png, .webp, .svg
+
+Examples:
+- waves-experiment.jpg
+- research-setup.png
+- results-chart.jpg
+
+Then update /data/projects.ts to import and use them.
