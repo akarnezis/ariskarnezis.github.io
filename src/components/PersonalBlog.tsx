@@ -1,115 +1,194 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { Clock, ArrowRight, Heart } from "lucide-react";
+import { Clock, ArrowRight, Heart, Search, Compass, Coffee, Plane, Lightbulb, User, BookOpen } from "lucide-react";
 import { Button } from "./ui/button";
+import { Link } from "react-router";
+import { blogPostsData } from "../data/blogPosts";
+import { useState, useMemo, useRef, useEffect } from "react";
 
 export function PersonalBlog() {
-  const posts = [
-    {
-      title: "My Journey into Research: From Curiosity to Career",
-      excerpt: "Reflecting on the unexpected path that led me to where I am today, and the moments that shaped my love for science.",
-      date: "November 8, 2024",
-      readTime: "5 min read",
-      category: "Personal",
-      tags: ["Career", "Reflection", "Science"],
-    },
-    {
-      title: "Finding Balance: Life as a Researcher",
-      excerpt: "Thoughts on navigating the demands of academic life while maintaining perspective and personal well-being.",
-      date: "October 20, 2024",
-      readTime: "6 min read",
-      category: "Lifestyle",
-      tags: ["Work-Life Balance", "Academia", "Mental Health"],
-    },
-    {
-      title: "Books That Changed How I Think About Science",
-      excerpt: "A collection of reads that inspired me, challenged my assumptions, and expanded my understanding of the scientific process.",
-      date: "October 5, 2024",
-      readTime: "7 min read",
-      category: "Recommendations",
-      tags: ["Books", "Learning", "Inspiration"],
-    },
-    {
-      title: "The Art of Asking Good Questions",
-      excerpt: "What I've learned about curiosity, humility, and the importance of not knowing all the answers.",
-      date: "September 18, 2024",
-      readTime: "5 min read",
-      category: "Thoughts",
-      tags: ["Philosophy", "Research", "Learning"],
-    },
-    {
-      title: "Travel Diaries: Conferences Around the World",
-      excerpt: "Stories from the road—the cities, people, and unexpected moments that make academic travel memorable.",
-      date: "August 30, 2024",
-      readTime: "8 min read",
-      category: "Travel",
-      tags: ["Conferences", "Travel", "Networking"],
-    },
-    {
-      title: "Why I Started Writing (And Why You Should Too)",
-      excerpt: "The surprising benefits of putting ideas into words, and how writing has transformed my thinking.",
-      date: "August 10, 2024",
-      readTime: "6 min read",
-      category: "Writing",
-      tags: ["Communication", "Personal Growth", "Creativity"],
-    },
-  ];
+  const [showAll, setShowAll] = useState(() => {
+    // Load showAll state from localStorage
+    const saved = localStorage.getItem('blogShowAll');
+    return saved === 'true';
+  });
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const buttonRef = useRef<HTMLDivElement>(null);
+  const initialCount = 3;
+  const posts = blogPostsData;
 
+  // Save showAll state to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('blogShowAll', showAll.toString());
+  }, [showAll]);
+
+  // Get unique categories
+  const categories = useMemo(() => {
+    const uniqueCategories = Array.from(new Set(posts.map(post => post.category)));
+    return ["All", ...uniqueCategories];
+  }, [posts]);
+
+  // Filter posts based on search and category
+  const filteredPosts = useMemo(() => {
+    return posts.filter(post => {
+      const matchesSearch = searchQuery === "" || 
+        post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+      
+      const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
+      
+      return matchesSearch && matchesCategory;
+    });
+  }, [posts, searchQuery, selectedCategory]);
+
+  const displayedPosts = showAll ? filteredPosts : filteredPosts.slice(0, initialCount);
+  const hasMore = filteredPosts.length > initialCount;
+  
+  // Icon mapping for categories
+  const getCategoryIcon = (category: string) => {
+    const icons: { [key: string]: any } = {
+      "Lifestyle": Heart,
+      "Travel": Plane,
+      "Personal": User,
+      "Recommendations": BookOpen,
+      "Thoughts": Lightbulb,
+      "default": Coffee
+    };
+    const IconComponent = icons[category] || icons.default;
+    return IconComponent;
+  };
+
+  const getCategoryColor = (category: string) => {
+    const colors: { [key: string]: string } = {
+      "Lifestyle": "bg-red-100 text-red-700",
+      "Travel": "bg-orange-100 text-orange-700",
+      "Personal": "bg-purple-100 text-purple-700",
+      "Recommendations": "bg-green-100 text-green-700",
+      "Thoughts": "bg-yellow-100 text-yellow-700",
+      "default": "bg-slate-100 text-slate-700"
+    };
+    return colors[category] || colors.default;
+  };
+  
   return (
-    <section id="blog" className="py-24 bg-slate-50">
-      <div className="container mx-auto px-6 max-w-6xl">
+    <section id="blog" className="py-24 bg-slate-50 dark:bg-[#0a0e14]">
+      <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Heart className="w-8 h-8 text-red-500" />
-          </div>
-          <h2 className="text-4xl mb-4 text-slate-900">Personal Blog</h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Stories, reflections, and musings on life, science, and everything in between
+          <h2 className="text-4xl mb-4 text-slate-900 dark:text-white">Personal Blog</h2>
+          <p className="text-xl text-slate-600 dark:text-white max-w-2xl mx-auto">
+            Insights, thoughts, and stories about science, mathematics, and life as a researcher
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {posts.map((post, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow flex flex-col bg-white">
-              <CardHeader>
-                <div className="flex items-center justify-between mb-3">
-                  <Badge variant="secondary">{post.category}</Badge>
-                  <span className="text-sm text-slate-500 flex items-center gap-1">
-                    <Clock className="w-3 h-3" />
-                    {post.readTime}
-                  </span>
-                </div>
-                <CardTitle className="leading-tight">{post.title}</CardTitle>
-                <CardDescription>{post.date}</CardDescription>
-              </CardHeader>
-              
-              <CardContent className="flex-1 flex flex-col justify-between">
-                <p className="text-slate-600 mb-4">{post.excerpt}</p>
-                
-                <div>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {post.tags.map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant="outline">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                  
-                  <button className="flex items-center gap-2 text-[#2b3137] hover:text-[#1f2428] transition-colors">
-                    Read Story
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </CardContent>
-            </Card>
+
+        {/* Search Bar */}
+        <div className="mb-12">
+          <div className="relative max-w-2xl mx-auto">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
+            <input
+              type="text"
+              placeholder="Search blog posts..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-12 pr-4 py-4 rounded-full border border-slate-300 dark:border-[#252a31] focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-orange-500 focus:border-transparent text-slate-700 dark:text-slate-300 placeholder-slate-400 dark:placeholder-slate-500 bg-white dark:bg-[#0a0e14]"
+            />
+          </div>
+        </div>
+
+        {/* Category Filters */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category === selectedCategory ? "All" : category)}
+              className={`px-4 py-2 rounded-full transition-colors ${
+                selectedCategory === category
+                  ? "bg-[#d9653a] text-white shadow-md"
+                  : "bg-white dark:bg-[#151a21] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-[#252a31] hover:border-slate-400 dark:hover:border-slate-600"
+              }`}
+            >
+              {category}
+            </button>
           ))}
         </div>
         
-        <div className="text-center">
-          <Button size="lg" variant="outline">
-            View All Posts
-          </Button>
+        {/* Blog Posts List */}
+        <div className="space-y-6 mb-12">
+          {displayedPosts.map((post, index) => {
+            const IconComponent = getCategoryIcon(post.category);
+            return (
+              <Card key={index} id={`blog-${post.id}`} className="hover:shadow-lg dark:hover:shadow-orange-900/10 transition-shadow scroll-mt-24">
+                <CardContent className="p-8">
+                  <div className="flex gap-6">
+                    {/* Icon */}
+                    <div className={`flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center ${getCategoryColor(post.category)}`}>
+                      <IconComponent className="w-8 h-8" />
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-1 min-w-0">
+                      {/* Metadata Row */}
+                      <div className="flex flex-wrap items-center gap-3 mb-3">
+                        <Badge className="bg-[#d9653a] hover:bg-[#d9653a]">{post.category}</Badge>
+                        <span className="text-sm text-slate-500 dark:text-slate-400">{post.date}</span>
+                        <span className="text-slate-300 dark:text-slate-600">•</span>
+                        <span className="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                          <Clock className="w-3.5 h-3.5" />
+                          {post.readTime}
+                        </span>
+                      </div>
+                      
+                      {/* Title */}
+                      <h3 className="text-2xl font-serif mb-3 text-slate-900 dark:text-slate-100 leading-tight">
+                        {post.title}
+                      </h3>
+                      
+                      {/* Excerpt */}
+                      <p className="text-slate-600 dark:text-white mb-4 leading-relaxed">
+                        {post.excerpt}
+                      </p>
+                      
+                      {/* Read Story Link */}
+                      <Link 
+                        to={`/blog/${post.id}`}
+                        className="inline-flex items-center gap-2 text-[#d9653a] hover:text-[#c25731] hover:underline hover:gap-3 transition-all duration-200 font-medium"
+                      >
+                        Read Story
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
+
+        {displayedPosts.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-slate-600 dark:text-slate-400 text-lg">No posts found matching your criteria.</p>
+          </div>
+        )}
+        
+        {hasMore && (
+          <div ref={buttonRef} className="text-center">
+            <Button 
+              size="lg" 
+              onClick={() => {
+                setShowAll(!showAll);
+                if (showAll) {
+                  setTimeout(() => {
+                    buttonRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }, 100);
+                }
+              }}
+              className="bg-[#d9653a] hover:bg-[#c25731] text-white"
+            >
+              {showAll ? "Show Less" : "View More Blog Posts"}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );

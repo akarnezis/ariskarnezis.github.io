@@ -1,58 +1,153 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { ExternalLink, Calendar } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ExternalLink, Calendar, FileText } from "lucide-react";
+import { Link } from "react-router";
 import { projectsData } from "../data/projects";
+import { Button } from "./ui/button";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router";
 
 export function Projects() {
+  const location = useLocation();
+  const initialCount = 4;
+  const [filterMode, setFilterMode] = useState<"all" | "publications">("all");
+  const [showAll, setShowAll] = useState(false);
+
+  // Watch for hash changes and update filter mode
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash === "#publications") {
+      setFilterMode("publications");
+      setShowAll(true);
+    } else if (hash === "#projects") {
+      setFilterMode("all");
+      setShowAll(false);
+    }
+  }, [location]);
+
+  // Filter projects based on mode
+  const filteredProjects = filterMode === "publications" 
+    ? projectsData.filter(project => 
+        project.publications && 
+        project.publications.length > 0 && 
+        !project.publications[0].includes("doctoral research") &&
+        !project.publications[0].includes("MSc thesis")
+      )
+    : projectsData;
+
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, initialCount);
+  const hasMore = filteredProjects.length > initialCount;
+
   return (
-    <section id="projects" className="py-24 bg-slate-50">
+    <section id="projects" className="py-24 bg-slate-50 dark:bg-[#0a0e14]">
+      {/* Add publications anchor point */}
+      <div id="publications" className="absolute -mt-24" />
+      
       <div className="container mx-auto px-6 max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl mb-4 text-slate-900">Research Projects</h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            A selection of collaborative research initiatives I've contributed to throughout my academic career
+        <div className="text-center mb-8">
+          <h2 className="text-4xl mb-4 text-slate-900 dark:text-white">
+            {filterMode === "publications" ? "Publications" : "Research Projects"}
+          </h2>
+          <p className="text-xl text-slate-600 dark:text-white max-w-2xl mx-auto">
+            {filterMode === "publications" 
+              ? "Peer-reviewed publications and research outputs from my academic work"
+              : "A selection of collaborative research initiatives I've contributed to throughout my academic career"
+            }
           </p>
+        </div>
+
+        {/* Filter Toggle Buttons */}
+        <div className="flex justify-center gap-3 mb-12">
+          <button
+            onClick={() => setFilterMode("all")}
+            className={`px-6 py-2.5 rounded-full transition-all duration-200 ${
+              filterMode === "all"
+                ? "bg-[#d9653a] text-white shadow-md"
+                : "bg-white text-slate-700 border border-slate-300 hover:border-slate-400"
+            }`}
+          >
+            All Projects
+          </button>
+          
+          {/* Publications Only Toggle */}
+          <button
+            onClick={() => setFilterMode("publications")}
+            className={`px-6 py-2.5 rounded-full transition-all duration-200 flex items-center gap-2 ${
+              filterMode === "publications"
+                ? "bg-[#d9653a] text-white shadow-md"
+                : "bg-white text-slate-700 border border-slate-300 hover:border-slate-400"
+            }`}
+          >
+            <FileText className="w-4 h-4" />
+            Publications Only
+          </button>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
-          {projectsData.map((project) => (
-            <Card key={project.id} className="overflow-hidden hover:shadow-xl transition-shadow group">
-              <CardHeader>
-                <div className="flex items-start justify-between gap-4 mb-2">
-                  <CardTitle className="leading-tight">{project.title}</CardTitle>
-                  <Badge variant={project.status === "Ongoing" ? "default" : "secondary"}>
-                    {project.status}
-                  </Badge>
-                </div>
-                <CardDescription className="flex items-center gap-2 text-slate-600">
-                  <Calendar className="w-4 h-4" />
-                  {project.period}
-                </CardDescription>
-              </CardHeader>
-              
-              <CardContent className="space-y-4">
-                <p className="text-slate-700">{project.description}</p>
-                
-                <div>
-                  <p className="text-sm text-slate-600 mb-2">{project.institution}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant="outline">
-                        {tag}
+          {displayedProjects.map((project) => {
+            const hasPublications = project.publications && 
+              project.publications.length > 0 && 
+              !project.publications[0].includes("doctoral research") &&
+              !project.publications[0].includes("MSc thesis");
+            
+            return (
+              <Card key={project.id} id={`project-${project.id}`} className="overflow-hidden hover:shadow-xl transition-shadow group scroll-mt-24">
+                <CardHeader>
+                  <div className="flex items-start justify-between gap-4 mb-2">
+                    <CardTitle className="leading-tight">{project.title}</CardTitle>
+                    <div className="flex flex-col gap-2 items-end">
+                      <Badge variant={project.status === "Ongoing" ? "default" : "secondary"}>
+                        {project.status}
                       </Badge>
-                    ))}
+                      {hasPublications && (
+                        <Badge className="bg-orange-100 dark:bg-[#3a2a1a] text-orange-700 dark:text-orange-300 hover:bg-orange-100 dark:hover:bg-[#3a2a1a] flex items-center gap-1">
+                          <FileText className="w-3 h-3" />
+                          Published
+                        </Badge>
+                      )}
+                    </div>
                   </div>
-                </div>
+                  <CardDescription className="flex items-center gap-2 text-slate-600">
+                    <Calendar className="w-4 h-4" />
+                    {project.period}
+                  </CardDescription>
+                </CardHeader>
                 
-                <Link to={`/project/${project.id}`} className="flex items-center gap-2 text-[#2b3137] hover:text-[#1f2428] transition-colors">
-                  Learn More
-                  <ExternalLink className="w-4 h-4" />
-                </Link>
-              </CardContent>
-            </Card>
-          ))}
+                <CardContent className="space-y-4">
+                  <p className="text-slate-700 dark:text-white">{project.description}</p>
+                  
+                  <div>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 mb-2">{project.institution}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag, tagIndex) => (
+                        <Badge key={tagIndex} variant="outline">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <Link to={`/project/${project.id}`} className="inline-flex items-center gap-2 text-[#d9653a] hover:text-[#c25731] hover:underline hover:gap-3 transition-all duration-200 font-medium">
+                    Learn More
+                    <ExternalLink className="w-4 h-4" />
+                  </Link>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
+
+        {hasMore && (
+          <div className="text-center mt-12">
+            <Button 
+              size="lg" 
+              onClick={() => setShowAll(!showAll)}
+              className="bg-[#d9653a] hover:bg-[#c25731] text-white"
+            >
+              {showAll ? "Show Less" : "View More Projects"}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );

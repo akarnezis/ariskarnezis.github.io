@@ -29,22 +29,22 @@ export function Contact() {
       icon: Linkedin,
       label: "LinkedIn",
       link: "https://www.linkedin.com/in/aris-karnezis-595777b5/",
-      color: "text-blue-600 hover:text-blue-700",
+      color: "text-orange-600 hover:text-orange-700",
     },
     {
       icon: Github,
       label: "GitHub",
       link: "https://github.com/akarnezis",
-      color: "text-slate-700 hover:text-slate-900",
+      color: "text-orange-600 hover:text-orange-700",
     },
   ];
 
   return (
-    <section id="contact" className="py-24 bg-slate-50">
+    <section id="contact" className="py-24 bg-slate-50 dark:bg-[#0a0e14]">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl mb-4 text-slate-900">Get in Touch</h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl mb-4 text-slate-900 dark:text-white">Get in Touch</h2>
+          <p className="text-xl text-slate-600 dark:text-white max-w-2xl mx-auto">
             Interested in collaboration, have questions, or just want to connect? I'd love to hear from you.
           </p>
         </div>
@@ -53,21 +53,21 @@ export function Contact() {
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl mb-6">Contact Information</h3>
+                <h3 className="text-xl mb-6 text-slate-900 dark:text-white">Contact Information</h3>
                 <div className="space-y-4">
                   {contactInfo.map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
-                      <div className="p-2 bg-blue-50 rounded-lg">
-                        <item.icon className="w-5 h-5 text-blue-600" />
+                      <div className="p-2 bg-[#fff4ed] dark:bg-[#3a2a1a] rounded-lg">
+                        <item.icon className="w-5 h-5 text-[#d9653a] dark:text-[#d9653a]" />
                       </div>
                       <div>
-                        <p className="text-sm text-slate-500">{item.label}</p>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">{item.label}</p>
                         {item.link ? (
-                          <a href={item.link} className="text-slate-900 hover:text-blue-600 transition-colors">
+                          <a href={item.link} className="text-slate-900 dark:text-white hover:text-[#d9653a] dark:hover:text-[#d9653a] transition-colors">
                             {item.value}
                           </a>
                         ) : (
-                          <p className="text-slate-900">{item.value}</p>
+                          <p className="text-slate-900 dark:text-white">{item.value}</p>
                         )}
                       </div>
                     </div>
@@ -76,7 +76,7 @@ export function Contact() {
               </div>
               
               <div>
-                <h3 className="text-xl mb-6">Connect on Social</h3>
+                <h3 className="text-xl mb-6 text-slate-900 dark:text-white">Connect on Social</h3>
                 <div className="flex gap-4">
                   {socialLinks.map((social, index) => (
                     <a
@@ -84,7 +84,7 @@ export function Contact() {
                       href={social.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`p-3 bg-slate-100 rounded-lg ${social.color} transition-colors`}
+                      className={`p-3 bg-slate-100 dark:bg-slate-700 rounded-lg ${social.color} dark:text-orange-500 dark:hover:text-orange-400 transition-colors`}
                       aria-label={social.label}
                     >
                       <social.icon className="w-5 h-5" />
@@ -95,40 +95,40 @@ export function Contact() {
             </div>
             
             <div>
-              <h3 className="text-xl mb-6">Send a Message</h3>
+              <h3 className="text-xl mb-6 text-slate-900 dark:text-white">Send a Message</h3>
               <form className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm mb-2 text-slate-700">
+                  <label htmlFor="name" className="block text-sm mb-2 text-slate-700 dark:text-slate-300">
                     Name
                   </label>
                   <input
                     type="text"
                     id="name"
-                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                     placeholder="Your name"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm mb-2 text-slate-700">
+                  <label htmlFor="email" className="block text-sm mb-2 text-slate-700 dark:text-slate-300">
                     Email
                   </label>
                   <input
                     type="email"
                     id="email"
-                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                     placeholder="your.email@example.com"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm mb-2 text-slate-700">
+                  <label htmlFor="message" className="block text-sm mb-2 text-slate-700 dark:text-slate-300">
                     Message
                   </label>
                   <textarea
                     id="message"
                     rows={4}
-                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                     placeholder="Your message..."
                   />
                 </div>

@@ -26,6 +26,45 @@ import image_ed8b83a5d3520877a3c6541067cb8459b1a41222 from "figma:asset/ed8b83a5
 
 export const projectsData = [
   {
+    id: "average-transmitted-wave-particulate-materials",
+    title: "The average transmitted wave in random particulate materials",
+    description:
+      "Provided the first clear numerical evidence that multiple effective wavenumbers exist in random particulate materials using high-fidelity Monte-Carlo simulations, and proved the Ewald–Oseen extinction theorem for particulate materials.",
+    institution: "Department of Mechanical Engineering, University of Sheffield",
+    period: "2023 - 2024",
+    tags: [
+      "Wave Scattering",
+      "Multiple Scattering",
+      "Particulate Materials",
+      "Random Media",
+      "Monte-Carlo Simulations",
+    ],
+    image: "https://images.unsplash.com/photo-1719836567950-b0127bbbdf2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXZlJTIwcGh5c2ljcyUyMG1hdGVyaWFscyUyMHNjaWVuY2V8ZW58MXx8fHwxNzcyNDgyMDY1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    pdfDownload: "https://iopscience.iop.org/article/10.1088/1367-2630/ad49c2",
+    pdfTitle: "View Publication",
+    status: "Completed",
+    detailedDescription: `This research establishes rigorous numerical evidence for the existence of multiple effective wavenumbers in random particulate materials and provides a fundamental proof of the Ewald–Oseen extinction theorem in particulate media.
+
+Using high-fidelity Monte-Carlo simulations, this work demonstrates that the incident wave is extinct at a distance equal to the particle correlation length, providing unprecedented insight into wave propagation through complex random media. The findings have significant implications for understanding wave behavior in materials ranging from composites to biological tissues.`,
+    objectives: [
+      "Provide the first clear numerical evidence for multiple effective wavenumbers in random particulate materials",
+      "Prove the Ewald–Oseen extinction theorem for particulate materials through high-fidelity simulations",
+      "Demonstrate that the incident wave is extinct at a distance equal to the particle correlation length",
+      "Establish a rigorous computational framework for ensemble averaging in random media",
+    ],
+    methodology:
+      "We employed high-fidelity Monte-Carlo simulations with ensemble averaging techniques to study wave propagation through random particulate materials. The simulations were designed to capture the statistical behavior of waves in materials with varying particle distributions and correlation lengths, enabling direct comparison with theoretical predictions of effective medium theory.",
+    results: [
+      "First clear numerical evidence for the existence of multiple effective wavenumbers in random particulate materials",
+      "Rigorous proof of the Ewald–Oseen extinction theorem for particulate materials",
+      "Quantitative demonstration that extinction occurs at the particle correlation length scale",
+      "Established computational methods for accurate ensemble averaging in multiple scattering problems",
+    ],
+    publications: [
+      "Published in New Journal of Physics (2024): 'The average transmitted wave in random particulate materials' - https://iopscience.iop.org/article/10.1088/1367-2630/ad49c2",
+    ],
+  },
+  {
     id: "effective-waves-in-random-materials",
     title: "Effective waves in random particulate materials",
     description:
@@ -127,6 +166,42 @@ By analysing reflection coefficients and deriving effective wavenumbers, this re
     ],
   },
   {
+    id: "thz-superfocusing",
+    title: "Terahertz Superfocusing in Complex Scattering Media",
+    description:
+      "Used THz time-domain wavefront control to achieve spatio-temporal superfocusing through scattering media.",
+    institution: "University of Sussex",
+    period: "2018-2019",
+    tags: ["terahertz (THz)", "Complex imaging", "Wavefront shaping", "Genetic algorithm"],
+    pdfDownload: "https://drive.proton.me/urls/DSTBWRN4TC#oMdvHHGANdaj",
+    pdfTitle: " ",
+    status: "Completed",
+    detailedDescription: `This work developed an experimental-driven theoretical framework for complex imaging at terahertz wavelengths and proposes an iterative strategy to achieve spatio-temporal "superfocusing" through strongly scattering media.
+
+The thesis motivates THz complex imaging via the idea that scattering is "complex" rather than information-destroying, and leverages THz time-domain detection (amplitude + phase access) together with wavefront control concepts (transmission matrix / time-reversal style reasoning).`,
+    objectives: [
+      "Introduce the physics of terahertz radiation and its advantages for sensing/imaging.",
+      "Build the theory of imaging and focusing through complex scattering media (speckles, transmission matrix, wavefront shaping)",
+      "Formulate a terahertz-specific scheme for space–time superfocusing through multiple scattering media",
+      "Evaluate the approach with numerical simulations of wavefront optimization and pulse propagation through disorder.",
+    ],
+    methodology:
+      "The thesis combines: (i) terahertz generation/detection concepts from THz time-domain spectroscopy (optical rectification + electro-optic sampling), (ii) the transmission-matrix description of scattering media (frequency-dependent TM and its time-domain impulse response), and (iii) iterative wavefront optimization using a genetic algorithm to maximize intensity at a target output mode, enabling spatio-temporal control for broadband pulses.",
+    results: [
+      "A terahertz superfocusing workflow is formulated where the scattering system effectively acts as a lens once the incident pattern is optimized using feedback from a point detector (in analogy to optical focusing through turbid media).",
+      "genetic-algorithm optimization scheme is detailed for wavefront control (selection, breeding, mutation schedule) to accelerate convergence and improve enhancement.",
+      "Simulations compare Binary Amplitude Modulation (THz) with Pseudorandom Phase Modulation (visible) and report higher enhancement for the phase-modulation case.",
+      "A spatio-temporal pulse model is implemented to show how disorder broadens and distorts pulses, and how correlation/autocorrelation diagnostics help characterize speckle-pulse structure in complex media.",
+    ],
+    additionalImages: [
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    ],
+    publications: [
+      "This work is part of the author's research and is included in the MSc thesis submitted to University of Sussex.",
+    ],
+  },
+  {
     id: "quantum-hydro",
     title: "Quantum Hydrodynamics near caustics",
     description:
@@ -161,40 +236,6 @@ Using semiclassical tools (WKB/geometrical optics and phase-space methods), the 
       "The Bohmian-trajectory initial value problem is not well posed near fold/cusp caustics due to singular behavior in the quantum potential and phase derivatives.",
       "In examples where caustics onset at $t = 0+$, initial data for the Burgers/Bohmian characteristic dynamics cannot be prescribed consistently.",
       "Consequently, after caustic onset, Bohmian trajectories fail to converge to geometrical-optics rays in the classical limit.",
-    ],
-  },
-  {
-    id: "thz-superfocusing",
-    title: "Terahertz Superfocusing in Complex Scattering Media",
-    description:
-      "Used THz time-domain wavefront control to achieve spatio-temporal superfocusing through scattering media.",
-    institution: "University of Sussex",
-    period: "2018-2019",
-    tags: ["terahertz (THz)", "Complex imaging", "Wavefront shaping", "Genetic algorithm"],
-    status: "Completed",
-    detailedDescription: `This work developed an experimental-driven theoretical framework for complex imaging at terahertz wavelengths and proposes an iterative strategy to achieve spatio-temporal “superfocusing” through strongly scattering media.
-
-The thesis motivates THz complex imaging via the idea that scattering is “complex” rather than information-destroying, and leverages THz time-domain detection (amplitude + phase access) together with wavefront control concepts (transmission matrix / time-reversal style reasoning).`,
-    objectives: [
-      "Introduce the physics of terahertz radiation and its advantages for sensing/imaging.",
-      "Build the theory of imaging and focusing through complex scattering media (speckles, transmission matrix, wavefront shaping)",
-      "Formulate a terahertz-specific scheme for space–time superfocusing through multiple scattering media",
-      "Evaluate the approach with numerical simulations of wavefront optimization and pulse propagation through disorder.",
-    ],
-    methodology:
-      "The thesis combines: (i) terahertz generation/detection concepts from THz time-domain spectroscopy (optical rectification + electro-optic sampling), (ii) the transmission-matrix description of scattering media (frequency-dependent TM and its time-domain impulse response), and (iii) iterative wavefront optimization using a genetic algorithm to maximize intensity at a target output mode, enabling spatio-temporal control for broadband pulses.",
-    results: [
-      "A terahertz superfocusing workflow is formulated where the scattering system effectively acts as a lens once the incident pattern is optimized using feedback from a point detector (in analogy to optical focusing through turbid media).",
-      "genetic-algorithm optimization scheme is detailed for wavefront control (selection, breeding, mutation schedule) to accelerate convergence and improve enhancement.",
-      "Simulations compare Binary Amplitude Modulation (THz) with Pseudorandom Phase Modulation (visible) and report higher enhancement for the phase-modulation case.",
-      "A spatio-temporal pulse model is implemented to show how disorder broadens and distorts pulses, and how correlation/autocorrelation diagnostics help characterize speckle-pulse structure in complex media.",
-    ],
-    additionalImages: [
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    ],
-    publications: [
-      "This work is part of the author's research and is included in the MSc thesis submitted to University of Sussex.",
     ],
   },
 ];

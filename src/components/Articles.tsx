@@ -1,112 +1,192 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { Clock, ArrowRight } from "lucide-react";
+import { Clock, ArrowRight, Search, BookMarked, TrendingUp, FlaskConical, BrainCircuit, Binary, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
+import { Link } from "react-router";
+import { articlesData } from "../data/articles";
+import { useState, useMemo, useRef, useEffect } from "react";
 
 export function Articles() {
-  const posts = [
-    {
-      title: "The Beautiful Mathematics Behind Protein Folding",
-      excerpt: "Exploring how computational models mimic nature's most elegant solutions to one of biology's fundamental challenges.",
-      date: "November 5, 2024",
-      readTime: "8 min read",
-      category: "Deep Dive",
-      tags: ["Protein Folding", "Mathematics", "Computational Biology"],
-    },
-    {
-      title: "Why Your DNA Isn't Your Destiny: An Introduction to Epigenetics",
-      excerpt: "Understanding how environmental factors influence gene expression and what it means for personalized medicine.",
-      date: "October 28, 2024",
-      readTime: "6 min read",
-      category: "Explainer",
-      tags: ["Epigenetics", "Genetics", "Medicine"],
-    },
-    {
-      title: "Machine Learning Meets Drug Discovery: A Game Changer?",
-      excerpt: "An honest look at the promises and limitations of AI in pharmaceutical research, based on our latest findings.",
-      date: "October 15, 2024",
-      readTime: "10 min read",
-      category: "Analysis",
-      tags: ["AI", "Drug Discovery", "Opinion"],
-    },
-    {
-      title: "The Problem with P-Values: A Researcher's Perspective",
-      excerpt: "Statistical significance doesn't always mean what we think it does. Let's talk about better ways to interpret research findings.",
-      date: "September 30, 2024",
-      readTime: "7 min read",
-      category: "Methods",
-      tags: ["Statistics", "Research Methods", "Science Communication"],
-    },
-    {
-      title: "From Lab to Life: How Basic Research Shapes Medicine",
-      excerpt: "Real stories of how seemingly obscure discoveries led to breakthrough treatments we use today.",
-      date: "September 12, 2024",
-      readTime: "9 min read",
-      category: "Story",
-      tags: ["Medical Research", "History", "Innovation"],
-    },
-    {
-      title: "Open Science: Why I Share My Research Data",
-      excerpt: "The case for transparency in research and how open data accelerates scientific progress.",
-      date: "August 25, 2024",
-      readTime: "5 min read",
-      category: "Opinion",
-      tags: ["Open Science", "Research Ethics", "Collaboration"],
-    },
-  ];
+  const [showAll, setShowAll] = useState(() => {
+    // Load showAll state from localStorage
+    const saved = localStorage.getItem('articlesShowAll');
+    return saved === 'true';
+  });
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const buttonRef = useRef<HTMLDivElement>(null);
+  const initialCount = 3;
+
+  // Save showAll state to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('articlesShowAll', showAll.toString());
+  }, [showAll]);
+
+  // Get unique categories
+  const categories = useMemo(() => {
+    const uniqueCategories = Array.from(new Set(articlesData.map(article => article.category)));
+    return ["All", ...uniqueCategories];
+  }, []);
+
+  // Filter articles based on search and category
+  const filteredArticles = useMemo(() => {
+    return articlesData.filter(article => {
+      const matchesSearch = searchQuery === "" || 
+        article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        article.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        article.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+      
+      const matchesCategory = selectedCategory === "All" || article.category === selectedCategory;
+      
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchQuery, selectedCategory]);
+
+  const displayedArticles = showAll ? filteredArticles : filteredArticles.slice(0, initialCount);
+  const hasMore = filteredArticles.length > initialCount;
+
+  // Icon mapping for categories
+  const getCategoryIcon = (category: string) => {
+    const icons: { [key: string]: any } = {
+      "Mathematics": BookMarked,
+      "Physics": TrendingUp,
+      "Engineering": Binary,
+      "Chemistry": FlaskConical,
+      "Biology": BrainCircuit,
+      "Computing": Sparkles,
+      "Robotics": Sparkles,
+      "default": BookMarked
+    };
+    const IconComponent = icons[category] || icons.default;
+    return IconComponent;
+  };
+
+  const getCategoryColor = (category: string) => {
+    const colors: { [key: string]: string } = {
+      "Mathematics": "bg-orange-100 text-orange-700",
+      "Physics": "bg-purple-100 text-purple-700",
+      "Engineering": "bg-orange-100 text-orange-700",
+      "Chemistry": "bg-green-100 text-green-700",
+      "Biology": "bg-emerald-100 text-emerald-700",
+      "Computing": "bg-indigo-100 text-indigo-700",
+      "Robotics": "bg-pink-100 text-pink-700",
+      "default": "bg-slate-100 text-slate-700"
+    };
+    return colors[category] || colors.default;
+  };
 
   return (
-    <section id="articles" className="py-24 bg-white">
-      <div className="container mx-auto px-6 max-w-6xl">
+    <section id="articles" className="py-24 bg-white dark:bg-[#151a21]">
+      <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl mb-4 text-slate-900">Academic Articles</h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Exploring ideas, breaking down complex topics, and sharing perspectives from the frontiers of science
+          <h2 className="text-4xl mb-4 text-slate-900 dark:text-white">Explainable Science</h2>
+          <p className="text-xl text-slate-600 dark:text-white max-w-2xl mx-auto">
+            Deep dives into specific concepts, methods, and findings from my research areas
           </p>
         </div>
+
+        {/* Search Bar */}
+        <div className="mb-12">
+          <div className="relative max-w-2xl mx-auto">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
+            <input
+              type="text"
+              placeholder="Search articles..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-12 pr-4 py-4 rounded-full border border-slate-300 dark:border-[#252a31] focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-orange-500 focus:border-transparent text-slate-700 dark:text-slate-300 placeholder-slate-400 dark:placeholder-slate-500 bg-white dark:bg-[#0a0e14]"
+            />
+          </div>
+        </div>
+
+        {/* Category Filters */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category === selectedCategory ? "All" : category)}
+              className={`px-4 py-2 rounded-full transition-colors ${
+                selectedCategory === category
+                  ? "bg-[#d9653a] text-white shadow-md"
+                  : "bg-white dark:bg-[#151a21] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-[#252a31] hover:border-slate-400 dark:hover:border-slate-600"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {posts.map((post, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow flex flex-col">
-              <CardHeader>
-                <div className="flex items-center justify-between mb-3">
-                  <Badge>{post.category}</Badge>
-                  <span className="text-sm text-slate-500 flex items-center gap-1">
-                    <Clock className="w-3 h-3" />
-                    {post.readTime}
-                  </span>
-                </div>
-                <CardTitle className="leading-tight">{post.title}</CardTitle>
-                <CardDescription>{post.date}</CardDescription>
-              </CardHeader>
-              
-              <CardContent className="flex-1 flex flex-col justify-between">
-                <p className="text-slate-600 mb-4">{post.excerpt}</p>
-                
-                <div>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {post.tags.map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant="outline">
-                        {tag}
-                      </Badge>
-                    ))}
+        {/* Articles List */}
+        <div className="space-y-6 mb-12">
+          {displayedArticles.map((article) => (
+            <Card key={article.id} id={`article-${article.id}`} className="hover:shadow-lg dark:hover:shadow-orange-900/10 transition-shadow scroll-mt-24">
+              <CardContent className="p-8">
+                <div className="flex gap-6">
+                  {/* Icon */}
+                  <div className={`flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center ${getCategoryColor(article.category)}`}>
+                    {(() => {
+                      const IconComponent = getCategoryIcon(article.category);
+                      return <IconComponent className="w-8 h-8" />;
+                    })()}
                   </div>
                   
-                  <button className="flex items-center gap-2 text-[#2b3137] hover:text-[#1f2428] transition-colors">
-                    Read Article
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    {/* Metadata Row */}
+                    <div className="flex flex-wrap items-center gap-3 mb-3">
+                      <Badge className="bg-[#d9653a] hover:bg-[#d9653a]">{article.category}</Badge>
+                      <span className="text-sm text-slate-500 dark:text-slate-400">{article.date}</span>
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-2xl font-serif mb-3 text-slate-900 dark:text-slate-100 leading-tight">
+                      {article.title}
+                    </h3>
+                    
+                    {/* Excerpt */}
+                    <p className="text-slate-600 dark:text-white mb-4 leading-relaxed">
+                      {article.excerpt}
+                    </p>
+                    
+                    {/* Read Article Link */}
+                    <Link 
+                      to={`/article/${article.id}`} 
+                      className="inline-flex items-center gap-2 text-[#d9653a] hover:text-[#c25731] hover:underline hover:gap-3 transition-all duration-200 font-medium"
+                    >
+                      Read Article
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
+
+        {displayedArticles.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-slate-600 dark:text-slate-400 text-lg">No articles found matching your criteria.</p>
+          </div>
+        )}
         
-        <div className="text-center">
-          <Button size="lg" variant="outline">
-            View All Articles
-          </Button>
-        </div>
+        {hasMore && (
+          <div ref={buttonRef} className="text-center">
+            <Button 
+              size="lg" 
+              onClick={() => {
+                setShowAll(!showAll);
+                if (showAll) {
+                  setTimeout(() => {
+                    buttonRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }, 100);
+                }
+              }}
+              className="bg-[#d9653a] hover:bg-[#c25731] text-white"
+            >
+              {showAll ? "Show Less" : "View More Articles"}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
