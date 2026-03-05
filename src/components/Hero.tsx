@@ -39,7 +39,7 @@ export function Hero() {
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="gap-2" asChild>
-                <a href="https://drive.proton.me/urls/EJMZDVY3Y0#eHZs5MQgbuac" target="_blank" rel="noopener noreferrer">
+                <a href="https://drive.proton.me/urls/0AQZ9FBSMW#X17bW8hm10Hz" target="_blank" rel="noopener noreferrer">
                   <Download className="w-4 h-4" />
                   Download CV
                 </a>

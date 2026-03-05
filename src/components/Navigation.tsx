@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "./ui/button";
 import {
@@ -10,11 +10,57 @@ import { useTheme } from "../contexts/ThemeContext";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
 
+  // Track active section based on scroll position and hash
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      setActiveSection("");
+      return;
+    }
+
+    const handleScroll = () => {
+      // Check the current hash first - if it's #publications, use that
+      const currentHash = window.location.hash;
+      if (currentHash === "#publications") {
+        setActiveSection("#publications");
+        return;
+      }
+
+      const sections = ["projects", "articles", "blog", "contact"];
+      const scrollPosition = window.scrollY + 100; // offset for fixed nav
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(`#${sectionId}`);
+            return;
+          }
+        }
+      }
+      
+      // If we're at the top of the page, no section is active
+      if (window.scrollY < 100) {
+        setActiveSection("");
+      }
+    };
+
+    handleScroll(); // Check on mount
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("hashchange", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("hashchange", handleScroll);
+    };
+  }, [location.pathname]);
+
   const navItems = [
+    { label: "Home", href: "/", isRoute: true },
     { label: "About", href: "/about", isRoute: true },
     { label: "Projects", href: "#projects", isRoute: false },
     { label: "Publications", href: "#publications", isRoute: false },
@@ -49,6 +95,23 @@ export function Navigation() {
     }
   };
 
+  // Determine if a nav item is active
+  const isActive = (item: typeof navItems[0]) => {
+    if (item.isRoute) {
+      return location.pathname === item.href;
+    }
+    return activeSection === item.href;
+  };
+
+  // Get the appropriate className for nav items
+  const getNavClassName = (item: typeof navItems[0], isMobile: boolean = false) => {
+    const baseClass = isMobile ? "block py-2" : "";
+    const activeClass = isActive(item)
+      ? "text-orange-600 dark:text-orange-500"
+      : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200";
+    return `${baseClass} ${activeClass} transition-colors`.trim();
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#0a0e14]/80 backdrop-blur-md border-b border-slate-200 dark:border-[#252a31]">
       <div className="container mx-auto px-6 max-w-6xl">
@@ -64,7 +127,7 @@ export function Navigation() {
                 <Link
                   key={item.label}
                   to={item.href}
-                  className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
+                  className={getNavClassName(item)}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -74,7 +137,7 @@ export function Navigation() {
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
-                  className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
+                  className={getNavClassName(item)}
                 >
                   {item.label}
                 </a>
@@ -135,7 +198,7 @@ export function Navigation() {
                 <Link
                   key={item.label}
                   to={item.href}
-                  className="block text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200 transition-colors py-2"
+                  className={getNavClassName(item, true)}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -145,7 +208,7 @@ export function Navigation() {
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
-                  className="block text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200 transition-colors py-2"
+                  className={getNavClassName(item, true)}
                 >
                   {item.label}
                 </a>

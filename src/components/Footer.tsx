@@ -84,7 +84,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://drive.proton.me/urls/EJMZDVY3Y0#eHZs5MQgbuac" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-white transition-colors">
+                <a href="https://drive.proton.me/urls/0AQZ9FBSMW#X17bW8hm10Hz" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-white transition-colors">
                   <Download className="inline-block mr-2" size={16} />
                   CV/Resume
                 </a>

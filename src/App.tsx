@@ -28,6 +28,7 @@ const router = createBrowserRouter([
         path: "/about",
         element: (
           <>
+            <Navigation />
             <AboutPage />
             <Footer />
           </>
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
         path: "/project/:projectId",
         element: (
           <>
+            <Navigation />
             <ProjectDetail />
             <Footer />
           </>
@@ -46,6 +48,7 @@ const router = createBrowserRouter([
         path: "/blog/:postId",
         element: (
           <>
+            <Navigation />
             <BlogPostDetail />
             <Footer />
           </>
@@ -55,6 +58,7 @@ const router = createBrowserRouter([
         path: "/article/:articleId",
         element: (
           <>
+            <Navigation />
             <ArticleDetail />
             <Footer />
           </>
@@ -64,6 +68,7 @@ const router = createBrowserRouter([
         path: "*",
         element: (
           <>
+            <Navigation />
             <NotFoundPage />
             <Footer />
           </>

@@ -1,13 +1,10 @@
-import { Navigation } from "./Navigation";
 import { Button } from "./ui/button";
-import { Home, Search, ArrowLeft } from "lucide-react";
+import { Home, Search } from "lucide-react";
 import { Link } from "react-router";
 
 export function NotFoundPage() {
   return (
-    <>
-      <Navigation />
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white flex items-center justify-center px-6">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-[#0a0e14] dark:to-[#0a0e14] flex items-center justify-center px-6 pt-16">
         <div className="text-center max-w-2xl">
           {/* Large 404 */}
           <div className="mb-8">
@@ -54,7 +51,6 @@ export function NotFoundPage() {
             </p>
           </div>
         </div>
-      </div>
-    </>
+    </div>
   );
 }

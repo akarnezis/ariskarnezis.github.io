@@ -1,13 +1,10 @@
-import { Navigation } from "./Navigation";
 import { GraduationCap, Award, BookOpen, Target, MapPin, Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
 export function AboutPage() {
   return (
-    <>
-      <Navigation />
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-        <div className="container mx-auto px-6 py-24 max-w-4xl">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-[#0a0e14] dark:to-[#0a0e14] pt-16">
+      <div className="container mx-auto px-6 py-24 max-w-4xl">
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-5xl mb-6 text-slate-900">About Me</h1>
@@ -63,18 +60,20 @@ export function AboutPage() {
                       <h3 className="text-xl font-semibold text-slate-900 mb-1">PhD in Applied & Computational Mathematics</h3>
                       <p className="text-slate-600 mb-2 flex items-center gap-2">
                         <MapPin className="w-4 h-4" />
-                        University of Sheffield
+                        University of Sheffield, UK
                       </p>
                       <p className="text-slate-500 flex items-center gap-2 mb-3">
                         <Calendar className="w-4 h-4" />
-                        2019 - 2023
+                        September 2019 - August 2023
                       </p>
-                      <p className="text-slate-700">
-                        Thesis: "Wave Propagation in Disordered Materials and Machine Learning Applications"
+                      <p className="text-slate-700 mb-2">
+                        <strong>Dynamics Research Group</strong>
                       </p>
-                      <p className="text-slate-600 mt-2">
-                        Focused on mathematical modeling of elastic wave scattering in complex media, with applications 
-                        to non-destructive testing and pipeline inspection using physics-informed neural networks.
+                      <p className="text-slate-700 mb-2">
+                        Thesis: <em>"Waves in disordered particulate materials: transmission and inter-particle correlations"</em>
+                      </p>
+                      <p className="text-slate-600">
+                        Supervisors: Dr Artur Gower, Dr Anton Krynkin
                       </p>
                     </div>
                   </div>
@@ -88,18 +87,23 @@ export function AboutPage() {
                       <GraduationCap className="w-6 h-6 text-green-700" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-slate-900 mb-1">MSc in Quantum Technologies</h3>
+                      <h3 className="text-xl font-semibold text-slate-900 mb-1">M.Sc. Quantum Technology</h3>
                       <p className="text-slate-600 mb-2 flex items-center gap-2">
                         <MapPin className="w-4 h-4" />
-                        University of Sussex
+                        University of Sussex, UK
                       </p>
                       <p className="text-slate-500 flex items-center gap-2 mb-3">
                         <Calendar className="w-4 h-4" />
-                        2017 - 2019
+                        September 2018 - August 2019
+                      </p>
+                      <p className="text-slate-700 mb-2">
+                        <strong>EPic Laboratory</strong>
+                      </p>
+                      <p className="text-slate-700 mb-2">
+                        Thesis: <em>"THz superfocusing in complex scattering media"</em>
                       </p>
                       <p className="text-slate-600">
-                        Specialized in mathematical modeling and computational methods, with coursework in partial 
-                        differential equations, numerical analysis, and scientific computing.
+                        Supervisors: Prof. Marco Peccianti, Dr Alessia Pasquazi
                       </p>
                     </div>
                   </div>
@@ -113,18 +117,23 @@ export function AboutPage() {
                       <GraduationCap className="w-6 h-6 text-purple-700" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-slate-900 mb-1">BSc in Pure & Applied Mathematics</h3>
+                      <h3 className="text-xl font-semibold text-slate-900 mb-1">B.Sc. Mathematics & Applied Mathematics</h3>
                       <p className="text-slate-600 mb-2 flex items-center gap-2">
                         <MapPin className="w-4 h-4" />
-                        Imperial College London
+                        University of Crete, Greece
                       </p>
                       <p className="text-slate-500 flex items-center gap-2 mb-3">
                         <Calendar className="w-4 h-4" />
-                        2014 - 2017
+                        September 2012 - March 2018
+                      </p>
+                      <p className="text-slate-700 mb-2">
+                        <strong>Specialisation in Sciences</strong>
+                      </p>
+                      <p className="text-slate-700 mb-2">
+                        Thesis: <em>"Quantum Hydrodynamics near caustics"</em>
                       </p>
                       <p className="text-slate-600">
-                        First Class Honours. Foundation in both theoretical and applied aspects of mathematics and physics, 
-                        with a focus on analytical mechanics, quantum theory, and mathematical methods.
+                        Supervisor: Prof. George Makrakis
                       </p>
                     </div>
                   </div>
@@ -143,73 +152,73 @@ export function AboutPage() {
               <CardContent className="pt-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h3 className="font-semibold text-lg text-slate-900 mb-3">Wave Mechanics</h3>
+                    <h3 className="font-semibold text-lg text-slate-900 mb-3">Wave Mechanics & Acoustics</h3>
                     <ul className="space-y-2 text-slate-700">
                       <li className="flex items-start gap-2">
                         <span className="text-[#d9653a] mt-1">•</span>
-                        <span>Elastic wave propagation in complex media</span>
+                        <span>Wave propagation and scattering</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-[#d9653a] mt-1">•</span>
-                        <span>Multiple scattering theory</span>
+                        <span>Acoustics in complex media</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-[#d9653a] mt-1">•</span>
-                        <span>Disordered and random media</span>
+                        <span>Random media and material characterisation</span>
                       </li>
                     </ul>
                   </div>
                   
                   <div>
-                    <h3 className="font-semibold text-lg text-slate-900 mb-3">Machine Learning</h3>
+                    <h3 className="font-semibold text-lg text-slate-900 mb-3">Sensor Technologies</h3>
                     <ul className="space-y-2 text-slate-700">
                       <li className="flex items-start gap-2">
                         <span className="text-[#d9653a] mt-1">•</span>
-                        <span>Physics-informed neural networks</span>
+                        <span>Optical and quantum technologies</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-[#d9653a] mt-1">•</span>
-                        <span>Deep learning for inverse problems</span>
+                        <span>Acoustic sensing and measurement</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-[#d9653a] mt-1">•</span>
-                        <span>Data-driven modeling of physical systems</span>
+                        <span>LiDAR and computer vision</span>
                       </li>
                     </ul>
                   </div>
                   
                   <div>
-                    <h3 className="font-semibold text-lg text-slate-900 mb-3">Applied Mathematics</h3>
+                    <h3 className="font-semibold text-lg text-slate-900 mb-3">Signal Processing & Optimization</h3>
                     <ul className="space-y-2 text-slate-700">
                       <li className="flex items-start gap-2">
                         <span className="text-[#d9653a] mt-1">•</span>
-                        <span>Partial differential equations</span>
+                        <span>Signal processing techniques</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-[#d9653a] mt-1">•</span>
-                        <span>Asymptotic analysis</span>
+                        <span>Non-linear optimisation</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-[#d9653a] mt-1">•</span>
-                        <span>Computational methods</span>
+                        <span>Data analysis and visualisation</span>
                       </li>
                     </ul>
                   </div>
                   
                   <div>
-                    <h3 className="font-semibold text-lg text-slate-900 mb-3">Engineering Applications</h3>
+                    <h3 className="font-semibold text-lg text-slate-900 mb-3">Robotics & Localisation</h3>
                     <ul className="space-y-2 text-slate-700">
                       <li className="flex items-start gap-2">
                         <span className="text-[#d9653a] mt-1">•</span>
-                        <span>Non-destructive testing and evaluation</span>
+                        <span>Simultaneous Localization and Mapping (SLAM)</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-[#d9653a] mt-1">•</span>
-                        <span>Pipeline inspection and monitoring</span>
+                        <span>Robot navigation in confined spaces</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-[#d9653a] mt-1">•</span>
-                        <span>Structural health monitoring</span>
+                        <span>Multi-sensor data fusion</span>
                       </li>
                     </ul>
                   </div>
@@ -233,12 +242,12 @@ export function AboutPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg text-slate-900 mb-1">
-                        Winter School Hackathon Winner
+                        Best Mathematical Insight - Scattering Hackathon
                       </h3>
                       <p className="text-slate-600 mb-2">
-                        Workshop on Mathematical Theory and Applications of Multiple Wave Scattering
+                        Winter School on Mathematical Theory and Applications of Multiple Wave Scattering. Issued by Isaac Newton Institute for Mathematical Sciences, University of Cambridge.
                       </p>
-                      <p className="text-slate-500">Cambridge, 2023</p>
+                      <p className="text-slate-500">2023</p>
                     </div>
                   </div>
                 </CardContent>
@@ -252,12 +261,12 @@ export function AboutPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg text-slate-900 mb-1">
-                        EPSRC Doctoral Training Partnership
+                        PhD Scholarship
                       </h3>
                       <p className="text-slate-600 mb-2">
-                        Full PhD funding with additional travel and research support
+                        The University of Sheffield - Full funding with additional travel and research support
                       </p>
-                      <p className="text-slate-500">2019 - 2023</p>
+                      <p className="text-slate-500">September 2019 - August 2023</p>
                     </div>
                   </div>
                 </CardContent>
@@ -271,12 +280,12 @@ export function AboutPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg text-slate-900 mb-1">
-                        Best Presentation Award
+                        Travel Bursaries
                       </h3>
                       <p className="text-slate-600 mb-2">
-                        Graduate Student Symposium, Department of Applied Mathematics
+                        Isaac Newton Institute for Mathematical Sciences (£1.1k), UK Acoustics Network (£1.3k), EPSRC Centre for Doctoral Training (£500), Global Opportunities 2020 (£500)
                       </p>
-                      <p className="text-slate-500">2021</p>
+                      <p className="text-slate-500">2019 - 2023</p>
                     </div>
                   </div>
                 </CardContent>
@@ -290,43 +299,115 @@ export function AboutPage() {
             <div className="relative border-l-2 border-slate-300 pl-8 space-y-8">
               <div className="relative">
                 <div className="absolute -left-10 w-4 h-4 bg-blue-600 rounded-full border-4 border-white"></div>
-                <div className="mb-1 text-slate-500">2023 - Present</div>
+                <div className="mb-1 text-slate-500">January 2025 - Present</div>
                 <h3 className="text-xl font-semibold text-slate-900 mb-2">Research Associate</h3>
                 <p className="text-slate-700">
-                  University of Sheffield, Department of Applied Mathematics
+                  University of Sheffield - Department of Electrical and Electronic Engineering
+                </p>
+                <p className="text-slate-600 mt-2 text-sm">
+                  Developing advanced multi-sensor fusion algorithms integrating acoustic, optical, and LiDAR data for autonomous robot navigation, precise localization, and real-time mapping in buried pipe environments.
+                </p>
+              </div>
+
+              <div className="relative">
+                <div className="absolute -left-10 w-4 h-4 bg-blue-500 rounded-full border-4 border-white"></div>
+                <div className="mb-1 text-slate-500">June 2024 - December 2024</div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Research Associate</h3>
+                <p className="text-slate-700">
+                  University of Sheffield - Department of Electrical and Electronic Engineering
+                </p>
+                <p className="text-slate-600 mt-2 text-sm">
+                  Collaborated with Opteran Technologies to advance autonomous robot navigation inside buried pipes.
                 </p>
               </div>
 
               <div className="relative">
                 <div className="absolute -left-10 w-4 h-4 bg-green-600 rounded-full border-4 border-white"></div>
-                <div className="mb-1 text-slate-500">2019 - 2023</div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">PhD Researcher</h3>
+                <div className="mb-1 text-slate-500">April 2024 - May 2024</div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Research Assistant</h3>
                 <p className="text-slate-700">
-                  University of Sheffield, Department of Applied Mathematics
+                  University of Sheffield - Department of Automatic Control and Systems Engineering
+                </p>
+                <p className="text-slate-600 mt-2 text-sm">
+                  Implemented computer vision and localization techniques for robot navigation inside pipes using optical video data.
+                </p>
+              </div>
+
+              <div className="relative">
+                <div className="absolute -left-10 w-4 h-4 bg-green-500 rounded-full border-4 border-white"></div>
+                <div className="mb-1 text-slate-500">January 2024 - May 2024</div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Research Assistant</h3>
+                <p className="text-slate-700">
+                  Pipebots
+                </p>
+                <p className="text-slate-600 mt-2 text-sm">
+                  Developed software employing LiDAR technology for the detection of structural features and blockages in buried pipes.
                 </p>
               </div>
 
               <div className="relative">
                 <div className="absolute -left-10 w-4 h-4 bg-purple-600 rounded-full border-4 border-white"></div>
-                <div className="mb-1 text-slate-500">2017 - 2019</div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">Graduate Student</h3>
+                <div className="mb-1 text-slate-500">September 2019 - August 2023</div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">PhD Researcher</h3>
                 <p className="text-slate-700">
-                  University of Oxford, Mathematical Institute
+                  University of Sheffield - Department of Applied Mathematics
+                </p>
+                <p className="text-slate-600 mt-2 text-sm">
+                  Focused on wave propagation in disordered particulate materials with applications to inverse problems.
+                </p>
+              </div>
+
+              <div className="relative">
+                <div className="absolute -left-10 w-4 h-4 bg-purple-500 rounded-full border-4 border-white"></div>
+                <div className="mb-1 text-slate-500">June 2023 - August 2023</div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Research Assistant</h3>
+                <p className="text-slate-700">
+                  University of Sheffield
+                </p>
+                <p className="text-slate-600 mt-2 text-sm">
+                  Built a custom robot for acoustic sensing and measurement, developed software for real-time acoustic sensing and object detection.
                 </p>
               </div>
 
               <div className="relative">
                 <div className="absolute -left-10 w-4 h-4 bg-orange-600 rounded-full border-4 border-white"></div>
-                <div className="mb-1 text-slate-500">Summer 2018</div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">Research Intern</h3>
+                <div className="mb-1 text-slate-500">February 2022 - March 2022</div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Research Assistant</h3>
                 <p className="text-slate-700">
-                  National Physical Laboratory, Acoustics Group
+                  University of Sheffield - Department of Mechanical Engineering
+                </p>
+                <p className="text-slate-600 mt-2 text-sm">
+                  Optimised the Sound Impedance Tube experiment and determined airflow resistance of porous materials.
                 </p>
               </div>
+
+              <div className="relative">
+                <div className="absolute -left-10 w-4 h-4 bg-orange-500 rounded-full border-4 border-white"></div>
+                <div className="mb-1 text-slate-500">July 2021 - August 2021</div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Hardware Engineer</h3>
+                <p className="text-slate-700">
+                  UK Acoustics Network
+                </p>
+                <p className="text-slate-600 mt-2 text-sm">
+                  Designed and built an acoustic levitator employing ultrasonic technology to levitate small objects.
+                </p>
+              </div>
+
+              <div className="relative">
+                <div className="absolute -left-10 w-4 h-4 bg-pink-600 rounded-full border-4 border-white"></div>
+                <div className="mb-1 text-slate-500">February 2020 - June 2023</div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Graduate Teaching Assistant</h3>
+                <p className="text-slate-700">
+                  University of Sheffield
+                </p>
+                <p className="text-slate-600 mt-2 text-sm">
+                  Led problem-solving classes on dynamics of aerospace structures & machines, provided support for dynamics courses, demonstrated MATLAB expertise in fluid dynamics and thermodynamics courses.
+                </p>
+              </div>
+
             </div>
           </section>
         </div>
-      </div>
-    </>
+    </div>
   );
 }

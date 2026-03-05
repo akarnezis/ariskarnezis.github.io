@@ -63,7 +63,7 @@ export function ProjectDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0a0e14]">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#0a0e14] pt-16">
       {/* Header with back button */}
       <div className="bg-white dark:bg-[#151a21] border-b dark:border-[#252a31]">
         <div className="container mx-auto px-6 max-w-7xl py-8">
