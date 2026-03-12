@@ -2300,6 +2300,12 @@
   }
 
   @media (hover: hover) {
+    .dark\:group-hover\:text-\[\#d9653a\]:is(.dark *):is(:where(.group):hover *) {
+      color: #d9653a;
+    }
+  }
+
+  @media (hover: hover) {
     .dark\:hover\:border-slate-500:is(.dark *):hover {
       border-color: var(--color-slate-500);
     }

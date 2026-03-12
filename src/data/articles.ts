@@ -20,7 +20,9 @@ export const articlesData: Article[] = [
     category: "Physics",
     tags: ["Wave Scattering", "Random Media", "Effective Medium Theory"],
     relatedProject: "average-transmitted-wave-particulate-materials",
-    content: `For a long time, researchers have used a simple idea to describe how waves travel through random materials.
+    content: `This is the first article I'm writing in this section, and I wanted to start with something familiar — my own work. Recently, I published a paper on wave scattering in random particulate materials, and I thought it would be a good opportunity to explain some of the ideas in a more accessible way. If you're interested in the technical details, you can find the full paper linked above in the "Related Research" section. Here, I'll focus on the core concepts and why they matter.
+
+For a long time, researchers have used a simple idea to describe how waves travel through random materials.
 
 If you send a wave into a material filled with many randomly placed particles, the details quickly become messy. Every particle scatters the wave, and every arrangement looks slightly different. But if you average over many possible arrangements, something surprising happens: the overall behaviour often becomes much simpler.
 
@@ -74,7 +76,7 @@ In fact, the distance over which the original wave fades is closely tied to how 
 
 So small-scale structure is not just background detail — it shapes what we observe at larger scales.
 
-## Why It Matters
+## The Bigger Picture
 
 Taken together, these results change how we think about wave propagation in random materials.
 
@@ -84,6 +86,6 @@ Sometimes there is more than one effective wave. Sometimes the original wave dis
 
 For anyone modelling waves, designing materials, or interpreting experiments, knowing when the simple picture fails makes a real difference.
 
-Random materials are often more structured — and more interesting — than they first appear.`,
+Understanding these subtleties doesn't just refine our theories — it opens new ways to engineer materials with specific wave properties. And that, ultimately, is what makes this work worth doing.`,
   },
 ];

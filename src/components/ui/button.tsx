@@ -53,7 +53,7 @@ function Button({
       acc[key] = props[key as keyof typeof props];
     }
     return acc;
-  }, {} as Record<string, any>);
+  }, {} as any);
 
   return (
     <Comp
