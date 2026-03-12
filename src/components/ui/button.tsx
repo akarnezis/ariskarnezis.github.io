@@ -49,7 +49,14 @@ function Button(
   const Comp = asChild ? Slot : "button";
 
   // Filter out Figma-specific props that shouldn't be passed to DOM elements
-  const { _fgT, _fgS, _fgB, _fgt, _fgs, _fgb, ...filteredProps } = props as any;
+  const filteredProps = Object.keys(props).reduce((acc, key) => {
+    // Remove any props that start with _fg (Figma inspector props)
+    if (key.startsWith('_fg')) {
+      return acc;
+    }
+    acc[key] = (props as any)[key];
+    return acc;
+  }, {} as any);
 
   return (
     <Comp
