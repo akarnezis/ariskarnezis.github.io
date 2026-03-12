@@ -9,6 +9,8 @@ import { NotFoundPage } from "./components/NotFoundPage";
 import { Footer } from "./components/Footer";
 import { Layout } from "./components/Layout";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { ErrorBoundary } from "./components/ErrorBoundary";
+import { Analytics } from "./components/Analytics";
 
 const router = createBrowserRouter([
   {
@@ -80,8 +82,11 @@ const router = createBrowserRouter([
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <Analytics />
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }

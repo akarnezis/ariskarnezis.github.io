@@ -7,6 +7,7 @@ import { ArrowLeft, Clock, Calendar, ExternalLink } from "lucide-react";
 import { ContentSidebar } from "./ContentSidebar";
 import { useMemo } from "react";
 import { Link } from "react-router";
+import { SEOHelmet } from "./SEOHelmet";
 
 // Helper function to parse markdown formatting (bold and italic)
 function parseMarkdown(text: string): (string | JSX.Element)[] {
@@ -162,6 +163,13 @@ export function ArticleDetail() {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#2d2d2d] pt-16">
+      <SEOHelmet
+        title={`${article.title} | Research Article`}
+        description={article.excerpt}
+        type="article"
+        publishedTime={new Date(article.date).toISOString()}
+        tags={article.tags}
+      />
       {/* Header */}
       <div className="bg-white dark:bg-[#3a3a3a] border-b dark:border-[#4a4a4a]">
         <div className="container mx-auto px-6 max-w-7xl py-8">

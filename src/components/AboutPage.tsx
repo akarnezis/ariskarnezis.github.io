@@ -1,10 +1,15 @@
 import { GraduationCap, Award, BookOpen, Target, MapPin, Calendar, Download } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
+import { SEOHelmet } from "./SEOHelmet";
 
 export function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-[#2d2d2d] dark:to-[#2d2d2d] pt-16">
+      <SEOHelmet
+        title="About | Research Associate in Applied Mathematics"
+        description="Learn about my journey through mathematics, physics, and research in wave scattering, random media, and intelligent systems. Research Associate at the University of Sheffield."
+      />
       <div className="container mx-auto px-6 py-24 max-w-4xl">
           {/* Header */}
           <div className="text-center mb-16">

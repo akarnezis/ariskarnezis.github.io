@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { User, FlaskConical, FileText, Mail, Mic, Github, Linkedin, GraduationCap, Download } from "lucide-react";
+import { RSSFeedLinks } from "./RSSFeedLinks";
 
 export function Footer() {
   // Function to handle smooth scroll when clicking footer links
@@ -60,10 +61,10 @@ export function Footer() {
             <h4 className="text-white mb-4">Resources</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/#talks" className="flex items-center hover:text-white transition-colors" onClick={() => handleLinkClick('talks')}>
+                <a href="https://drive.proton.me/urls/6CRBEG1KEC#ib6PMVllbJP2" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-white transition-colors">
                   <Mic className="inline-block mr-2" size={16} />
                   Talks
-                </Link>
+                </a>
               </li>
               <li>
                 <a href="https://github.com/akarnezis" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-white transition-colors">
@@ -93,7 +94,11 @@ export function Footer() {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-[#4a4a4a] text-center text-sm">
+        <div className="pt-8 border-t border-[#4a4a4a] mb-6">
+          <RSSFeedLinks />
+        </div>
+
+        <div className="pt-6 border-t border-[#4a4a4a] text-center text-sm">
           <p>&copy; 2025 Aris Karnezis. All rights reserved.</p>
         </div>
       </div>

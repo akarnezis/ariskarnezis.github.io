@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import { MathText } from "./MathText";
 import { ContentSidebar } from "./ContentSidebar";
 import { useMemo } from "react";
+import { SEOHelmet } from "./SEOHelmet";
 
 export function ProjectDetail() {
   const { projectId } = useParams();
@@ -64,6 +65,12 @@ export function ProjectDetail() {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#2d2d2d] pt-16">
+      <SEOHelmet
+        title={`${project.title} | Research Project`}
+        description={project.detailedDescription.substring(0, 155)}
+        type="article"
+        tags={project.tags}
+      />
       {/* Header with back button */}
       <div className="bg-white dark:bg-[#3a3a3a] border-b dark:border-[#4a4a4a]">
         <div className="container mx-auto px-6 max-w-7xl py-8">

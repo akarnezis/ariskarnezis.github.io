@@ -34,26 +34,22 @@ const buttonVariants = cva(
   },
 );
 
-function Button({
-  className,
-  variant,
-  size,
-  asChild = false,
-  ...props
-}: React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean;
-  }) {
+function Button(
+  {
+    className,
+    variant,
+    size,
+    asChild = false,
+    ...props
+  }: React.ComponentProps<"button"> &
+    VariantProps<typeof buttonVariants> & {
+      asChild?: boolean;
+    }
+) {
   const Comp = asChild ? Slot : "button";
 
   // Filter out Figma-specific props that shouldn't be passed to DOM elements
-  const filteredProps = Object.keys(props).reduce((acc, key) => {
-    // Exclude Figma internal props (they start with _fg)
-    if (!key.startsWith('_fg')) {
-      acc[key] = props[key as keyof typeof props];
-    }
-    return acc;
-  }, {} as any);
+  const { _fgT, _fgS, _fgB, _fgt, _fgs, _fgb, ...filteredProps } = props as any;
 
   return (
     <Comp

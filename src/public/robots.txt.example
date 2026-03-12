@@ -1,0 +1,15 @@
+# Allow all crawlers to access all content
+User-agent: *
+Allow: /
+
+# Sitemap location (update with your actual domain)
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Optional: Crawl-delay (seconds between requests)
+# Crawl-delay: 1
+
+# Optional: Disallow specific paths if needed
+# Examples:
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /temp/

@@ -7,6 +7,7 @@ import { Contact } from "./Contact";
 import { useEffect } from "react";
 import { useLocation } from "react-router";
 import { useHomePageReset } from "../contexts/HomePageResetContext";
+import { SEOHelmet } from "./SEOHelmet";
 
 export function HomePage() {
   const location = useLocation();
@@ -33,6 +34,7 @@ export function HomePage() {
 
   return (
     <div key={resetKey}>
+      <SEOHelmet />
       <Hero />
       <Projects />
       <Articles />
