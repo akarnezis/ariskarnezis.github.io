@@ -1337,6 +1337,10 @@
     padding: calc(var(--spacing) * 3);
   }
 
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+
   .p-6 {
     padding: calc(var(--spacing) * 6);
   }
@@ -2263,6 +2267,10 @@
 
   .dark\:text-slate-400:is(.dark *) {
     color: var(--color-slate-400);
+  }
+
+  .dark\:text-slate-500:is(.dark *) {
+    color: var(--color-slate-500);
   }
 
   .dark\:text-slate-600:is(.dark *) {

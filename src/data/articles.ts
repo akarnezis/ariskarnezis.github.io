@@ -6,126 +6,84 @@ export interface Article {
   readTime: string;
   category: string;
   tags: string[];
+  relatedProject?: string;
   content: string;
 }
 
 export const articlesData: Article[] = [
   {
-    id: "beautiful-mathematics-protein-folding",
-    title: "The Beautiful Mathematics Behind Protein Folding",
-    excerpt: "Exploring how computational models mimic nature's most elegant solutions to one of biology's fundamental challenges.",
-    date: "November 5, 2024",
-    readTime: "8 min read",
-    category: "Biology",
-    tags: ["Protein Folding", "Mathematics", "Computational Biology"],
-    content: `Proteins are the workhorses of biology. From the hemoglobin carrying oxygen in your blood to the enzymes breaking down your food, these molecular machines perform countless essential functions. But here's the fascinating part: each protein's function is entirely determined by its three-dimensional shape, which in turn arises from a simple chain of amino acids folding in on itself.
-
-## The Folding Problem
-
-The question of how a protein goes from a linear sequence of amino acids to a complex 3D structure has puzzled scientists for decades. This is known as the protein folding problem, and it's one of the most important challenges in computational biology.
-
-Consider this: a typical protein might contain 300 amino acids. Each amino acid can adopt multiple conformations, giving us an astronomical number of possible shapes—far too many to test one by one. Yet somehow, proteins fold into their correct shape in milliseconds.
-
-## Mathematical Models
-
-To understand protein folding, researchers have developed sophisticated mathematical models. These models treat the protein as an energy landscape, where the goal is to find the configuration with the lowest energy—the native state.
-
-### Energy Minimization
-
-The most common approach uses potential energy functions that account for various molecular interactions: hydrogen bonds, electrostatic forces, van der Waals interactions, and hydrophobic effects. The folding process can be viewed as a minimization problem in a high-dimensional space.
-
-### Statistical Mechanics
-
-Another powerful framework comes from statistical mechanics, which describes the ensemble of possible protein conformations. This probabilistic approach helps explain not just the final structure, but also the folding pathway and the presence of intermediate states.
-
-## Computational Approaches
-
-Modern computational methods combine these mathematical insights with machine learning. AlphaFold, developed by DeepMind, uses deep neural networks trained on known protein structures to predict how new sequences will fold.
-
-The success of these computational models validates our mathematical understanding while opening new possibilities for drug design and disease treatment. When we understand the mathematics of folding, we can predict how mutations affect protein function and design new proteins with desired properties.
-
-## Looking Forward
-
-As computational power increases and our mathematical models become more sophisticated, we're moving closer to a complete solution of the protein folding problem. This won't just be a triumph of pure science—it will have profound implications for medicine, biotechnology, and our understanding of life itself.`,
-  },
-  {
-    id: "dna-not-destiny-epigenetics",
-    title: "Why Your DNA Isn't Your Destiny: An Introduction to Epigenetics",
-    excerpt: "Understanding how environmental factors influence gene expression and what it means for personalized medicine.",
-    date: "October 28, 2024",
+    id: "effective-wavenumber-multiple-waves",
+    title: "Why One Effective Wavenumber Isn't Always Enough",
+    excerpt: "For a long time, researchers have used a simple idea to describe how waves travel through random materials. It turns out this simple picture isn't always enough.",
+    date: "March 10, 2026",
     readTime: "6 min read",
-    category: "Biology",
-    tags: ["Epigenetics", "Genetics", "Medicine"],
-    content: "Article content coming soon...",
-  },
-  {
-    id: "machine-learning-drug-discovery",
-    title: "Machine Learning Meets Drug Discovery: A Game Changer?",
-    excerpt: "An honest look at the promises and limitations of AI in pharmaceutical research, based on our latest findings.",
-    date: "October 15, 2024",
-    readTime: "10 min read",
-    category: "Computing",
-    tags: ["AI", "Drug Discovery", "Opinion"],
-    content: `The pharmaceutical industry is buzzing with excitement about artificial intelligence. Headlines promise that machine learning will revolutionize drug discovery, cutting development times from decades to years and costs from billions to millions. But as someone working at the intersection of computation and biology, I think we need a more nuanced view.
-
-## The Promise
-
-Machine learning has indeed achieved remarkable successes in drug discovery. AI models can now predict molecular properties, identify potential drug candidates, and even design entirely new molecules with desired characteristics.
-
-### Screening and Optimization
-
-Traditional drug screening involves testing millions of compounds—a time-consuming and expensive process. ML models can predict which molecules are most likely to bind to target proteins, dramatically reducing the number of compounds that need physical testing.
-
-### Property Prediction
-
-Modern neural networks can predict crucial properties like toxicity, solubility, and metabolic stability. This allows researchers to filter out problematic candidates early in the development pipeline.
-
-## The Reality Check
-
-Despite these advances, AI hasn't replaced the need for careful experimental validation. Biology is messy and complex in ways that even our best models struggle to capture.
-
-### Data Quality Issues
-
-Machine learning is only as good as its training data. In drug discovery, we often have limited data on novel targets, and the data we do have may be noisy or biased. Models trained on existing drugs may not generalize well to entirely new chemical spaces.
-
-### The Valley of Death
-
-Predicting that a molecule will work in a test tube is very different from showing it will work safely and effectively in humans. The journey from computational prediction to approved drug is still long and expensive.
-
-## A Balanced Perspective
-
-Machine learning is a powerful tool, but it's not magic. The most successful applications combine AI with deep domain expertise and careful experimental validation. As the field matures, I expect we'll see AI becoming an integral part of the drug discovery toolkit—augmenting rather than replacing human researchers.
-
-The real game-changer won't be AI alone, but the synergy between computational methods, biological understanding, and clinical expertise.`,
-  },
-  {
-    id: "problem-with-p-values",
-    title: "The Problem with P-Values: A Researcher's Perspective",
-    excerpt: "Statistical significance doesn't always mean what we think it does. Let's talk about better ways to interpret research findings.",
-    date: "September 30, 2024",
-    readTime: "7 min read",
-    category: "Mathematics",
-    tags: ["Statistics", "Research Methods", "Science Communication"],
-    content: "Article content coming soon...",
-  },
-  {
-    id: "lab-to-life-basic-research",
-    title: "From Lab to Life: How Basic Research Shapes Medicine",
-    excerpt: "Real stories of how seemingly obscure discoveries led to breakthrough treatments we use today.",
-    date: "September 12, 2024",
-    readTime: "9 min read",
-    category: "Chemistry",
-    tags: ["Medical Research", "History", "Innovation"],
-    content: "Article content coming soon...",
-  },
-  {
-    id: "open-science-sharing-data",
-    title: "Open Science: Why I Share My Research Data",
-    excerpt: "The case for transparency in research and how open data accelerates scientific progress.",
-    date: "August 25, 2024",
-    readTime: "5 min read",
     category: "Physics",
-    tags: ["Open Science", "Research Ethics", "Collaboration"],
-    content: "Article content coming soon...",
+    tags: ["Wave Scattering", "Random Media", "Effective Medium Theory"],
+    relatedProject: "average-transmitted-wave-particulate-materials",
+    content: `For a long time, researchers have used a simple idea to describe how waves travel through random materials.
+
+If you send a wave into a material filled with many randomly placed particles, the details quickly become messy. Every particle scatters the wave, and every arrangement looks slightly different. But if you average over many possible arrangements, something surprising happens: the overall behaviour often becomes much simpler.
+
+A helpful way to picture this is to imagine shining a flashlight through fog. Up close, each droplet scatters light in its own way, and the motion is complicated. But from far away, the beam looks simple — it just travels forward and gradually fades.
+
+This simplified picture is what scientists call an effective medium. Instead of tracking every particle, we replace the complicated material with a smoother one that behaves the same on average. And once we do that, we can describe the wave using just one number — the effective wavenumber, which tells us how fast the wave travels and how quickly it fades as it moves through the material.
+
+For a long time, researchers assumed that this single effective wavenumber was always enough.
+
+It turns out it isn't.
+
+## When One Wavenumber Fails
+
+The simple picture works very well when particles scatter weakly. But when scattering becomes strong, something different happens.
+
+Instead of behaving like one clean wave travelling through a uniform material, the average field can contain more than one effective wave. Each travels differently, fades differently, and contributes to what we observe.
+
+This matters because many real applications operate in exactly these stronger scattering regimes. If we ignore the extra waves, we risk misunderstanding how energy actually moves through the material.
+
+There is also a practical takeaway: the transition is not mysterious. If individual particles scatter strongly, multiple effective waves are likely to appear.
+
+## How We Checked
+
+To see whether this was really happening, we ran large-scale numerical experiments.
+
+The idea sounds simple: generate many random materials, simulate the wave scattering in each one, average the results, and compare with theory. In reality, it was much harder than expected.
+
+We needed tens of thousands of simulations before the average became stable. Each simulation involved solving a full scattering problem, which is already computationally demanding. Even after averaging, extracting the effective waves from the results required careful analysis.
+
+But the effort paid off.
+
+The simulations showed clear evidence that in some regimes the material transmits not just one effective wave, but two. This was not numerical noise or overfitting — it was a consistent physical effect.
+
+## What Happens to the Original Wave?
+
+This raises another natural question: what happens to the original incoming wave once it enters the material?
+
+There is a well-known idea in physics called the extinction theorem. It says that the original incident wave does not survive inside a material. Instead, it is cancelled out and replaced by the waves generated through scattering.
+
+For random particulate materials, this had often been assumed rather than fully shown. One of the things we found is that it really does happen — and we can describe exactly where.
+
+The incident wave disappears after a certain distance inside the material. That distance depends on how the particles are arranged.
+
+## Why Particle Arrangement Matters
+
+It is tempting to think only the number of particles matters — how many there are and how strongly they scatter. But the way they are arranged also plays an important role.
+
+Even random materials have structure. Some arrangements are more clustered, some more ordered, and some show clear short-range patterns. These patterns affect how waves travel and how quickly the incident wave disappears.
+
+In fact, the distance over which the original wave fades is closely tied to how far these structural patterns extend.
+
+So small-scale structure is not just background detail — it shapes what we observe at larger scales.
+
+## Why It Matters
+
+Taken together, these results change how we think about wave propagation in random materials.
+
+The traditional picture — one effective wave travelling through one effective medium — is still useful. But it is not universal.
+
+Sometimes there is more than one effective wave. Sometimes the original wave disappears over a measurable distance. And sometimes the arrangement of particles matters as much as their number.
+
+For anyone modelling waves, designing materials, or interpreting experiments, knowing when the simple picture fails makes a real difference.
+
+Random materials are often more structured — and more interesting — than they first appear.`,
   },
 ];

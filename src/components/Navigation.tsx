@@ -7,6 +7,7 @@ import {
   useLocation,
 } from "react-router";
 import { useTheme } from "../contexts/ThemeContext";
+import { useHomePageReset } from "../contexts/HomePageResetContext";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +15,7 @@ export function Navigation() {
   const navigate = useNavigate();
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
+  const { resetHomePage } = useHomePageReset();
 
   // Track active section based on scroll position and hash
   useEffect(() => {
@@ -75,13 +77,25 @@ export function Navigation() {
     { label: "Blog", href: "#blog", isRoute: false },
   ];
 
+  const handleHomeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // If already on home page, prevent navigation and just reset
+    if (location.pathname === "/") {
+      e.preventDefault();
+      resetHomePage();
+    }
+    // Otherwise, let the Link component handle navigation
+    // and reset will happen after navigation
+  };
+
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string,
     isRoute: boolean = false,
   ) => {
     // If it's a route (not an anchor), let Link handle it
-    if (isRoute) return;
+    if (isRoute) {
+      return;
+    }
     
     e.preventDefault();
     setIsOpen(false);
@@ -127,7 +141,12 @@ export function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#2d2d2d] backdrop-blur-md border-b border-slate-200 dark:border-[#4a4a4a]">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="text-xl font-bold text-slate-900 dark:text-slate-100" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+          <Link 
+            to="/" 
+            className="text-xl font-bold text-slate-900 dark:text-slate-100" 
+            style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
+            onClick={handleHomeClick}
+          >
             Aris Karnezis
           </Link>
 
@@ -139,7 +158,13 @@ export function Navigation() {
                   key={item.label}
                   to={item.href}
                   className={getNavClassName(item)}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    setIsOpen(false);
+                    // Reset home page state if navigating to home
+                    if (item.href === "/") {
+                      handleHomeClick(e);
+                    }
+                  }}
                 >
                   {item.label}
                 </Link>
@@ -210,7 +235,13 @@ export function Navigation() {
                   key={item.label}
                   to={item.href}
                   className={getNavClassName(item, true)}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    setIsOpen(false);
+                    // Reset home page state if navigating to home
+                    if (item.href === "/") {
+                      handleHomeClick(e);
+                    }
+                  }}
                 >
                   {item.label}
                 </Link>
