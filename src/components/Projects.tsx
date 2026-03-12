@@ -39,7 +39,7 @@ export function Projects() {
   const hasMore = filteredProjects.length > initialCount;
 
   return (
-    <section id="projects" className="py-24 bg-slate-50 dark:bg-[#0a0e14]">
+    <section id="projects" className="py-24 bg-slate-50 dark:bg-[#2d2d2d]">
       {/* Add publications anchor point */}
       <div id="publications" className="absolute -mt-24" />
       
@@ -59,11 +59,14 @@ export function Projects() {
         {/* Filter Toggle Buttons */}
         <div className="flex justify-center gap-3 mb-12">
           <button
-            onClick={() => setFilterMode("all")}
+            onClick={() => {
+              setFilterMode("all");
+              window.location.hash = "#projects";
+            }}
             className={`px-6 py-2.5 rounded-full transition-all duration-200 ${
               filterMode === "all"
                 ? "bg-[#d9653a] text-white shadow-md"
-                : "bg-white text-slate-700 border border-slate-300 hover:border-slate-400"
+                : "bg-white dark:bg-[#3a3a3a] text-slate-700 dark:text-white border border-slate-300 dark:border-[#4a4a4a] hover:border-slate-400 dark:hover:border-slate-500"
             }`}
           >
             All Projects
@@ -71,11 +74,14 @@ export function Projects() {
           
           {/* Publications Only Toggle */}
           <button
-            onClick={() => setFilterMode("publications")}
+            onClick={() => {
+              setFilterMode("publications");
+              window.location.hash = "#publications";
+            }}
             className={`px-6 py-2.5 rounded-full transition-all duration-200 flex items-center gap-2 ${
               filterMode === "publications"
                 ? "bg-[#d9653a] text-white shadow-md"
-                : "bg-white text-slate-700 border border-slate-300 hover:border-slate-400"
+                : "bg-white dark:bg-[#3a3a3a] text-slate-700 dark:text-white border border-slate-300 dark:border-[#4a4a4a] hover:border-slate-400 dark:hover:border-slate-500"
             }`}
           >
             <FileText className="w-4 h-4" />
@@ -96,7 +102,7 @@ export function Projects() {
                   <div className="flex items-start justify-between gap-4 mb-2">
                     <CardTitle className="leading-tight">{project.title}</CardTitle>
                     <div className="flex flex-col gap-2 items-end">
-                      <Badge variant={project.status === "Ongoing" ? "default" : "secondary"}>
+                      <Badge variant={project.status === "Ongoing" ? "default" : "secondary"} className={project.status === "Completed" ? "dark:border-white/20" : ""}>
                         {project.status}
                       </Badge>
                       {hasPublications && (

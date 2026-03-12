@@ -14,6 +14,107 @@ export interface BlogPost {
 
 export const blogPostsData: BlogPost[] = [
   {
+    id: "being-stuck-research",
+    title: "On Research, Patience, and the Art of Being Stuck",
+    excerpt: "A reflection on what I've learned from months of staring at equations that refuse to work — and why that's the most important part.",
+    date: "December 28, 2024",
+    readTime: "7 min read",
+    category: "Personal",
+    tags: ["Research", "Philosophy", "Problem-Solving"],
+    headerImage: "https://images.unsplash.com/photo-1758685845872-4edbf0e76014?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGlua2luZyUyMHJlc2VhcmNoJTIwcGF0aWVuY2UlMjBwcm9ibGVtJTIwc29sdmluZ3xlbnwxfHx8fDE3NzMwOTQ0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    content: `
+I spent months stuck on the proof of the extinction theorem. I knew the result had to be true — the Monte-Carlo simulations showed it clearly — but the mathematics wouldn't cooperate. Every approach I tried led to a dead end or a circular argument. The ensemble averaging seemed straightforward in principle, but when I tried to write it out rigorously, the boundary conditions kept creating inconsistencies.
+
+The proof eventually worked. But this post isn't about the solution — it's about the months of being stuck, and why that time wasn't wasted.
+
+## The Myth of Eureka
+
+We have this cultural narrative about breakthroughs: a lone genius has a flash of insight in the shower, or while staring at an apple falling from a tree, and everything falls into place. Newton's apple. Archimedes in the bathtub. Einstein's thought experiments.
+
+The reality, at least in my experience, is more like slowly building a wall in the dark. You lay bricks without knowing if you're building in the right direction. Sometimes you realize you've been building on unstable ground and have to tear down what you've built and start again. There's no dramatic moment of clarity — just the gradual accumulation of small understandings that eventually add up to something coherent.
+
+During those months on the extinction theorem, I tried many different approaches. I attempted to use Green's functions directly, but the convergence conditions were too restrictive. I tried formulating it as a variational problem, but couldn't construct a suitable functional. I explored analogies with other extinction theorems in electromagnetic theory, but the particulate case had subtleties that didn't translate cleanly.
+
+Each failure was frustrating. I'd spend days developing an approach, convince myself it was going to work, only to hit a fundamental obstacle I couldn't resolve. And then I'd have to start over.
+
+> "If you're not confused, you're not paying attention." — Someone much smarter than me
+
+## The Emotional Landscape of Being Stuck
+
+What's rarely discussed is the emotional toll of being stuck. Research papers don't have a section called "Months of Despair and Self-Doubt." We present the polished final result, the elegant proof, the clear narrative from problem to solution. We omit the mess.
+
+Being stuck feels personal. When an approach doesn't work, it's easy to interpret it as evidence of your own inadequacy. Maybe you're not smart enough. Maybe you don't understand the fundamentals as well as you thought. Maybe you shouldn't be doing this work.
+
+I remember sitting at my desk, staring at pages of crossed-out derivations, feeling like a fraud. My colleagues seemed to be making steady progress on their projects, publishing papers, moving forward. Meanwhile, I was stuck on a single proof.
+
+The rational part of my brain knew this was normal — that being stuck is part of research, that everyone goes through it. But the emotional part didn't care about rationality. It just felt like failure.
+
+What helped was talking to my supervisor and colleagues. Turns out, everyone has their "stuck" stories. The senior researcher who spent six months on a problem before realizing their fundamental assumption was wrong. The postdoc who rewrote the same proof seven times before it finally worked. Knowing I wasn't alone made the frustration more bearable.
+
+## What Being Stuck Teaches You
+
+The time spent being stuck isn't wasted, even when it feels like it. Each failed approach taught me something about the structure of the problem.
+
+When the Green's function approach didn't work, I learned exactly which mathematical conditions were essential for the extinction theorem to hold. When the variational formulation failed, I gained insight into the energy constraints of the system. When the electromagnetic analogies broke down, I understood precisely what made the particulate case unique.
+
+By the time the right idea appeared — connecting the ensemble boundary conditions with the background wave equation terms in a way that preserved causality — I had the context to recognize it. Without the failed attempts, I wouldn't have known what to look for. I needed to understand what *wouldn't* work before I could see what *would*.
+
+This is something you can't shortcut. You can't read about someone else's failed approaches and gain the same understanding. You have to struggle through them yourself. The knowledge isn't just intellectual — it's experiential. Your intuition gets calibrated through repeated failure.
+
+## The Structure of Productive Struggle
+
+Not all struggling is equally productive. There's a difference between being stuck because you're working on a genuinely difficult problem, and being stuck because you haven't learned the necessary prerequisites, or because you're approaching the problem from the wrong angle.
+
+Productive struggling has a particular character. You feel like you're *almost* understanding something, like the solution is just out of reach. You can articulate what the obstacles are, even if you don't know how to overcome them. You're making small increments of progress, even if the main problem remains unsolved.
+
+Unproductive struggling feels different. You're completely lost. You can't even formulate what you don't understand. You're not making any progress, just spinning your wheels. In these cases, the answer isn't to keep pushing — it's to step back, learn the background material, or reframe the problem entirely.
+
+Learning to distinguish between these two types of struggle took time. Early in my PhD, I wasted weeks on unproductive struggles — trying to solve problems I didn't have the tools for, or pursuing dead ends that anyone with more experience would have recognized immediately. I've gotten better at recognizing when I'm in a productive struggle (keep going) versus an unproductive one (step back and reassess).
+
+## The Role of Time and Patience
+
+One thing I've learned is that some problems need time. Not active working time, necessarily, but time for your subconscious to process.
+
+There were several occasions during those weeks where I'd be completely stuck, so I'd stop working on the proof and do something else — read a paper, work on a different project, go for a walk. And then, sometimes days later, an idea would occur to me seemingly out of nowhere.
+
+I don't think this is magical. I think my brain was continuing to work on the problem in the background, making connections I wasn't consciously aware of. But it needed space to do that. If I'd kept forcing it, grinding away at the problem without breaks, those insights might not have emerged.
+
+This is hard in academic culture, which often equates productivity with visible busyness. Taking a walk when you're stuck can feel like procrastination. But sometimes the most productive thing you can do is stop actively working and let your mind wander.
+
+## Advice for Fellow Sufferers
+
+If you're in the stuck phase right now, here's what has helped me:
+
+**Keep a research diary.** Write down what you tried and why it didn't work. This serves two purposes: it prevents you from trying the same failed approach twice, and it gives you a record of progress even when it doesn't feel like you're making any. Looking back at my notes from those weeks, I can see that I was learning, even when it felt like I was going nowhere.
+
+**Talk to people.** Explain your problem to someone outside your field, or even someone not in research at all. The act of simplifying often reveals what you've been missing. You can't hide behind jargon when explaining to a non-expert — you have to get to the core of the issue. I've had breakthroughs while explaining problems to friends who had no idea what I was talking about, just because articulating it clearly forced me to think differently.
+
+**Take walks.** Seriously. Physical movement helps. There's something about walking that seems to facilitate creative thinking. I don't understand the neuroscience, but empirically, I've had many good ideas while walking.
+
+**Change your environment.** If you've been staring at the same equations in the same office for days, go somewhere else. Work in a coffee shop, a library, a park. Fresh surroundings can trigger fresh thinking.
+
+**Give yourself permission to work on something else.** You don't have to solve the problem right now. Work on a different aspect of your project, or a completely different project. Sometimes coming back to a problem with fresh eyes makes all the difference.
+
+**Be kind to yourself.** This is the hardest one. Research is difficult on purpose. Being stuck doesn't mean you're failing — it means you're working on something hard enough to be worthwhile. If it were easy, someone would have already solved it.
+
+## The Resolution (and Why It Matters Less Than You Think)
+
+Eventually, I did solve the extinction theorem proof. The key insight was recognizing that the ensemble averaging could be reframed in terms of a scattering operator acting on the background field, which made the boundary conditions much cleaner. Once I saw that, the pieces fell into place relatively quickly.
+
+But here's the thing: the moment of solution, while satisfying, wasn't the most valuable part of the experience. What I gained from those months of being stuck — the deep understanding of the problem structure, the intuition about what approaches work and why, the familiarity with the mathematical tools — that's what actually mattered.
+
+The proof is now a few pages in my thesis. It doesn't convey the struggle, the false starts, the months of frustration. But that struggle is what made me a better researcher. I understand the extinction theorem in a way I never could have if I'd just read someone else's proof.
+
+## A Final Thought
+
+If there's one thing I want you to take away from this, it's that being stuck is not a bug in the research process — it's a feature. It's where the real learning happens. It's where you develop intuition, resilience, and deep understanding.
+
+So if you're stuck right now, frustrated and wondering if you're cut out for this: you probably are. The fact that you're struggling with hard problems is evidence that you're doing real research. Keep going. The understanding you're building, brick by brick in the dark, will serve you for the rest of your career.
+
+And maybe, someday, you'll write your own blog post about being stuck. I hope you do.
+    `,
+  },
+  {
     id: "finding-balance-life-as-researcher",
     title: "Finding Balance: Life as a Researcher",
     excerpt: "Thoughts on navigating the demands of academic life while maintaining perspective and personal well-being.",
@@ -55,7 +156,7 @@ Research can be lonely. You spend hours working on problems that few people unde
 
 One of the best decisions I made was to actively cultivate connections, not just professional collaborations, but genuine relationships with colleagues, mentors, and friends outside academia. These connections remind me that I'm not alone in my struggles, that others have faced similar challenges, and that there's life beyond the next publication.
 
-I also make time for collaboration not just because it's professionally valuable, but because it's intellectually energizing. Working with people from different disciplines - whether it's engineers, physicists, or mathematicians - reminds me why I fell in love with research in the first place. It's the exchange of ideas, the "aha" moments, the collective problem-solving that makes this work meaningful.
+I also make time for collaboration not just because it's professionally valuable, but because it's intellectually energizing. Working with people from different disciplines — whether it's engineers, physicists, or mathematicians — reminds me why I fell in love with research in the first place. It's the exchange of ideas, the "aha" moments, the collective problem-solving that makes this work meaningful.
 
 ### 4. Physical and Mental Health Are Non-Negotiable
 
@@ -95,67 +196,117 @@ So here's to the messy, imperfect journey of being a human in academia. To the s
     title: "My Journey into Research: From Curiosity to Career",
     excerpt: "Reflecting on the unexpected path that led me to where I am today, and the moments that shaped my love for science.",
     date: "November 8, 2024",
-    readTime: "5 min read",
+    readTime: "10 min read",
     category: "Personal",
     tags: ["Career", "Reflection", "Science"],
     headerImage: "https://images.unsplash.com/photo-1535989447733-390925ae4c19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJlZXIlMjBqb3VybmV5JTIwc3VjY2VzcyUyMHBhdGh3YXl8ZW58MXx8fHwxNzcyNDg4NzMzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     content: `
-If you had told my teenage self that I'd end up as a research scientist, I'm not sure I would have believed you. Not because I wasn't interested in science—I was—but because the path seemed impossibly distant and unclear. Research felt like something other people did, brilliant people with natural talent and perfect grades. It wasn't until much later that I realized research isn't about being the smartest person in the room. It's about being curious, persistent, and willing to embrace uncertainty.
+If you had told my teenage self that I'd end up as a research scientist, I'm not sure I would have believed you.
+
+Not because I wasn't interested in science—I was—but because the path seemed impossibly distant and unclear. Research felt like something other people did: brilliant people with natural talent, perfect grades, and complete certainty about where they were going. It took me a long time to realise that research is not about being the smartest person in the room. It is about being curious, persistent, and willing to live with uncertainty for long enough to discover something new.
 
 ## The Spark
 
-I can't pinpoint exactly when I fell in love with science, but I remember the moment I realized I wanted to understand how things work at a deeper level. I was in a physics class, learning about wave mechanics, and suddenly something clicked. The equations weren't just abstract symbols—they described reality. They explained why light behaves the way it does, why sound travels through air, why the world around us follows patterns we can predict and understand.
+For a long time, I used to say that I couldn't pinpoint the exact moment when I fell in love with science. But that is not really true. I can.
 
-That realization was exhilarating. I became obsessed with the idea that underneath the complexity of the world, there were fundamental principles waiting to be discovered. I wanted to be part of that process, to contribute to human understanding, even in some small way.
+I was seventeen years old, on a school trip to Geneva, when we visited CERN. That visit changed me. Until then, science had been something I enjoyed and admired, but mostly from the outside. At CERN, I saw research up close for the first time. I saw what it looked like when people dedicated themselves to difficult questions and worked patiently through problems whose solutions were anything but obvious.
+
+What stayed with me most was not just the prestige of the place, but the people. The more I interacted with researchers, the more I was struck by the satisfaction they seemed to find in problem-solving itself: the discipline, the persistence, the logical clarity, and the quiet excitement of reaching an answer that had to be earned rather than guessed. Something about that way of thinking spoke to me immediately.
+
+Around the same period, I remember sitting in a physics class learning about wave mechanics, and suddenly something clicked. The equations stopped feeling abstract. They became descriptions of reality. They explained why light behaves the way it does, why sound travels through air, why patterns appear in the natural world, and why so much of what seems chaotic can still be understood.
+
+That realisation was exhilarating. I became obsessed with the idea that underneath the complexity of the world there were deeper principles waiting to be uncovered. I wanted, in some small way, to be part of that process.
+
+## The First Steps
+
+That growing fascination led me to the University of Crete, where I studied Mathematics and Applied Mathematics and specialised in the sciences. During my degree, I was especially drawn to subjects such as quantum mechanics, optics and waves, electromagnetism, and classical mechanics.
+
+What I loved most was that mathematics gave structure to curiosity. It offered a language precise enough to describe physical reality, but flexible enough to reveal unexpected connections. During my undergraduate studies, I began to realise that what attracted me was not only learning established ideas, but pushing beyond them.
+
+In my final semester, I worked on an undergraduate thesis in quantum hydrodynamics near caustics, at the interface of quantum mechanics and semiclassical analysis.
+
+That project gave me my first real encounter with research as it actually is: not neat and linear, but slow, technical, uncertain, and deeply absorbing. It was the first time I experienced the difference between solving problems that already have answers and working on questions whose answers are still incomplete.
 
 ## The Uncertain Path
 
-But wanting to do research and actually doing it are very different things. After finishing my undergraduate degree, I wasn't sure what came next. I applied to PhD programs, partly out of genuine interest and partly because I wasn't ready to leave academia yet. I remember the anxiety of waiting for responses, wondering if I was good enough, if I had what it took.
+Even then, wanting to do research and actually becoming a researcher still felt like two very different things.
 
-When I was accepted to pursue my PhD at the University of Sheffield, I felt a mix of excitement and terror. Excitement because this was the opportunity I'd been hoping for. Terror because I had no idea what I was getting myself into. Research isn't like coursework. There's no syllabus, no clear path to follow. You're exploring the unknown, and most of the time, you don't know if you're even going in the right direction.
+After my undergraduate degree, I was not entirely sure what would come next. What I did know was that I wanted to keep moving toward the kinds of questions that had begun to fascinate me. That led me to a Master's in Quantum Technology at the University of Sussex, where I joined the EPic Laboratory and worked on THz superfocusing in complex scattering media.
+
+That stage mattered a great deal. It brought together applied mathematics, optics, photonics, scattering, and signal processing in a way that felt natural to me. It also confirmed that I was happiest working in spaces where disciplines overlap. I liked problems that were both theoretical and physical, abstract and practical at the same time.
+
+By then, the PhD had become more than a vague ambition. It felt like the next step, even if I still had no clear idea what living through one would actually be like.
+
+When I was accepted to pursue my PhD at the University of Sheffield in Applied and Computational Mathematics, I felt a mix of excitement and terror. Excitement because this was the opportunity I had been hoping for. Terror because I had no idea what I was getting myself into. Research is not like coursework. There is no syllabus, no model answer, no guaranteed path through the material. You are trying to make sense of something that is not yet fully understood, and most of the time you do not know whether you are even asking the right question.
 
 ## The Reality Check
 
-The first year of my PhD was humbling. I quickly realized that research is messy, frustrating, and full of dead ends. For every breakthrough, there are dozens of failed experiments, inconclusive results, and moments of profound self-doubt. I spent months working on models that didn't converge, debugging code that refused to work, and reading papers that made me feel like I understood nothing.
+The first year of my PhD was humbling.
 
-There were times when I seriously questioned whether I was cut out for this. Imposter syndrome was a constant companion. I looked at my peers and assumed they all had it figured out, that I was the only one struggling. It took time to realize that everyone feels this way, that doubt is part of the process.
+I quickly realised that research is messy, frustrating, and full of dead ends. For every breakthrough, there are countless failed attempts, inconclusive results, code that refuses to work, and papers that seem clear until you try to build on them yourself. I spent long stretches working on models that did not converge, trying to understand numerical behaviour that made no intuitive sense, and doubting whether I was capable enough to continue.
+
+Imposter syndrome became a constant companion. I looked at other PhD students and assumed they had all figured something out that I had missed. It took me time to understand that this feeling is almost universal. Uncertainty is not a sign that you do not belong in research. In many ways, it is the environment research takes place in.
 
 ## Finding My Focus
 
-What kept me going was genuine curiosity. Even on the hardest days, I was fascinated by the problems I was working on. During my PhD, I focused on wave mechanics and scattering in random materials—how waves propagate through complex, disordered systems. It was challenging, but it was also deeply satisfying to work on something so fundamental.
+What kept me going was genuine curiosity.
 
-As I progressed, I discovered that I loved the interdisciplinary nature of my work. I wasn't just doing physics—I was using computational methods, machine learning, mathematical modeling. I was collaborating with engineers, mathematicians, and industry partners. Research, I learned, isn't about working in isolation. It's about bringing together different perspectives and tools to solve complex problems.
+During my PhD, I worked on waves in disordered particulate materials, focusing on transmission and inter-particle correlations.
 
-## The Turning Point
+I was trying to understand how waves propagate through complex random systems—problems that are mathematically subtle, physically rich, and often resistant to simple intuition. It was difficult work, but it was also deeply satisfying. The harder the questions became, the more I wanted to understand them.
 
-Finishing my PhD was a milestone, but it wasn't the end of the journey. If anything, it was the beginning. I had to decide what came next. Did I want to stay in academia? Pursue a postdoc? Look for industry roles? The options were both exciting and overwhelming.
+Over time, I found my research identity in that space between theory, modelling, and computation. I was not only doing physics, and not only doing mathematics. I was using numerical methods, computational tools, modelling techniques, and physical reasoning together. That interdisciplinary character became one of the things I loved most about research.
 
-I chose to continue as a Research Associate, working on applied problems at the intersection of machine learning and physics. It felt like the right fit—challenging enough to keep me engaged, but with real-world applications that gave my work purpose. I'm now working on physics-informed neural networks for pipeline inspection, combining theoretical understanding with practical engineering challenges.
+It also became clearer that research is not a solitary pursuit. During my PhD, I published work on transmitted waves in random particulate materials and on pair-correlations in random particle configurations, and those experiences taught me that ideas become stronger when they are discussed, challenged, and developed with others.
+
+## After the PhD
+
+Finishing my PhD was a milestone, but not an endpoint.
+
+What came next was another period of transition: deciding whether to stay in academia, move toward industry, or try to inhabit the increasingly interesting space between the two. What appealed to me most was work that kept the intellectual depth of research while engaging with real-world engineering problems.
+
+That is where my more recent work has taken me. After the PhD, I moved into research roles involving acoustic sensing, LiDAR, optical systems, robot navigation, computer vision, localisation, and multi-sensor fusion in buried pipe and underground environments. 
+
+On paper, that might look like a major shift away from my PhD. But it does not feel that way to me. The underlying motivation is still the same: understanding complex systems, extracting structure from difficult environments, and combining mathematics, physics, and computation to solve problems that matter.
+
+## What Research Also Gave Me
+
+One thing that is easy to miss when telling this story is that becoming a researcher did not happen only through thesis chapters and publications.
+
+It also happened through teaching. During my time at Sheffield, I worked as a Graduate Teaching Assistant across several modules, supporting students in dynamics, aerospace structures, and even rocket-launching projects.
+
+Teaching forced me to communicate ideas clearly, to slow down, and to remember what it feels like to encounter difficult concepts for the first time. It made me a better researcher because it made me think more carefully.
+
+It happened through outreach as well: science festivals, demonstrations, open days, and opportunities to share science with people outside academia. Those experiences mattered because they reminded me that science is not only for specialists. There is something powerful about making difficult ideas visible and exciting to others.
+
+These moments did not define my path, but they helped affirm that the work was going somewhere.
 
 ## What I've Learned
 
-Looking back, here's what I wish I had known when I started:
+Looking back, here is what I wish I had known when I started.
 
-**Research is for anyone willing to learn.** You don't need to be a genius. You need curiosity, persistence, and the ability to tolerate uncertainty.
+Research is for anyone willing to learn. You do not need to be a genius. You need curiosity, persistence, and resilience.
 
-**It's okay not to have everything figured out.** No one does. The path isn't linear, and that's okay.
+It is okay not to have everything figured out. Almost nobody does. The path is rarely linear.
 
-**Collaboration is everything.** Some of my best ideas have come from conversations with people outside my immediate field. Don't work in isolation.
+Failure is not evidence that you are inadequate. It is part of the process. Dead ends, false starts, and confusion are built into the work.
 
-**Failure is part of the process.** Most experiments don't work. Most hypotheses are wrong. That's not a sign of inadequacy—it's how science works.
+Collaboration matters enormously. Some of the best ideas emerge not in isolation, but in conversation.
 
-**Find problems you care about.** The work is too hard to sustain if you're not genuinely interested. Find the questions that excite you, even when they're difficult.
+And perhaps most importantly, becoming a researcher is not a single moment. It happens gradually. Through study, through mistakes, through difficult projects, through mentors, through conferences, through teaching, through community, and through the decision to keep going.
 
 ## Where I'm Going
 
-I don't know exactly where this path will lead. Maybe I'll stay in academia long-term. Maybe I'll transition to industry. Maybe I'll end up doing something I haven't even considered yet. What I do know is that I'm grateful for the journey so far—the challenges, the breakthroughs, the people I've met along the way.
+I still do not know exactly where this path will lead. Maybe I will remain in academia. Maybe I will move further into applied research or industry. Maybe the most interesting work will happen somewhere between those worlds.
 
-If you're considering a career in research, or if you're in the middle of your own journey and feeling uncertain, I hope this story is encouraging. The path isn't always clear, and it's rarely easy. But if you're driven by curiosity and willing to embrace the uncertainty, it's a deeply rewarding way to spend your time.
+What I do know is that I am grateful for the path so far—for the questions, the challenges, the people, the setbacks, and the breakthroughs.
 
-Science needs people from all backgrounds, with different perspectives and ways of thinking. It needs people who ask questions, who challenge assumptions, who are willing to explore the unknown. Maybe that's you. If it is, I hope you'll take the leap.
+If you are considering research, or if you are already on that path and feeling uncertain, I hope this is encouraging. You do not need absolute confidence to begin. You do not need a perfect plan. You do not need to look like the stereotype of a scientist.
+
+You only need enough curiosity to ask the next question, and enough persistence to keep following it.
     `,
   },
-  {
+  /*{
     id: "books-that-changed-how-i-think",
     title: "Books That Changed How I Think About Science",
     excerpt: "A collection of reads that inspired me, challenged my assumptions, and expanded my understanding of the scientific process.",
@@ -165,90 +316,10 @@ Science needs people from all backgrounds, with different perspectives and ways 
     tags: ["Books", "Learning", "Inspiration"],
     headerImage: "https://images.unsplash.com/photo-1604866830893-c13cafa515d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rcyUyMGxpYnJhcnklMjBsZWFybmluZyUyMHJlYWRpbmd8ZW58MXx8fHwxNzcyNDg4NzMzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     content: `
-Books have always been my refuge. When research gets overwhelming, when experiments fail, when I need perspective, I turn to books. Not just textbooks or research papers, but books that make me think differently about science, creativity, and the process of discovery. Here are some that have profoundly shaped how I approach my work.
-
-## "The Structure of Scientific Revolutions" by Thomas Kuhn
-
-This is the book that changed how I understand scientific progress. Kuhn argues that science doesn't advance through steady, linear accumulation of knowledge, but through paradigm shifts—revolutionary moments when our fundamental assumptions are overturned.
-
-Reading this during my PhD was revelatory. I realized that much of scientific work is "normal science"—solving puzzles within an established framework. But the most exciting moments come when that framework is challenged, when anomalies pile up and force us to rethink everything.
-
-It taught me to question assumptions, to look for the edges where our current models break down. It also made me more humble. The theories we work with today will eventually be replaced or refined. We're not discovering eternal truths—we're building the best models we can with current knowledge.
-
-**Key takeaway:** Science is human, messy, and revolutionary. Don't be afraid to question the paradigms you're working within.
-
-## "Thinking, Fast and Slow" by Daniel Kahneman
-
-Kahneman's exploration of cognitive biases fundamentally changed how I approach research. As scientists, we like to think we're rational, objective observers. But we're not. We're humans with all the cognitive quirks and biases that entails.
-
-The book distinguishes between System 1 (fast, intuitive thinking) and System 2 (slow, deliberate reasoning). Much of our day-to-day decision-making happens in System 1, which is efficient but prone to errors. Scientific research requires engaging System 2—being deliberate, questioning intuitions, and designing experiments that account for our biases.
-
-I now approach my work with more skepticism toward my own conclusions. I actively look for ways I might be wrong, seek out disconfirming evidence, and try to design experiments that minimize bias. It's made me a better researcher.
-
-**Key takeaway:** We're all susceptible to cognitive biases. Good science means recognizing and accounting for them.
-
-## "Gödel, Escher, Bach" by Douglas Hofstadter
-
-This is a dense, ambitious book that weaves together mathematics, art, music, and consciousness. It's ostensibly about Gödel's incompleteness theorems, but it's really about patterns, self-reference, and the limits of formal systems.
-
-What I love about this book is how it demonstrates that seemingly disparate fields—mathematics, music, visual art—share deep structural similarities. As someone working at the intersection of physics, mathematics, and machine learning, this resonated deeply. The best ideas often come from making unexpected connections between different domains.
-
-It also taught me humility about what we can and cannot know. Gödel showed that any sufficiently complex formal system contains truths that cannot be proven within that system. There are fundamental limits to what we can compute, prove, or predict. Understanding those limits is as important as pushing boundaries.
-
-**Key takeaway:** Look for patterns across disciplines. The most creative insights often come from unexpected connections.
-
-## "The Demon-Haunted World" by Carl Sagan
-
-Sagan's passionate defense of scientific thinking and skepticism is a book I return to whenever I feel discouraged. He argues that science isn't just a collection of facts or methods—it's a way of thinking. It's about asking questions, demanding evidence, and being willing to change your mind when the evidence warrants it.
-
-What struck me most is Sagan's emphasis on humility and wonder. Science, he argues, is more inspiring than any myth or superstition because it reveals the actual complexity and beauty of the universe. We don't need comforting falsehoods when reality is this magnificent.
-
-The book also reminds me why science communication matters. If we want people to value scientific thinking, we need to make it accessible, to share the wonder and excitement that drives us. This is part of why I started writing—to share that sense of curiosity with a broader audience.
-
-**Key takeaway:** Science is a way of thinking, not just a body of knowledge. And it's our responsibility to share that thinking with others.
-
-## "Range" by David Epstein
-
-This book challenged one of academia's core assumptions: that success requires early specialization and hyper-focus. Epstein argues the opposite—that in complex, unpredictable fields, generalists often outperform specialists.
-
-He profiles successful people across various domains who took winding paths, explored multiple interests, and succeeded precisely because of their breadth of experience. This was deeply reassuring for me. My own path has been somewhat meandering—I've worked in physics, mathematics, machine learning, and engineering. I sometimes worried this lack of focus was a weakness.
-
-But Epstein's research suggests that breadth is valuable. It allows you to see connections others miss, to apply ideas from one field to another, to think creatively when narrow expertise would be limiting. In a rapidly changing world, adaptability and broad thinking are assets.
-
-**Key takeaway:** Don't be afraid to explore widely. Breadth of knowledge is a strength, not a weakness.
-
-## "The Art of Doing Science and Engineering" by Richard Hamming
-
-Hamming's book is based on a series of lectures he gave to scientists and engineers. It's pragmatic, opinionated, and full of hard-won wisdom. He addresses questions like: How do you pick important problems? How do you manage your career? How do you actually get things done?
-
-One chapter that stuck with me is titled "You and Your Research." Hamming argues that doing great work isn't just about talent or opportunity—it's about deliberately cultivating the right habits and attitudes. Work on important problems. Be willing to tolerate ambiguity. Don't let perfectionism prevent you from making progress. Be open to serendipity.
-
-It's a book I wish I'd read at the start of my PhD. It would have saved me a lot of frustration and wasted effort.
-
-**Key takeaway:** Success in research is about habits and attitudes as much as it is about talent.
-
-## "The Emperor's New Mind" by Roger Penrose
-
-Penrose's exploration of consciousness, computation, and quantum mechanics is challenging but rewarding. He argues that consciousness cannot be explained purely through computation, that there's something fundamentally non-algorithmic about human thought.
-
-Whether or not you agree with his conclusions (and many don't), the book is a masterclass in interdisciplinary thinking. Penrose draws on physics, mathematics, neuroscience, and philosophy to tackle one of the hardest problems in science. It's ambitious, rigorous, and deeply thought-provoking.
-
-For me, it reinforced the importance of thinking deeply about foundational questions. We can get so caught up in technical details that we forget to ask big, philosophical questions. What is computation? What is intelligence? What are the limits of our models? These questions matter.
-
-**Key takeaway:** Don't lose sight of the big, foundational questions. Technical expertise is important, but so is philosophical curiosity.
-
-## Why Reading Matters
-
-These books didn't just teach me facts or methods—they changed how I think. They challenged my assumptions, broadened my perspective, and reminded me why I love science in the first place.
-
-In academia, we're often encouraged to read narrowly—papers directly relevant to our research, textbooks in our subfield. But some of the most valuable ideas come from outside our immediate domains. Reading widely makes you a better thinker, a more creative researcher, and a more interesting person.
-
-So if you're feeling stuck, overwhelmed, or uninspired, pick up a book. Not a textbook or a research paper, but something that makes you think differently. Something that challenges your assumptions, expands your horizons, or reminds you why you fell in love with learning in the first place.
-
-You might be surprised by what you discover.
-    `,
-  },
-  {
+Coming Soon...
+`,
+  },*/
+  /*{
     id: "art-of-asking-good-questions",
     title: "The Art of Asking Good Questions",
     excerpt: "What I've learned about curiosity, humility, and the importance of not knowing all the answers.",
@@ -361,115 +432,489 @@ So if you're at the beginning of your research journey, don't worry too much abo
 
 After all, the most important scientific discoveries didn't come from people who had all the answers. They came from people who asked the right questions.
     `,
-  },
+  },*/
   {
-    id: "travel-diaries-conferences",
-    title: "Travel Diaries: Conferences Around the World",
-    excerpt: "Stories from the road—the cities, people, and unexpected moments that make academic travel memorable.",
-    date: "August 30, 2024",
+    id: "france-waves2022",
+    title: "Travel Diaries: France - The First Real Conference",
+    excerpt: "My first major international conference at Waves2022—the nerves, the breakthroughs, and discovering I was part of a global research community.",
+    date: "July 25, 2022",
     readTime: "8 min read",
     category: "Travel",
-    tags: ["Conferences", "Travel", "Networking"],
-    headerImage: "https://images.unsplash.com/photo-1764505878962-4090d605f258?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjBjb25mZXJlbmNlJTIwaW50ZXJuYXRpb25hbCUyMGNpdGllc3xlbnwxfHx8fDE3NzI0ODg3MzN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    tags: ["France", "Conferences", "Wave Mechanics"],
+    headerImage: "https://images.unsplash.com/photo-1678644886790-13e1dcf8f3ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxFTlNUQSUyMFBhcmlzJTIwYnVpbGRpbmclMjBjYW1wdXN8ZW58MXx8fHwxNzczMjUzMjg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
     content: `
-Academic conferences have taken me to places I never imagined I'd visit. From the Alps to the streets of Tokyo, these trips have shaped not just my research but my understanding of the world. Here are some stories from the road—the people I've met, the places I've discovered, and the unexpected moments that made these journeys memorable.
+My first major international conference was Waves2022 at ENSTA Paris: the 15th International Conference on Mathematical and Numerical Aspects of Wave Propagation. It is one of the major venues in the field, and at the time, that felt almost overwhelming. I was still relatively early in my PhD, preparing to present my work to an audience filled with researchers whose papers I had been reading for years.
 
-## Waves2022, France: The First Real Conference
+Even getting there felt significant. I took the train from London St Pancras to Paris, and somehow that made the journey feel more momentous. There was something deeply exciting about arriving by rail rather than by plane — watching the English countryside slowly give way to the French landscape, disappearing into the Channel Tunnel, and then emerging in an entirely different country. It felt like a fitting beginning to an experience that would change how I saw myself as a researcher.
 
-My first major international conference was Waves2022 in France. The 15th International Conference on Mathematical and Numerical Aspects of Wave Propagation is a major venue in the field, and I was terrified. I was still relatively early in my PhD, presenting my work to an audience full of researchers whose papers I'd been reading for years.
+## The Night Before
 
-I rehearsed my presentation obsessively, convinced I'd forget everything the moment I stepped on stage. The night before my talk, I barely slept, running through slides in my head, anticipating every possible question.
+If the journey to Paris felt exciting, the night before my talk felt anything but calm.
 
-When the moment came, something unexpected happened. As I started presenting, the nervousness faded. I was talking about something I genuinely cared about—wave mechanics, scattering in disordered materials—and that enthusiasm carried me through. The questions afterward were challenging but fair, and I realized that these intimidating experts were just people who loved the same problems I did.
+I rehearsed obsessively, convinced that the moment I stepped on stage, everything would vanish from my mind. I barely slept. Instead, I lay awake running through my slides over and over again, anticipating every possible question and every possible disaster.
 
-What I remember most isn't the presentation itself, but the conversations afterward. During coffee breaks, I found myself discussing wave propagation with researchers from all over the world. We sketched diagrams on napkins, debated different approaches, and discovered unexpected connections between our work. For the first time, I felt like part of a global community working on these fundamental questions.
+At around 2 a.m., I remember pacing around my hotel room, notes in hand, trying to reassure myself by preparing just one more time.
 
-Between sessions, I explored the conference location in France, struck by how different the rhythm of academic life felt in a new place. The long lunches, the animated discussions that continued over dinner—it was a reminder that research isn't just about equations. It's about people, curiosity, and shared passion for understanding the world.
+What if someone asks about the convergence conditions? What if there is an error in my derivation? What if I completely blank on stage?
 
-## Glasgow 2021: Conferences in a Pandemic
+At that point, the conference still felt enormous and intimidating. It seemed like the kind of event where every question mattered, every answer would be judged, and every mistake would be remembered.
 
-The BMC-BAMC (British Mathematical Colloquium and British Applied Mathematics Colloquium) in Glasgow 2021 was my first experience with a fully online conference. The pandemic had forced everything virtual, and while it was safer, something essential was lost.
+## The Moment of Truth
 
-I presented my work from my desk at home, talking to a screen of black boxes labeled with names. The chat was active, the questions were thoughtful, but I missed the serendipitous conversations that happen in physical spaces. You can't run into someone at a virtual coffee break and end up discussing an entirely different problem. You can't sketch ideas on a napkin over dinner.
+And then, when the time actually came, something unexpected happened.
 
-But the experience taught me something valuable: the core of academic exchange isn't the location—it's the ideas. Even through a screen, I connected with researchers working on similar problems. We set up follow-up meetings, shared code and papers, and built collaborations that continue today.
+As soon as I began speaking, the nervousness started to fall away. I was no longer thinking about being judged. I was talking about something I genuinely cared about: wave mechanics, scattering in disordered materials, and the questions that had occupied so much of my time and energy. That enthusiasm carried me through the talk more than confidence ever could.
 
-It also made me appreciate in-person conferences even more. When travel restrictions finally lifted, I was eager to get back out there, to experience that energy and connection that only happens when you're in the same room with people who share your curiosity.
+The questions afterward were challenging, but they were fair. More importantly, they revealed something I had not fully understood before: the intimidating experts in the room were not there to catch me out. They were simply people who cared deeply about the same kinds of problems I did.
 
-## Le Houches 2020: Learning from the Legends
+One researcher asked whether my ensemble approach counted as a kind of homogenisation technique in the field. It was exactly the sort of technical question I had worried about in advance — and exactly the kind of question I was ready for. Instead of feeling exposed, I felt engaged. For the first time, I was not just presenting research. I was participating in a real scientific conversation.
 
-The summer school in Le Houches on modeling of waves was transformative. Nestled in the French Alps, the school brought together PhD students and postdocs to learn from some of the biggest names in the field. For two weeks, we attended intensive lectures, worked on problem sets, and discussed cutting-edge research.
+## What Happened After the Talk
 
-The setting itself was inspiring—lectures in the morning with mountains visible through the windows, afternoon problem-solving sessions, and evenings spent discussing physics while hiking Alpine trails. There was something about that environment that made deep thinking easier. No distractions, no emails to answer, just complete immersion in wave mechanics.
+Looking back, what I remember most vividly is not the presentation itself, but everything that came after it.
 
-What struck me most was how accessible the "famous" researchers were. These were people whose textbooks I'd studied, whose papers had shaped my understanding of the field. And here they were, patiently answering questions, offering advice, sharing stories about their own struggles and breakthroughs.
+During coffee breaks, I found myself standing at whiteboards with researchers from all over the world. We sketched equations, debated different approaches, and discovered unexpected overlaps in our work. Those informal discussions had a kind of energy that formal talks sometimes cannot capture. People were curious, generous, and willing to think out loud together.
 
-One evening, I found myself in a long conversation with one of the instructors about the philosophy of mathematical modeling. We talked about when to trust a model, how to validate assumptions, and the art of balancing complexity with understanding. It was the kind of conversation that shifts your perspective, that makes you think differently about your own work.
+One professor from the United States made a comment that has stayed with me ever since: the problem I was trying to solve was a big open question in the field. Hearing that meant more to me than I can easily express. It was not just praise. It was validation — that the work mattered, that the questions I was asking were real ones, and that I was contributing to something larger than myself.
 
-Le Houches taught me that good research comes from a combination of technical skill and deep thinking. It's not just about running simulations or deriving equations—it's about understanding what you're doing and why it matters.
+A lecturer from Australia shared software for visualising scattering patterns, which later proved invaluable for my research. A PhD student from France and I discovered that we were working on complementary aspects of the same problem, and in the excitement of the moment we began planning a collaboration on the spot. We exchanged emails and made ambitious plans, though life eventually got in the way and the collaboration never materialised.
 
-## ICIAM2023, Tokyo: Applied Math on a Global Stage
+Even so, that hardly mattered. For the first time, I felt what it meant to belong to a global research community — one built not only on papers and presentations, but on conversations, generosity, and shared curiosity.
 
-The 10th International Congress on Industrial and Applied Mathematics in Tokyo was overwhelming in the best way. ICIAM is held every four years and brings together thousands of researchers from every corner of applied mathematics. The sheer scale was staggering—dozens of parallel sessions, posters covering entire conference halls, researchers from every continent.
+## Paris, Between Sessions
 
-I presented work at the intersection of wave mechanics and machine learning, and the audience was incredibly diverse. Engineers interested in applications, mathematicians focused on theory, physicists asking about fundamental principles. It forced me to think about my work from multiple angles, to explain it in ways that resonated with different communities.
+Of course, the conference was not confined to lecture halls and whiteboards.
 
-Between sessions, I attended talks far outside my immediate field. I learned about fluid dynamics, optimization, mathematical biology, climate modeling. It was a reminder of how vast applied mathematics is, and how the same fundamental tools—differential equations, numerical methods, computational techniques—appear across wildly different applications.
+Between sessions, I explored Paris with other attendees, and the organisers had put together social events that went far beyond the standard conference itinerary. Those moments outside the formal programme became just as memorable as the talks themselves.
 
-Tokyo itself was mesmerizing. The contrast between ancient shrines and futuristic technology, the efficiency of the transit system, the incredible food. I made time to explore the city, visiting temples, getting lost in neighborhoods, experiencing a culture so different from my own. Travel, I realized, doesn't just broaden your research perspective—it broadens your view of the world.
+One afternoon, we took a boat tour along the Seine. The conference provided free wine, and we embraced that fact enthusiastically. There was something surreal about drifting past the Paris skyline, glass in hand, talking about wave mechanics with people I had only just met. By the time we stepped back onto land, we were all pleasantly drunk and considerably closer than we had been a few hours earlier.
 
-One evening, a group of us from the conference went to a small izakaya. Over sake and shared dishes, the conversation ranged from mathematical techniques to career paths to what it means to do meaningful work. These connections—across countries, across disciplines—are what make conferences valuable.
+That strange blend of academic discussion and sheer joy made the whole experience unforgettable. It reminded me that conferences are not just places where ideas are presented; they are places where relationships are formed, often in the most unexpected settings.
 
-## Cambridge 2023: Winning the Hackathon
+## The Adventure Park
 
-The Workshop on Mathematical Theory and Applications of Multiple Wave Scattering (MWSW2023) at the Isaac Newton Institute in Cambridge was a highlight of my PhD. The winter school brought together researchers focused specifically on multiple scattering—my core research area.
+If the Seine tour was surreal, the adventure park was pure chaos.
 
-The lectures were exceptional. Key figures in the field gave talks covering theory, numerical methods, and applications. The audience spanned physicists, mathematicians, and engineers, and the discussions were incredibly rich. Everyone was working on related problems, which meant conversations could go deep quickly.
+The organisers took us to a park with tree-climbing pistes and zip lines strung high between the trees. There was something inherently funny about it: a group of mathematicians and physicists, most of whom spent their lives at desks, blackboards, or computer screens, suddenly attempting aerial obstacle courses.
 
-But the most memorable part was the hackathon. Teams were given a scattering problem and had to develop and implement a solution within a tight timeframe. It was intense—coding, debugging, testing, all while discussing strategy with teammates I'd just met.
+It was exhilarating, slightly ridiculous, and genuinely frightening in places.
 
-When they announced that our team had won, I was stunned. We'd approached the problem from an unusual angle, combining techniques from different subfields, and it had paid off. The prize mattered less than the validation—that our approach was novel, that we'd contributed something valuable in that short time.
+At one point, I slipped and cut my arm. It was nothing serious—just enough to draw blood and leave me with a scar I still have. Someone from Cambridge had worse luck and broke his finger after a fall. You might expect that to have ended the excursion, but somehow it did not. We helped him down, someone improvised a makeshift splint, and the rest of us carried on.
 
-Cambridge itself felt steeped in intellectual history. Walking through the streets where Newton, Maxwell, and Dirac had walked, attending lectures at the Isaac Newton Institute, I felt connected to a long tradition of scientific inquiry. My work was just a small piece of an ongoing conversation that spans centuries.
+There was something oddly perfect about the whole thing. After days of testing ourselves intellectually, we were suddenly testing ourselves physically. The adrenaline, the mishaps, and the sheer absurdity of it all created a kind of camaraderie that polite conference small talk never could.
 
-## Elasticity Day 2023, Sheffield: Building Community at Home
+## Wine, Food, and Late-Night Equations
 
-Co-organizing Elasticity Day at Sheffield was a different kind of conference experience. This was the UK's annual event for the mathematical solid mechanics community, and being involved in the planning gave me a new appreciation for what goes into these gatherings.
+Evenings were where the conference truly came alive for me. Every night, the organisers provided free wine, beer, and food for all attendees, and those gatherings quickly became the emotional centre of the week. We stood in small groups with plates of French cheese and charcuterie, glasses of wine in hand, letting conversations unfold naturally and without urgency.
 
-We invited speakers, organized the schedule, arranged catering, and tried to create an environment where productive conversations could happen. On the day itself, I spent less time attending talks and more time making sure everything ran smoothly, but I loved it.
+What surprised me most was how little those conversations stayed confined to research. Of course, we talked about wave mechanics, numerical methods, and open problems — but just as often we talked about everything else. We shared stories about where we had grown up, what it was like to study in different countries, the academic cultures we came from, and the very different paths that had brought us all into the same room.
 
-There's something special about hosting a conference at your home institution. You're showing off your department, introducing colleagues to your collaborators, facilitating connections that might not otherwise happen. I saw researchers meeting for the first time who immediately realized they were working on complementary problems. Those moments—watching collaborations form in real time—made all the planning worthwhile.
+There is something about good food and wine that dissolves formality. People relaxed, spoke more openly, and revealed parts of themselves that would never surface during a Q&A session. We compared teaching experiences, laughed about cultural misunderstandings, swapped travel stories, and talked about life beyond academia. Those conversations made the technical ones richer, not separate from them.
 
-It also reminded me that scientific community isn't just about big international conferences. Local and national events matter too. They're where early-career researchers present their first talks, where lasting collaborations are formed, where a sense of community is built and maintained.
+Looking back, I realise that those evenings were not just about networking or even collaboration. They were about understanding one another as whole people — researchers shaped by different cultures, institutions, and experiences, all temporarily sharing the same space.
 
-## What Travel Teaches You
+## Seeing Paris Properly
 
-These conferences have taught me things that no textbook or paper could. I've learned that:
+One of my colleagues at the conference was French, and he gave us what felt like the real Paris.
 
-**Geography shapes thinking.** Researchers in different parts of the world approach problems differently, influenced by local academic traditions, available resources, and cultural attitudes toward risk and uncertainty.
+We rented e-scooters and followed him through the city streets as he took us not to the obvious tourist spots, but to the places he had loved as a student — the cafés he used to visit, the hidden corners tourists would never find, the neighbourhoods that felt lived-in rather than staged.
 
-**The best conversations happen informally.** Coffee breaks, dinners, and walks through unfamiliar cities often lead to more creative discussions than formal sessions.
+Riding through Paris on an e-scooter, weaving through traffic behind a French mathematician who was pointing out his favourite places, I felt intensely, vividly alive. Every so often, he would stop to tell us a story about a neighbourhood, explain the history of a building, or recommend a restaurant we absolutely had to try.
 
-**Science is human.** Behind every paper is a person—with insecurities, ambitions, and a story about how they ended up doing this work. Conferences remind you of that humanity.
+It gave me something no guidebook could have. I was not just seeing Paris. I was being shown Paris through someone else's affection for it. That, too, felt like part of the conference experience: not just academic exchange, but cultural exchange, friendship, and a shared sense of discovery.
 
-**Exploration fuels creativity.** Stepping outside the lab, experiencing new places and cultures, makes you think differently. Some of my best ideas have come not at my desk but while wandering through an unfamiliar city.
+## What the Conference Taught Me
 
-## The Pandemic Pivot
+Looking back, Waves2022 taught me things no textbook ever could.
 
-The shift to virtual conferences during the pandemic showed both the limits and possibilities of online academic exchange. While we lost the spontaneous hallway conversations and the energy of shared physical space, we gained accessibility. Researchers who couldn't travel due to financial constraints, caregiving responsibilities, or visa restrictions could suddenly participate.
+First, it taught me that the research community is far more welcoming than I had imagined. I had built senior researchers up in my mind as intimidating, distant figures. In reality, they were generous with their time, thoughtful in their questions, and genuinely interested in hearing what younger researchers had to say.
 
-I hope we don't lose that accessibility as we return to in-person events. Hybrid formats, recorded talks, and virtual participation options can make academic conferences more inclusive without sacrificing the benefits of face-to-face interaction.
+Second, it taught me that presentation skills matter. Good ideas do not speak for themselves nearly as well as people like to pretend. I saw excellent work fail to connect because it was poorly communicated, and more modest work make a strong impression because it was explained clearly and confidently. Communicating research is not secondary to doing it; it is part of doing it.
 
-## Looking Forward
+Third, I learned that conferences are really about conversations, not just talks. The most important moments happened in the margins: in coffee breaks, evening receptions, walks between venues, and spontaneous discussions at whiteboards. That is where collaborations begin, where ideas collide, and where you start to understand what people are truly working on.
 
-I don't know where the next conference will take me. Maybe back to Japan, or somewhere I've never been—Australia, South America, or another part of Europe. What I do know is that these trips will continue to shape my work and worldview.
+And finally, I learned that enthusiasm matters. The researchers who impressed me most were not always the ones showing the most technically sophisticated results. They were the ones whose excitement was unmistakable. Their passion sharpened their questions, energised their talks, and drew people toward them. It reminded me that loving your subject is not an embarrassment in academia; it is one of your greatest strengths.
 
-Academic conferences aren't just about presenting research. They're about building a global community of curious people trying to understand the world a little better. They're about the conversations that happen in the margins, the unexpected friendships, and the reminder that science is a fundamentally human endeavor.
+## The Journey Home
 
-So here's to the next trip, the next city, the next unexpected conversation that changes how I think. Here's to winning hackathons, learning from legends in the Alps, and discovering that the journey matters as much as the destination.
+When it was time to return to London, I took the train back the same way I had arrived. As the French countryside slid past the window and the train entered the Channel Tunnel, I found myself reflecting on how different I felt from the person who had made the journey a few days earlier.
+
+I had presented at a major international conference. I had spoken with leading researchers in my field. I had come away with new ideas, new contacts, and a much clearer sense of where my work fit into the broader landscape of wave propagation research.
+
+But more than that, I had come away with a new sense of myself.
+
+For the first time, I did not feel like a PhD student pretending to be a researcher. I felt like a researcher. I felt like a legitimate member of a global community working on fundamental questions — questions that had been studied for decades and would continue to be studied long after I was gone.
+
+That shift was the real significance of Waves2022. It was more than my first major conference. It was a turning point. It was the moment I stopped feeling like an outsider and started feeling that I had a place in the conversation.
+
+And in Paris, at my first real conference, I found that place.
     `,
   },
   {
+    id: "glasgow-2021-pandemic",
+    title: "Travel Diaries: Glasgow - Conferences in a Pandemic",
+    excerpt: "Presenting from my desk at home to a screen of black boxes—what we lost and what we learned from virtual academic gatherings.",
+    date: "April 10, 2021",
+    readTime: "6 min read",
+    category: "Travel",
+    tags: ["Glasgow", "Virtual Conferences", "Pandemic"],
+    headerImage: "https://images.unsplash.com/photo-1705354150474-baef059e2d07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxHbGFzZ293JTIwU2NvdGxhbmQlMjBjaXR5c2NhcGUlMjB1bml2ZXJzaXR5fGVufDF8fHx8MTc3MzA5NjA0OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    content: `
+The BMC-BAMC (British Mathematical Colloquium and British Applied Mathematics Colloquium) in Glasgow in 2021 was my first experience of a fully online conference. Like so many events at the time, it had been pushed into a virtual format by the pandemic. It was necessary, and in many ways it worked remarkably well. But even then, it was impossible not to feel that something essential had been lost.
+
+I had been looking forward to going to Glasgow. I had never been to Scotland, and part of what makes conferences memorable is that they take you somewhere new. They break the routine of everyday life. They give research a setting, a mood, a sense of occasion. Instead of travelling to a new city, though, I attended the conference from home, sitting at my desk in the same room where I had already spent months working during lockdown.
+
+## The Virtual Reality
+
+Attending an online conference was strange from the very beginning. The talks took place through screens filled with muted microphones, blank cameras, and rows of names in little boxes. There was still a programme, still a schedule, still the familiar rhythm of moving from one session to another — but everything felt flattened.
+
+The biggest difference for me came with the poster session. In person, posters are interactive and dynamic. People wander over, pause because something catches their eye, ask a question, bring a colleague along, or end up staying much longer than either of you expected because the conversation becomes interesting. There is a kind of spontaneity built into poster sessions that makes them one of the most enjoyable parts of a conference.
+
+Online, that atmosphere was much harder to recreate.
+
+I presented my poster virtually, speaking to people through a screen rather than standing beside a printed poster in a crowded room. The conversations were still thoughtful, and people asked genuinely interesting questions, but the encounter felt more mediated and less natural. You lose all the little physical cues that make interaction easier: someone stopping to take a closer look, the glance that signals curiosity, the half-formed question that turns into a deeper discussion.
+
+## What Was Missing
+
+What I missed most was the informal side of conferences — the parts that are hardest to schedule and easiest to take for granted.
+
+At an in-person meeting, so much happens in the gaps between official events. You run into someone during a coffee break and discover they are working on a related problem. You sit next to somebody at lunch and end up talking about a paper, a method, or even a completely different area that unexpectedly connects with your own. You wander through the poster hall and find yourself drawn into conversations you never planned to have.
+
+None of that translated easily online.
+
+The virtual networking spaces existed, but they often felt forced in a way that in-person interaction does not. Instead of naturally drifting into conversation, you had to enter a breakout room, introduce yourself, and try to create in a few minutes what would normally emerge on its own. It was not that people were unwilling — everyone was doing their best — but the medium made spontaneity difficult.
+
+I also felt the absence of Glasgow itself. I was supposed to be attending a conference in a city I had never visited, but in reality I never left my room. The location became almost abstract. On screen, every conference looks vaguely similar. You do not get the feeling of being somewhere, and with that, you lose part of what makes academic travel memorable.
+
+## The Hybrid Future
+
+At the same time, the virtual format also revealed real advantages.
+
+Even through a screen, ideas still travelled. Researchers still shared their work, asked questions, and made connections. My poster still sparked conversations, and those conversations still mattered. That was an important lesson: even when the atmosphere changes, the core of a conference remains the exchange of ideas.
+
+The online format also made participation possible for many people who might otherwise have struggled to attend. Travel costs, visa issues, caring responsibilities, health concerns, and accessibility needs all become much less of a barrier when participation is remote. In that sense, the conference was more open than it might have been in person.
+
+That mattered to me. The pandemic disrupted so much, but it also forced academia to confront the fact that many of its long-standing structures were less accessible than they needed to be. Virtual conferences were not a perfect substitute, but they did show that participation could be widened in meaningful ways.
+
+Another benefit was flexibility. Recorded talks made it possible to revisit sessions, catch up on anything missed, and engage with the programme in a less rigid way than a traditional in-person conference allows. That was genuinely useful, especially in a dense academic meeting where several interesting talks might overlap.
+
+## A Different Kind of Conference Memory
+
+BMC-BAMC Glasgow 2021 stayed with me not because of a dramatic single moment, but because of what it represented.
+
+It took place during one of the strangest periods in recent history, when so much of ordinary academic life had been suspended or transformed. And yet the research community adapted. People still came together, still shared ideas, still made the effort to connect across distance and uncertainty. There was something quietly moving about that.
+
+The conference also made me appreciate, more sharply than before, what makes in-person events special. It is not only the talks or the formal sessions. It is the atmosphere, the chance encounters, the sense of travelling somewhere and being temporarily immersed in a community of people thinking about similar things.
+
+At the same time, it made me appreciate the value of remote participation and the possibilities it opens up. Virtual conferences may never fully replace the experience of being physically present, but they do offer accessibility, flexibility, and reach in ways that should not be forgotten.
+
+## Looking Back
+
+Looking back now, I think Glasgow 2021 taught me to hold two ideas at once.
+
+The first is that something important is lost when conferences become entirely virtual. The spontaneity, energy, and human texture of in-person interaction are difficult to reproduce online. That is especially true for poster sessions, which depend so much on informal conversation and movement.
+
+The second is that virtual formats still have real value. They make participation easier for many people, reduce practical barriers, and remind us that meaningful academic exchange does not always require physical proximity.
+
+So when I think of BMC-BAMC Glasgow 2021, I think both of what was absent and of what endured. I think of the city I did not get to explore, the conference spaces I never saw, and the poster session that took place through a screen instead of in a crowded hall. But I also think of a research community that found a way to keep going.
+
+And one day, when I finally do make it to Glasgow, I think I will remember that conference too — the one that was meant to happen there, but instead unfolded from my desk at home.
+    `,
+  },
+  {
+    id: "le-houches-alps-2020",
+    title: "Travel Diaries: Le Houches - The Best Trip I Never Had",
+    excerpt: "Some journeys stay with you even when you never take them—a reflection on the summer school that was cancelled by the pandemic.",
+    date: "August 15, 2020",
+    readTime: "7 min read",
+    category: "Travel",
+    tags: ["France", "Alps", "Summer School", "Wave Mechanics"],
+    headerImage: "https://images.unsplash.com/photo-1682679140549-e7369ae112be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxMZSUyMEhvdWNoZXMlMjBGcmVuY2glMjBBbHBzJTIwbW91bnRhaW5zJTIwdmlsbGFnZXxlbnwxfHx8fDE3NzMwOTYwNTB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    content: `
+Some journeys stay with you even when you never take them.
+
+For me, Le Houches is one of those journeys.
+
+In 2020, I was meant to attend the summer school in Le Houches on the modelling of waves — two weeks in the French Alps, surrounded by PhD students, postdocs, and some of the biggest names in the field. It was the kind of opportunity that feels almost mythical when you are early in research: a place where you do not just attend lectures, but immerse yourself completely in a subject, living and thinking alongside people who care about the same problems you do.
+
+And then the pandemic happened.
+
+Like so many plans that year, it disappeared before it could become real. I never made it to the mountains. I never sat in those lecture rooms. I never had the conversations I had imagined having. And yet, strangely, Le Houches still occupies a vivid place in my mind. It remains the best trip I never had.
+
+## The Place I Never Saw
+
+Part of the magic of Le Houches was always its setting.
+
+Nestled in the French Alps, the physics school has a reputation that goes beyond its lectures. People speak of it almost as a world of its own: a place where difficult ideas and dramatic landscapes somehow belong together. I imagined mornings spent looking out at the mountains before heading into lectures on wave mechanics, afternoons wrestling with problem sheets, and evenings walking through Alpine air while continuing conversations that had started in the classroom.
+
+It was not just the beauty of the place that appealed to me, but what that beauty seemed to promise: distance from the noise of everyday life, space to think deeply, and the rare chance to focus entirely on one subject without the usual interruptions of emails, meetings, deadlines, and routine.
+
+Even without going, I could feel the pull of that imagined setting. It represented the kind of intellectual immersion that is so hard to create in ordinary academic life.
+
+## Learning From Legends
+
+What drew me most strongly to Le Houches was the chance to learn from people whose work had already shaped the way I thought.
+
+At that stage in my PhD, I was still building my understanding of wave propagation, scattering, and mathematical modelling. The idea of spending two weeks learning from researchers whose papers I had read — people whose names already carried weight in the field — felt extraordinary. These were not just academics delivering isolated talks. They were people who had defined research areas, developed important frameworks, and influenced the questions younger researchers like me were beginning to ask.
+
+I often thought about what it would have been like to see how they taught. Every great researcher has a different intellectual style. Some begin from physical intuition and only then move toward mathematics. Others start from abstraction and build downward into application. Some think computationally, others geometrically, others analytically. I would have loved the chance to watch those approaches unfold side by side, not just to absorb the content, but to learn different ways of thinking.
+
+That, to me, is one of the hidden gifts of a summer school like Le Houches. You are not only learning material. You are learning how serious researchers approach material.
+
+## What I Would Have Taken From It
+
+Even though I did not attend, I know the kinds of things I would have taken away from that experience.
+
+First, I would have come away with a deeper understanding of the field itself. Summer schools offer something that conferences often cannot: time. Time to sit with ideas, time to return to them the next day, time to ask questions after the lecture rather than rushing to the next session. That sort of sustained exposure changes the way knowledge settles in your mind.
+
+Second, I would have gained perspective. When you are deep inside your own research problem, it is easy to become trapped inside its immediate difficulties. A place like Le Houches offers the chance to zoom out — to see how your work fits into a wider landscape, to understand which questions are foundational, which techniques travel across problems, and which assumptions deserve to be challenged.
+
+Third, I think I would have taken away confidence. Not the easy kind, but the quieter and more durable kind that comes from real intellectual contact. There is something reassuring about hearing leading researchers speak honestly about difficult ideas, about realizing that even the most established people in the field are still grappling with uncertainty, approximation, and incomplete understanding. I imagine that being there would have reminded me that research is not about already knowing everything. It is about learning how to stay with what you do not yet know.
+
+## The Conversations I Imagined
+
+If the lectures were one part of the dream, the conversations were the other.
+
+I imagined coffee breaks where a casual question turned into a twenty-minute discussion. I imagined lunches where people from different countries and different mathematical traditions compared ways of thinking. I imagined evening walks where the conversation shifted effortlessly between technical questions, academic life, and the more personal uncertainties that so often sit just beneath the surface of research.
+
+Those are the moments I think I would have valued most.
+
+Not only the chance to meet "legends" in the field, but the chance to encounter them as people — to hear about their struggles, their wrong turns, their changing views, the problems that mattered to them, and the ones they thought were worth leaving behind. That kind of access can be transformative for younger researchers. It reminds you that the names on papers are not remote authorities, but people who also had to learn, doubt, persist, and grow.
+
+I imagined, too, the community among the students. One of the most valuable things about summer schools is that they gather people at similar stages of their journey and give them time to think together. Those are often the relationships that last: the people whose paths run alongside yours, even if only briefly, before crossing again years later at conferences, workshops, or collaborations.
+
+## What the Pandemic Changed
+
+Of course, none of that happened.
+
+Like so many things in 2020, Le Houches became another casualty of the pandemic. At the time, that loss might have seemed small compared to everything else happening in the world. And in many ways, it was. But that does not mean it felt insignificant.
+
+Academic life is built not only on results and milestones, but also on possibilities — the courses, conversations, places, and encounters that shape how you think. Losing Le Houches felt like losing one of those rare possibilities. Not just a trip, but a form of intellectual experience I had been genuinely excited about.
+
+What the pandemic interrupted was not only travel, but momentum. It broke the imagined continuity of becoming: the sense that you were moving outward into the wider research world, meeting people, learning in new places, and gradually finding your place in a community. For many of us, that expansion suddenly collapsed back into bedrooms, laptops, and a much narrower version of academic life.
+
+## Why It Still Matters
+
+And yet, even as a missed opportunity, Le Houches still matters to me.
+
+It matters because of what it represented: the possibility of deep immersion, of learning from brilliant people, of being challenged and stretched in the best possible way. It matters because some opportunities shape you not only when they happen, but even in their absence. They become markers of what you value, what you were hoping for, and the kind of intellectual life you wanted to build.
+
+In a strange way, Le Houches helped clarify that for me. It reminded me how much I cared not just about producing research, but about being part of a living research culture — one built on ideas, conversation, mentorship, and shared curiosity.
+
+That may be why I still think of it so often. Not as a disappointment exactly, but as a lost possibility that still glows in memory.
+
+## The Best Trip I Never Had
+
+Le Houches remains, for me, the best trip I never had.
+
+I never saw the Alps from the lecture hall window. I never filled notebooks during the morning sessions. I never hiked mountain trails while discussing mathematics and physics with other researchers. I never met the legends I had hoped to learn from in person.
+
+But the fact that I missed it does not make it meaningless. If anything, it reveals how much opportunities like that matter. They are not just additions to a CV. They are spaces where people grow — intellectually, professionally, and personally.
+
+Perhaps one day I will make it there after all, in some other form, for some other event. Perhaps not. But even as an unrealised journey, Le Houches has stayed with me as a symbol of the kind of academic experience I value most: deep learning, generous exchange, and the rare feeling of being completely immersed in ideas that matter.
+
+Some trips change you when you take them.
+
+Others change you simply because you wanted them so badly.
+    `,
+  },
+  {
+    id: "tokyo-iciam-2023",
+    title: "Travel Diaries: Tokyo - Applied Math on a Global Stage",
+    excerpt: "Thousands of researchers, dozens of parallel sessions, and a mesmerizing city where ancient shrines meet futuristic technology.",
+    date: "August 25, 2023",
+    readTime: "7 min read",
+    category: "Travel",
+    tags: ["Japan", "Tokyo", "Applied Mathematics", "ICIAM"],
+    headerImage: "https://images.unsplash.com/photo-1767334851100-32cf23d83e1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxUb2t5byUyME1vdW50JTIwRnVqaSUyMHZpZXclMjBza3lsaW5lfGVufDF8fHx8MTc3MzI3MDc2OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    content: `
+The 10th International Congress on Industrial and Applied Mathematics in Tokyo was one of the most memorable trips of my PhD — not because it was easy, but because it tested me in ways I did not expect.
+
+The trip came immediately after I had submitted my first serious academic paper to a top journal. I should have felt relieved, and I did, but mostly I arrived in Japan already exhausted. What followed was a combination of intellectual excitement and physical struggle: a major international conference, a city unlike any I had ever visited, heavy jet lag, unfamiliar food, and the slow realization that I had pushed myself into the trip with very little left in reserve.
+
+## Arriving in Tokyo
+
+Tokyo was overwhelming from the start. The city felt immense, fast, and incredibly precise. The stations seemed endless, the metro system had a logic I admired but did not immediately understand, and everything around me moved with a sense of order that was both impressive and intimidating.
+
+What made the trip especially difficult was that my body never seemed to catch up. The jet lag hit me hard and stayed with me far longer than I expected. Eating was also more difficult than I had imagined. Although I appreciated Japanese food and was genuinely excited to experience the culture, I struggled to adapt and ended up losing five kilograms over the course of the trip.
+
+That was the point where the people around me really mattered.
+
+## The Importance of Support
+
+One of the things I took away most strongly from Tokyo had very little to do with mathematics.
+
+A fellow PhD student was an enormous source of support throughout the trip, and I do not think I appreciated enough before then how important that kind of support can be when you are travelling internationally, especially when things are not going smoothly. There is something deeply reassuring about knowing that someone is looking out for you, that you do not have to manage every difficult moment alone, and that if you are tired, disoriented, or simply overwhelmed, there is someone you can rely on.
+
+That kind of companionship changes the experience of travel completely. It turns what could have become an isolating trip into something shared and manageable. Looking back, I think that support was one of the reasons I was still able to enjoy so much of Japan despite how difficult the trip was physically.
+
+## The Conference
+
+ICIAM itself was enormous. Thousands of researchers, countless parallel sessions, and a programme so large that it felt impossible to take in fully. What I loved about it was the scale of applied mathematics on display: wave mechanics, optimisation, fluid dynamics, mathematical biology, industrial modelling — all of it unfolding at once.
+
+There was something energising about being reminded that my own work sits inside a much larger global conversation. Even when the trip felt hard on a personal level, the conference itself kept opening windows onto new ideas and different ways of thinking.
+
+## The Good Moments
+
+And there were many genuinely good moments.
+
+We went to one of the highest skyscrapers in Shibuya and looked out over the city, which seemed to stretch forever. We visited sumo houses and museums, and I was struck by how naturally history and tradition seemed to sit alongside modern urban life. We explored local neighbourhoods, wandered through Akihabara, got lost in the metro more than once, and gradually learned to laugh at our confusion rather than fight it.
+
+One of the most memorable parts of the trip was visiting Mount Fuji and staying for a night at the foot of the mountain. After the intensity of Tokyo, that change of setting felt almost unreal. It gave the trip a different rhythm and remains one of the clearest memories I have from Japan.
+
+I was also deeply impressed by Japanese culture more broadly: the politeness of everyday interactions, the attention to detail, the respect embedded in public life, and the quiet generosity people showed even when I was clearly lost or struggling. And, on a more personal note, I came away with a real appreciation for Japanese whisky.
+
+## What the Trip Taught Me
+
+Looking back, Tokyo taught me more than I expected.
+
+It reminded me that conferences are never only about the talks. They are also about the conditions in which you experience them: your energy, your health, the people around you, and how far from home you suddenly realise you are.
+
+It also reminded me that support matters. Academic travel can look exciting from the outside, but when things become difficult, it makes an enormous difference to know that you are not navigating it alone.
+
+And perhaps most practically of all, it taught me that a detailed risk assessment for international travel is highly recommended. That may sound dry, but it is true. Time differences, food, transport, fatigue, health, and the sheer stress of moving across the world while trying to function professionally are all things worth thinking through in advance. You do not always realise how important that is until you are already in the middle of it.
+
+## Looking Back
+
+Tokyo was not an easy trip, but it was a meaningful one.
+
+It came at a moment of transition for me, immediately after the submission of my first major paper, and it exposed how demanding that period had really been. At the same time, it gave me moments of wonder, challenge, humour, and friendship that I will remember for a long time.
+
+I came back tired, lighter in body, and much more aware of my limits. But I also came back with a deeper appreciation for good people, shared experiences, and the importance of looking after yourself when the world suddenly becomes much larger than your routine.
+    `,
+  },
+  {
+    id: "cambridge-hackathon-2023",
+    title: "Travel Diaries: Cambridge - Winning the Hackathon",
+    excerpt: "Intensive lectures, collaborative problem-solving, and the thrill of victory at the Isaac Newton Institute's multiple scattering workshop.",
+    date: "January 20, 2023",
+    readTime: "7 min read",
+    category: "Travel",
+    tags: ["Cambridge", "Hackathon", "Multiple Scattering", "Competition"],
+    headerImage: "https://images.unsplash.com/photo-1767290979763-5953b148ee69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDYW1icmlkZ2UlMjBUcmluaXR5JTIwQ29sbGVnZSUyMGNvdXJ0eWFyZCUyMGFyY2hpdGVjdHVyZXxlbnwxfHx8fDE3NzMyNjkyNzd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    content: `
+The Workshop on Mathematical Theory and Applications of Multiple Wave Scattering (MWSW2023) at the Isaac Newton Institute in Cambridge was one of the highlights of my PhD. It brought together researchers working on multiple scattering, wave propagation, and related mathematical and computational problems — in other words, exactly the kind of questions I cared most about.
+
+The lectures were excellent, the discussions were intense, and the atmosphere was deeply stimulating. But what made the workshop unforgettable for me was the hackathon: a fast-paced challenge that turned abstract ideas about wave scattering into a concrete and surprisingly difficult problem.
+
+## The Setting
+
+There was already something special about being at the Isaac Newton Institute.
+
+Cambridge carries a kind of intellectual weight that you can feel even before you enter a lecture room. The Institute itself has that rare atmosphere of seriousness without pretension: a place where difficult ideas are taken seriously, where people gather to think deeply, and where mathematics feels very much alive.
+
+For a PhD student working on waves and scattering, it felt like the right place to be. Everyone there was speaking, in one way or another, a language I had been trying to learn during my PhD. The workshop was not broad and general. It was focused. People cared about the same kinds of problems I cared about, and that made every conversation feel immediately meaningful.
+
+## A Workshop Built Around Multiple Scattering
+
+The workshop itself was packed with lectures from leading researchers in the field. Unlike a standard conference, where talks often present polished slices of finished work, this felt more like a real immersion in the subject. The speakers did not just present results; they developed ideas, explained methods, and opened up technical questions in a way that invited engagement.
+
+For me, that was one of the most valuable things about the week. I was not simply listening to talks. I was seeing how people in the field thought: how they framed problems, what they considered important, where they made approximations, and how they connected mathematics to physical intuition.
+
+That alone would have made the trip worthwhile. But then came the hackathon.
+
+## The Challenge
+
+The task was both simple to state and difficult to solve.
+
+We were given an incident beam and a target region in space. The goal was to place scatterers in such a way that as much wave energy as possible would be focused at that chosen location.
+
+What made the problem especially interesting was the catch: the target point lay inside a material containing randomly placed scatterers. So this was not simply a clean optimisation problem in open space. We were trying to control the wave field inside a disordered medium, where multiple scattering, interference, and shadowing all played a role.
+
+In other words, the challenge was not just to direct the beam, but to exploit scattering intelligently.
+
+And that was exactly what made it so fascinating.
+
+The winning team would be the one that managed to concentrate the greatest amount of energy at the specified point.
+
+## Why the Problem Was So Difficult
+
+At first glance, the problem sounded almost intuitive: send energy where you want it to go. But in practice, it was much more subtle.
+
+The same particles that might help focus the beam at one frequency or in one region could also obstruct, deflect, or dissipate energy in another. Small changes in the placement of scatterers could dramatically alter the resulting field. The entire problem depended on interference effects, geometry, and the way waves interacted with a complex surrounding structure.
+
+That meant there was no obvious answer and no straightforward route to it.
+
+You had to think carefully about where to place particles, how the incoming beam would interact with them, and how the scattered field would build up at the target location. It was a problem that sat beautifully at the intersection of physical intuition, mathematical reasoning, and computational experimentation.
+
+## Working Against the Clock
+
+Like all good hackathons, it created a very particular kind of intensity.
+
+People began sketching ideas quickly, testing strategies, comparing interpretations of the problem, and trying to understand what kind of placement might produce constructive interference at the point of interest. It was one of those situations where everyone in the room was thinking hard, but in different ways. Some approached it geometrically, others numerically, others from a more physical or analytical perspective.
+
+That was what made the atmosphere so exciting. You could feel the problem pulling different kinds of expertise together.
+
+For me, one of the most enjoyable parts was that the challenge was concrete enough to be playful, but deep enough to be genuinely scientific. It was competitive, yes, but it was also intellectually rich. You were not just trying to "win"; you were trying to understand how to manipulate a complicated scattering environment in a controlled and effective way.
+
+## The Moment of Recognition
+
+What made the result so memorable was not just the fact that we won, but what that win represented. There were two awards: one for achieving the highest energy concentration at the target location, and another for the most compelling mathematical and numerical approach. We won the second.
+
+The team that achieved the highest energy concentration used a direct optimisation strategy, applying gradient descent to tune the particle positions. Our approach was different. Instead of treating the task purely as an optimisation problem, we tried to think about how to shape the wave field more deliberately.
+
+We focused on structured placements of scatterers — especially ring-like configurations — designed to guide and concentrate energy through resonance and interference. Rather than searching blindly for the best arrangement, we aimed to use physical intuition about how waves interact with structure to design configurations that naturally steered energy toward the target region.
+
+What I found most satisfying was that our solution reflected a way of thinking rather than just a computational trick. It showed that combining physical insight with mathematical reasoning can lead to designs that are not only effective but also conceptually clear.
+
+In a field where progress often unfolds slowly over months or years, there was something deeply rewarding about tackling such a difficult problem in a compressed timeframe and arriving at a coherent solution. It was also a reminder that research can be joyful.
+
+So much of PhD life is slow, solitary, and uncertain. You spend long stretches stuck on derivations, simulations, debugging, or trying to make sense of results that refuse to behave. The hackathon, by contrast, compressed all the intellectual excitement of research into a short, intense burst: a hard problem, shared energy, creative thinking, and the quiet thrill of watching an idea come together.
+
+## What I Took Away From It
+
+What stayed with me most was how naturally the challenge captured something essential about research in wave scattering.
+
+The problem was not artificial. It reflected the real difficulty of controlling waves in complex media, where disorder is not just a nuisance but part of the problem itself. It required more than technical skill. It required intuition, experimentation, flexibility, and a willingness to think in terms of interactions rather than isolated objects.
+
+It also reminded me how much I enjoy problems where mathematics and physics genuinely meet. You cannot solve something like that through formalism alone, and you cannot solve it through intuition alone either. You need both. You need to think mathematically, but also physically — to imagine what the wave is doing, how the medium is shaping it, and where energy is likely to accumulate or disappear.
+
+That balance is one of the things I love most about this area of research.
+
+## Reconnecting with Familiar Faces
+
+One of the unexpected pleasures of the workshop was how many familiar faces were there.
+
+Several people I had met at Waves2022 in Paris were also at Cambridge, and there was something particularly satisfying about those reunions. A year earlier, we had been sharing wine on a boat along the Seine, discussing wave mechanics while slightly drunk and newly acquainted. Now, here we were again, still talking about scattering problems, but with a year of research behind us and a deeper sense of shared trajectory.
+
+Those conversations felt different this time. We were not just introducing ourselves or making polite conference small talk. We were catching up. Comparing notes on how our work had evolved. Asking each other the kinds of questions you can only ask someone who already understands what you are trying to do.
+
+Beyond the social reconnections, the workshop also offered something more directly valuable: access to some of the leading researchers in the field. Professors and senior figures who, in other contexts, might seem distant or unapproachable were remarkably generous with their time. I had several one-on-one meetings where I was able to talk through the specific problems I was stuck on — both mathematical and computational — and receive genuine guidance.
+
+One conversation stands out. I had been struggling with a computational bottleneck in my simulations, unsure whether the issue was fundamental or just a matter of implementation. A professor whose work I had been citing for years sat down with me and walked through the problem step by step. Within half an hour, he had suggested an alternative formulation I had not considered, one that turned out to resolve the issue almost entirely. That kind of direct, focused mentorship is rare, and I left the conversation feeling not only helped but also encouraged.
+
+## Walking Through History
+
+Outside the workshop itself, Cambridge offered its own kind of education.
+
+My academic friends from Cambridge took it upon themselves to show me the city properly. We visited most of the major colleges, walking through courtyards and cloisters that have stood for centuries. They pointed out the rooms where famous mathematicians had worked, the libraries where foundational texts had been written, the corridors where some of the greatest minds in the history of science had walked.
+
+There was something quietly moving about that. I was just a PhD student working on wave scattering, but I was walking through spaces where Newton had thought about gravity, where Maxwell had developed his equations, where Dirac had reshaped quantum mechanics. It made my own work feel smaller, yes, but also connected — part of an ongoing tradition of trying to understand the physical world through mathematics.
+
+One evening, we had dinner in the Great Hall of Trinity College. The hall itself is grand and formal, with high ceilings, wood-panelled walls, and long tables where generations of students have eaten. Sitting there, surrounded by portraits of past fellows and the weight of institutional history, felt surreal. It was the kind of experience that academic life occasionally offers: a reminder that you are part of something much larger and longer than your own small contribution.
+
+Afterward, we walked to the Eagle pub, a place famous in the history of science. It was there, in 1953, that Francis Crick announced that he and James Watson had discovered the structure of DNA — the double helix. Standing in that same pub, pint in hand, I felt the same kind of continuity I had felt walking through the colleges. Science is not just papers and conferences. It is also places, conversations, moments of excitement shared over a drink. Some of those moments turn out to matter enormously.
+
+## Cambridge Beyond the Hackathon
+
+Of course, Cambridge itself added something to the experience.
+
+There is always something a little surreal about walking through a place so strongly associated with the history of science and mathematics, especially while working on your own small corner of an ongoing intellectual tradition. Between sessions, I found myself reflecting on that continuity: the idea that even highly specialised problems, like wave focusing in random scattering media, belong to a much longer story about trying to understand and control the physical world.
+
+Being in that environment gave the workshop an added sense of occasion. It did not make the work feel grander than it was, but it did make it feel connected — part of a much wider conversation stretching across disciplines, institutions, and generations.
+
+## Looking Back
+
+Looking back, what I remember most about Cambridge was the combination of focus, challenge, and excitement.
+
+The lectures sharpened my understanding of the field. The conversations made me feel part of a real research community. And the hackathon brought all of that into one vivid moment: a problem about steering energy through disorder, a room full of people thinking creatively, and the satisfaction of seeing a difficult idea come together.
+
+Winning was exciting, of course. But more than that, the experience reminded me why I enjoy research in the first place. Not only because I like solving problems, but because I like the kind of problems that force you to combine intuition, analysis, and imagination.
+
+And this was exactly that kind of problem.
+    `,
+  },
+  /*{
     id: "why-i-started-writing",
     title: "Why I Started Writing (And Why You Should Too)",
     excerpt: "The surprising benefits of putting ideas into words, and how writing has transformed my thinking.",
@@ -567,5 +1012,5 @@ So if you've been considering starting a blog, keeping a research journal, or ju
 
 You might discover, as I did, that the act of writing is its own reward.
     `,
-  },
+  },*/
 ];

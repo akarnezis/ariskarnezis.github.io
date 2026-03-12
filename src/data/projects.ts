@@ -31,7 +31,7 @@ export const projectsData = [
     description:
       "Provided the first clear numerical evidence that multiple effective wavenumbers exist in random particulate materials using high-fidelity Monte-Carlo simulations, and proved the Ewald–Oseen extinction theorem for particulate materials.",
     institution: "Department of Mechanical Engineering, University of Sheffield",
-    period: "2023 - 2024",
+    period: "2023 – 2024",
     tags: [
       "Wave Scattering",
       "Multiple Scattering",
@@ -61,7 +61,44 @@ Using high-fidelity Monte-Carlo simulations, this work demonstrates that the inc
       "Established computational methods for accurate ensemble averaging in multiple scattering problems",
     ],
     publications: [
-      "Published in New Journal of Physics (2024): 'The average transmitted wave in random particulate materials' - https://iopscience.iop.org/article/10.1088/1367-2630/ad49c2",
+      "Published in New Journal of Physics (2024): 'The average transmitted wave in random particulate materials' — https://iopscience.iop.org/article/10.1088/1367-2630/ad49c2",
+    ],
+  },
+    {
+    id: "calculating-pair-correlations",
+    title: "Calculating pair-correlations from random particle configurations",
+    description:
+      "Developed an efficient gradient-based optimization method to solve the realizability problem — recovering particle configurations from pair-correlations — and demonstrated how to calculate accurate pair-correlations from small particle configurations while avoiding boundary effects.",
+    institution: "Department of Mechanical Engineering, University of Sheffield",
+    period: "2023 – 2024",
+    tags: [
+      "Pair-correlations",
+    ],
+    image: "https://images.unsplash.com/photo-1633164530923-309fd4c02969?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXJ0aWNsZSUyMHBoeXNpY3MlMjBjb21wdXRhdGlvbmFsJTIwc2ltdWxhdGlvbiUyMG1hdGVyaWFsc3xlbnwxfHx8fDE3NzMwOTMxNzl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    pdfDownload: "https://drive.proton.me/urls/Q5V49PNSJ8#xfdedPjElG8Z",
+    pdfTitle: " ",
+    status: "Completed",
+    detailedDescription: `This research addresses two fundamental problems in material science: calculating pair-correlations from particle configurations without boundary artifacts, and solving the inverse "realizability problem" of recovering particle configurations from specified pair-correlations.
+
+Pair-correlation functions describe the probability of finding particle pairs at certain distances and are essential for predicting material properties such as wave propagation, thermal conductivity, and mechanical behavior. This work presents novel computational methods that significantly improve efficiency compared to traditional approaches, enabling the design of materials with tailored structural properties.`,
+    objectives: [
+      "Develop methods to calculate pair-correlations from small particle configurations while avoiding boundary effects that typically require very large configurations",
+      "Solve the realizability problem by recovering particle configurations from specified pair-correlations or structure factors",
+      "Implement gradient-based optimization methods that outperform traditional non-gradient approaches like Genetic Algorithms and Simulated Annealing",
+      "Provide a framework for designing particulate materials with specific properties by controlling pair-correlations",
+      "Establish necessary conditions and restrictions for physically realizable pair-correlations and structure factors",
+    ],
+    methodology:
+      "The research introduces a two-region approach where particles are placed in a larger region R2 while pair-correlations are calculated from an inner region R1, effectively eliminating boundary effects even for small configurations. For the inverse problem, the method optimizes the structure factor (a smooth function of particle positions) rather than the discontinuous pair-correlation function, enabling efficient gradient-based optimization using Limited-memory BFGS (L-BFGS). The approach employs a two-step process: a global optimization step that allows particle overlaps to explore the parameter space broadly, followed by a local refinement step with a penalty function that prevents overlaps and achieves high precision in matching target structure factors.",
+    results: [
+      "Derived explicit formulas for calculating pair-correlations from finite particle configurations in both 2D and 3D that eliminate boundary artifacts without requiring infinitely large systems",
+      "Developed analytical expressions for the gradient of the structure factor with respect to particle positions, enabling efficient gradient-based optimization",
+      "Successfully demonstrated the method by recovering particle configurations matching Percus-Yevick pair-correlations for hard discs at 15% volume fraction",
+      "Showed that the gradient-based approach using structure factors converges more efficiently than traditional Monte-Carlo methods that use non-gradient optimization",
+      "Established a computational framework applicable to material design problems ranging from composites to neutron star crusts, with applications in controlling wave propagation, thermal properties, and mechanical behavior",
+    ],
+    publications: [
+      "Published on arXiv (2024): 'Calculating pair-correlations from random particle configurations' — https://drive.proton.me/urls/Q5V49PNSJ8#xfdedPjElG8Z",
     ],
   },
   {
@@ -70,15 +107,13 @@ Using high-fidelity Monte-Carlo simulations, this work demonstrates that the inc
     description:
       "Investigated how waves propagate through random particulate media by analysing reflection coefficients and effective wavenumbers in three dimensions.",
     institution: "University of Sheffield",
-    period: "2022 - 2023",
+    period: "2022 – 2023",
     tags: [
       "Scattering Theory",
-      "Particulate materials",
-      "Mathematical Modeling",
     ],
     image: image_ed8b83a5d3520877a3c6541067cb8459b1a41222,
     pdfDownload:
-      "https://drive.google.com/uc?export=download&id=19LmFkZPT2Mf8LZsw8i-giU1lxYUC0Zat",
+      "https://drive.proton.me/urls/EXJ6P301N0#Nkl9ifU6V9Oe",
     pdfTitle: " ",
     status: "Completed",
     detailedDescription: `This research project focuses on understanding how acoustic and electromagnetic waves interact with random particulate materials. The work combines analytical methods with numerical simulations to characterise wave propagation in complex heterogeneous media.
@@ -121,7 +156,7 @@ By analysing reflection coefficients and deriving effective wavenumbers, this re
     ],
     image: image_343284038a5b5fde8cc82a276654a0ed9514b4d2,
     pdfDownload:
-      "https://drive.google.com/uc?export=download&id=1qQ3HlnQAeKX6B-APZrUsUibmyrJw8dpQ",
+      "https://drive.proton.me/urls/5RHV6N3C0R#EdglkLvMlyCX",
     pdfTitle: " ",
     status: "Completed",
     detailedDescription: `This project investigates how to obtain accurate Monte Carlo simulations of random particulate media, with a particular emphasis on the pair-correlation function and the impact of finite-domain effects.
@@ -163,6 +198,44 @@ By analysing reflection coefficients and deriving effective wavenumbers, this re
     ],
     publications: [
       "This work is part of the author's doctoral research and is included in the PhD thesis submitted to University of Sheffield.",
+    ],
+  },
+  {
+    id: "lidar-pipe-detection",
+    title: "Feature detection and classification in buried pipes using LiDAR technology",
+    description:
+      "Developed a low-cost LiDAR-based system for real-time detection and classification of structural features in buried sewer pipes, achieving high-accuracy identification of joints, manholes, and blockages for autonomous robotic inspection.",
+    institution: "School of Electrical and Electronic Engineering, University of Sheffield",
+    period: "2024 – 2025",
+    tags: [
+      "LiDAR",
+    ],
+    image: "https://images.unsplash.com/photo-1701111759812-b9a2da549c44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb2JvdGljcyUyMGxpZGFyJTIwc2Vuc29yJTIwaW5mcmFzdHJ1Y3R1cmUlMjBpbnNwZWN0aW9ufGVufDF8fHx8MTc3MzA5MzYyNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    pdfDownload: "https://drive.proton.me/urls/F25QXSGCTW#nWbPHHkmniPa",
+    pdfTitle: " ",
+    status: "Completed",
+    detailedDescription: `This research presents a novel approach to autonomous inspection of buried sewer and wastewater infrastructure using low-cost LiDAR technology. With 0.8 million kilometers of buried pipes in the UK alone, effective inspection is essential but currently relies on expensive, manually-controlled tethered crawlers.
+
+This work addresses the critical challenge of enabling autonomous robotic navigation in confined pipe environments by developing a real-time system that accurately detects and classifies structural features such as pipe joints, manholes, and blockages. The approach combines efficient data processing with a lightweight decision algorithm specifically designed for the computational and power constraints of untethered robotic platforms.`,
+    objectives: [
+      "Develop a low-cost LiDAR sensing system suitable for confined pipe environments with minimal lighting and limited space for sensors",
+      "Create a computationally efficient, real-time detection algorithm capable of running onboard resource-constrained robots",
+      "Accurately classify critical structural features including pipe walls, joints between pipe segments, manhole openings, and blockages",
+      "Achieve classification performance comparable to computationally intensive machine learning methods while maintaining real-time operation",
+      "Validate the system's performance using ground-truth annotations collected from various pipe materials and environments",
+    ],
+    methodology:
+      "The system uses an Okdo LiDAR Module (LD06) mounted at a 30-degree angle on a robotic platform, positioned 150mm above ground level. The sensor captures full circular scans, but processing focuses on three 60-degree regions (front, left, right) where features are most likely to appear. Raw LiDAR data undergoes filtering and geometric projection into Cartesian coordinates. A fast two-stage decision system applies DBSCAN clustering to identify spatially coherent point groups in each region, then computes average horizontal distances to classify features. Stage 1 selects the nearest cluster based on distance separation, while Stage 2 applies threshold-based classification: pipe walls fall within the nominal pipe radius, joints appear slightly beyond, and manholes are detected at greater distances. A semi-automated labelling system generates ground truth annotations by visualizing scans in polar form, creating a balanced dataset of several hundred features across multiple pipe materials for validation against both the threshold-based system and a Random Forest benchmark classifier.",
+    results: [
+      "Achieved 96.9% recall for manhole detection and 95.5% recall for joint detection using the fast two-stage decision system, matching the performance of a Random Forest classifier (97% and 93% recall respectively)",
+      "Successfully demonstrated real-time 3D reconstruction of an 11.5-meter pipe network using LiDAR scans aligned with wheel odometry",
+      "Validated distance threshold separation between pipe features through Gaussian distribution analysis, confirming clear distinction between pipe walls, joints, and manholes",
+      "Developed a computationally lightweight algorithm suitable for onboard processing on low-powered robots with limited computational resources",
+      "Created a robust semi-automated ground truth labelling system enabling systematic validation across diverse pipe materials and environments",
+      "Established a framework for future expansion to multiclass classification including blockage detection and various feature types",
+    ],
+    publications: [
+      "Published in CCWI 2025 Proceedings (2025): 'Feature detection and classification in buried pipes using LiDAR technology' — https://drive.proton.me/urls/F25QXSGCTW#nWbPHHkmniPa",
     ],
   },
   {

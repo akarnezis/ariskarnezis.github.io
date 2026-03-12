@@ -15,7 +15,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-slate-900 dark:bg-[#0a0e14] text-slate-300 dark:text-slate-400 py-12 border-t border-slate-800 dark:border-[#252a31]">
+    <footer className="bg-[#2d2d2d] dark:bg-[#2d2d2d] text-slate-300 dark:text-slate-400 py-12 border-t border-[#4a4a4a] dark:border-[#4a4a4a]">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
@@ -84,7 +84,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://drive.proton.me/urls/0AQZ9FBSMW#X17bW8hm10Hz" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-white transition-colors">
+                <a href="https://drive.proton.me/urls/P1DGV8A3CR#PtoLC3qcshda" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-white transition-colors">
                   <Download className="inline-block mr-2" size={16} />
                   CV/Resume
                 </a>
@@ -93,7 +93,7 @@ export function Footer() {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-slate-800 text-center text-sm">
+        <div className="pt-8 border-t border-[#4a4a4a] text-center text-sm">
           <p>&copy; 2025 Aris Karnezis. All rights reserved.</p>
         </div>
       </div>

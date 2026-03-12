@@ -65,7 +65,7 @@ export function ContentSidebar({ tableOfContents, relatedItems, relatedTitle }: 
       <div className="space-y-6">
         {/* Table of Contents */}
         {tableOfContents.length > 0 && (
-          <div className="bg-white dark:bg-[#0a0e14] rounded-lg border border-slate-200 dark:border-[#252a31] p-6">
+          <div className="bg-white dark:bg-[#2d2d2d] rounded-lg border border-slate-200 dark:border-[#4a4a4a] p-6">
             <h3 className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">
               On This Page
             </h3>
@@ -89,7 +89,7 @@ export function ContentSidebar({ tableOfContents, relatedItems, relatedTitle }: 
 
         {/* Related Content */}
         {relatedItems.length > 0 && (
-          <div className="bg-white dark:bg-[#0a0e14] rounded-lg border border-slate-200 dark:border-[#252a31] p-6">
+          <div className="bg-white dark:bg-[#2d2d2d] rounded-lg border border-slate-200 dark:border-[#4a4a4a] p-6">
             <h3 className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">
               {relatedTitle}
             </h3>

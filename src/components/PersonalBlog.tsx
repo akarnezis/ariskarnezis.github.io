@@ -73,7 +73,7 @@ export function PersonalBlog() {
   };
   
   return (
-    <section id="blog" className="py-24 bg-slate-50 dark:bg-[#0a0e14]">
+    <section id="blog" className="py-24 bg-slate-50 dark:bg-[#2d2d2d]">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl mb-4 text-slate-900 dark:text-white">Personal Blog</h2>
@@ -91,7 +91,7 @@ export function PersonalBlog() {
               placeholder="Search blog posts..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 rounded-full border border-slate-300 dark:border-[#252a31] focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-orange-500 focus:border-transparent text-slate-700 dark:text-slate-300 placeholder-slate-400 dark:placeholder-slate-500 bg-white dark:bg-[#0a0e14]"
+              className="w-full pl-12 pr-4 py-4 rounded-full border border-slate-300 dark:border-[#4a4a4a] focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-orange-500 focus:border-transparent text-slate-700 dark:text-slate-300 placeholder-slate-400 dark:placeholder-slate-500 bg-white dark:bg-[#2d2d2d]"
             />
           </div>
         </div>
@@ -105,7 +105,7 @@ export function PersonalBlog() {
               className={`px-4 py-2 rounded-full transition-colors ${
                 selectedCategory === category
                   ? "bg-[#d9653a] text-white shadow-md"
-                  : "bg-white dark:bg-[#151a21] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-[#252a31] hover:border-slate-400 dark:hover:border-slate-600"
+                  : "bg-white dark:bg-[#3a3a3a] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-[#4a4a4a] hover:border-slate-400 dark:hover:border-slate-600"
               }`}
             >
               {category}

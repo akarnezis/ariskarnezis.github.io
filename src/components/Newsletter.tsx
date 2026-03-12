@@ -18,10 +18,17 @@ export function Newsletter() {
       return;
     }
 
-    // Simulate successful subscription
-    // In production, this would connect to your newsletter service (Mailchimp, ConvertKit, etc.)
+    // Send email notification with subscriber's email
+    const subject = encodeURIComponent("New Newsletter Subscriber");
+    const body = encodeURIComponent(
+      `New subscriber to your newsletter:\n\nEmail: ${email}\n\nSubscribed on: ${new Date().toLocaleString()}`
+    );
+    
+    window.location.href = `mailto:a.karnezis@protonmail.com?subject=${subject}&body=${body}`;
+
+    // Show success message
     setStatus("success");
-    setMessage("Thanks for subscribing! Check your inbox for a confirmation email.");
+    setMessage("Thanks for subscribing! You'll receive updates about new research and insights.");
     setEmail("");
 
     // Reset after 5 seconds
@@ -32,7 +39,7 @@ export function Newsletter() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+    <section className="py-20 bg-[#2d2d2d] dark:bg-[#2d2d2d] text-white">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-6">

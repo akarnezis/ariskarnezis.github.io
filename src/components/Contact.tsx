@@ -1,8 +1,34 @@
 import { Card } from "./ui/card";
 import { Mail, Linkedin, Github, Twitter, Building2, MapPin } from "lucide-react";
 import { Button } from "./ui/button";
+import { useState } from "react";
 
 export function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Create mailto link with pre-filled information
+    const subject = encodeURIComponent(`Message from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    
+    // Open email client
+    window.location.href = `mailto:a.karnezis@protonmail.com?subject=${subject}&body=${body}`;
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
   const contactInfo = [
     {
       icon: Mail,
@@ -40,7 +66,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-slate-50 dark:bg-[#0a0e14]">
+    <section id="contact" className="py-24 bg-slate-50 dark:bg-[#2d2d2d]">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl mb-4 text-slate-900 dark:text-white">Get in Touch</h2>
@@ -84,7 +110,7 @@ export function Contact() {
                       href={social.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`p-3 bg-slate-100 dark:bg-slate-700 rounded-lg ${social.color} dark:text-orange-500 dark:hover:text-orange-400 transition-colors`}
+                      className={`p-3 bg-slate-100 dark:bg-[#3a3a3a] dark:border dark:border-white/20 rounded-lg ${social.color} dark:text-orange-500 dark:hover:text-orange-400 transition-colors`}
                       aria-label={social.label}
                     >
                       <social.icon className="w-5 h-5" />
@@ -96,7 +122,7 @@ export function Contact() {
             
             <div>
               <h3 className="text-xl mb-6 text-slate-900 dark:text-white">Send a Message</h3>
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="name" className="block text-sm mb-2 text-slate-700 dark:text-slate-300">
                     Name
@@ -104,8 +130,11 @@ export function Contact() {
                   <input
                     type="text"
                     id="name"
-                    className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-slate-300 dark:border-[#4a4a4a] dark:bg-[#3a3a3a] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                     placeholder="Your name"
+                    required
                   />
                 </div>
                 
@@ -116,8 +145,11 @@ export function Contact() {
                   <input
                     type="email"
                     id="email"
-                    className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-slate-300 dark:border-[#4a4a4a] dark:bg-[#3a3a3a] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                     placeholder="your.email@example.com"
+                    required
                   />
                 </div>
                 
@@ -128,8 +160,11 @@ export function Contact() {
                   <textarea
                     id="message"
                     rows={4}
-                    className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-slate-300 dark:border-[#4a4a4a] dark:bg-[#3a3a3a] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                     placeholder="Your message..."
+                    required
                   />
                 </div>
                 

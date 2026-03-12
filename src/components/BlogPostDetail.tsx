@@ -160,9 +160,9 @@ export function BlogPostDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0a0e14] pt-16">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#2d2d2d] pt-16">
       {/* Header */}
-      <div className="bg-white dark:bg-[#151a21] border-b dark:border-[#252a31]">
+      <div className="bg-white dark:bg-[#3a3a3a] border-b dark:border-[#4a4a4a]">
         <div className="container mx-auto px-6 max-w-7xl py-8">
           <Button 
             onClick={() => {
@@ -184,7 +184,7 @@ export function BlogPostDetail() {
       <div className="container mx-auto px-6 max-w-7xl py-12">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12">
           {/* Post Content */}
-          <article className="bg-white dark:bg-[#151a21] rounded-lg shadow-sm p-8 lg:p-12">
+          <article className="bg-white dark:bg-[#3a3a3a] rounded-lg shadow-sm p-8 lg:p-12">
             {/* Meta Information */}
             <div className="mb-8">
               <Badge className="mb-4 bg-[#d9653a] hover:bg-[#d9653a]">

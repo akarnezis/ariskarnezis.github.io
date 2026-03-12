@@ -23,29 +23,36 @@ export function Navigation() {
     }
 
     const handleScroll = () => {
-      // Check the current hash first - if it's #publications, use that
-      const currentHash = window.location.hash;
-      if (currentHash === "#publications") {
-        setActiveSection("#publications");
-        return;
-      }
-
       const sections = ["projects", "articles", "blog", "contact"];
       const scrollPosition = window.scrollY + 100; // offset for fixed nav
 
+      // Find which section we're currently in based on scroll position
+      let currentSection = "";
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
         if (element) {
           const { offsetTop, offsetHeight } = element;
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(`#${sectionId}`);
-            return;
+            currentSection = sectionId;
+            break;
           }
         }
       }
-      
-      // If we're at the top of the page, no section is active
-      if (window.scrollY < 100) {
+
+      // If we're in the projects section, check if hash says we should show publications
+      if (currentSection === "projects") {
+        const currentHash = window.location.hash;
+        if (currentHash === "#publications") {
+          setActiveSection("#publications");
+          return;
+        }
+      }
+
+      // Set the active section based on scroll position
+      if (currentSection) {
+        setActiveSection(`#${currentSection}`);
+      } else if (window.scrollY < 100) {
+        // If we're at the top of the page, no section is active
         setActiveSection("");
       }
     };
@@ -98,6 +105,10 @@ export function Navigation() {
   // Determine if a nav item is active
   const isActive = (item: typeof navItems[0]) => {
     if (item.isRoute) {
+      // Special handling for Home - only active when on "/" and no section is active
+      if (item.href === "/") {
+        return location.pathname === "/" && !activeSection;
+      }
       return location.pathname === item.href;
     }
     return activeSection === item.href;
@@ -113,7 +124,7 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#0a0e14]/80 backdrop-blur-md border-b border-slate-200 dark:border-[#252a31]">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#2d2d2d] backdrop-blur-md border-b border-slate-200 dark:border-[#4a4a4a]">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="text-xl font-bold text-slate-900 dark:text-slate-100" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>

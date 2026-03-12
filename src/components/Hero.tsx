@@ -6,8 +6,8 @@ import { ArrowRight, Mail, Linkedin, Github, Download, GraduationCap } from "luc
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-50 to-white dark:from-[#0a0e14] dark:to-[#151a21]">
-      <div className="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-800 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,#0a0e14,rgba(10,14,20,0.6))] -z-10" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-50 to-white dark:from-[#2d2d2d] dark:to-[#3a3a3a]">
+      <div className="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-800 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,#2d2d2d,rgba(45,45,45,0.6))] -z-10" />
       
       <div className="container mx-auto px-6 py-24 max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -32,14 +32,14 @@ export function Hero() {
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="gap-2" asChild>
+              <Button size="lg" variant="outline" className="gap-2 dark:border-white/20" asChild>
                 <a href="#contact">
                   <Mail className="w-4 h-4" />
                   Get in Touch
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="gap-2" asChild>
-                <a href="https://drive.proton.me/urls/0AQZ9FBSMW#X17bW8hm10Hz" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="outline" className="gap-2 dark:border-white/20" asChild>
+                <a href="https://drive.proton.me/urls/P1DGV8A3CR#PtoLC3qcshda" target="_blank" rel="noopener noreferrer">
                   <Download className="w-4 h-4" />
                   Download CV
                 </a>
@@ -47,13 +47,13 @@ export function Hero() {
             </div>
             
             <div className="flex gap-4 pt-4">
-              <a href="https://www.linkedin.com/in/aris-karnezis-595777b5/" target="_blank" rel="noopener noreferrer" className="text-[#2b3137] hover:text-[#1f2428] dark:text-slate-400 dark:hover:text-slate-200 transition-colors">
+              <a href="https://www.linkedin.com/in/aris-karnezis-595777b5/" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-100 dark:bg-[#3a3a3a] dark:border dark:border-white/20 rounded-lg text-orange-600 hover:text-orange-700 dark:text-orange-500 dark:hover:text-orange-400 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="https://github.com/akarnezis" target="_blank" rel="noopener noreferrer" className="text-[#2b3137] hover:text-[#1f2428] dark:text-slate-400 dark:hover:text-slate-200 transition-colors">
+              <a href="https://github.com/akarnezis" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-100 dark:bg-[#3a3a3a] dark:border dark:border-white/20 rounded-lg text-orange-600 hover:text-orange-700 dark:text-orange-500 dark:hover:text-orange-400 transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="https://scholar.google.com/citations?user=E3y4MmEAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" className="text-[#2b3137] hover:text-[#1f2428] dark:text-slate-400 dark:hover:text-slate-200 transition-colors">
+              <a href="https://scholar.google.com/citations?user=E3y4MmEAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-100 dark:bg-[#3a3a3a] dark:border dark:border-white/20 rounded-lg text-orange-600 hover:text-orange-700 dark:text-orange-500 dark:hover:text-orange-400 transition-colors">
                 <GraduationCap className="w-5 h-5" />
               </a>
             </div>

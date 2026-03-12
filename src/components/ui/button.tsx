@@ -46,11 +46,20 @@ function Button({
   }) {
   const Comp = asChild ? Slot : "button";
 
+  // Filter out Figma-specific props that shouldn't be passed to DOM elements
+  const filteredProps = Object.keys(props).reduce((acc, key) => {
+    // Exclude Figma internal props (they start with _fg)
+    if (!key.startsWith('_fg')) {
+      acc[key] = props[key as keyof typeof props];
+    }
+    return acc;
+  }, {} as Record<string, any>);
+
   return (
     <Comp
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
+      {...filteredProps}
     />
   );
 }
