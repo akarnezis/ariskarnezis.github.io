@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router";
+import { useParams, useNavigate, Link, useLocation } from "react-router";
 import { articlesData } from "../data/articles";
 import { projectsData } from "../data/projects";
 import { Badge } from "./ui/badge";
@@ -6,7 +6,6 @@ import { Button } from "./ui/button";
 import { ArrowLeft, Clock, Calendar, ExternalLink } from "lucide-react";
 import { ContentSidebar } from "./ContentSidebar";
 import { useMemo } from "react";
-import { Link } from "react-router";
 import { SEOHelmet } from "./SEOHelmet";
 
 // Helper function to parse markdown formatting (bold and italic)
@@ -111,8 +110,11 @@ function extractHeadings(content: string) {
 export function ArticleDetail() {
   const { articleId } = useParams();
   const navigate = useNavigate();
-  
+  const location = useLocation();
   const article = articlesData.find((a) => a.id === articleId);
+  
+  // Get the scrollTo value from navigation state
+  const scrollToId = (location.state as { scrollTo?: string })?.scrollTo || `article-${articleId}`;
 
   // Get related articles (same category, excluding current)
   const relatedArticles = useMemo(() => {
@@ -174,13 +176,7 @@ export function ArticleDetail() {
       <div className="bg-white dark:bg-[#3a3a3a] border-b dark:border-[#4a4a4a]">
         <div className="container mx-auto px-6 max-w-7xl py-8">
           <Button 
-            onClick={() => {
-              navigate("/");
-              setTimeout(() => {
-                const element = document.querySelector(`#article-${articleId}`);
-                element?.scrollIntoView({ behavior: "auto" });
-              }, 100);
-            }}
+            onClick={() => navigate(`/#${scrollToId}`)}
             className="bg-[#d9653a] hover:bg-[#c25532] dark:bg-[#d9653a] dark:hover:bg-[#c25532] text-white"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -256,6 +252,7 @@ export function ArticleDetail() {
                       ) : (
                         <Link
                           to={`/project/${project.id}`}
+                          state={{ scrollTo: `project-${project.id}` }}
                           className="group flex items-start gap-3 transition-colors"
                         >
                           <div className="flex-1">
@@ -315,13 +312,7 @@ export function ArticleDetail() {
             {/* Footer */}
             <div className="flex justify-center mt-16">
               <Button
-                onClick={() => {
-                  navigate("/");
-                  setTimeout(() => {
-                    const element = document.querySelector(`#article-${articleId}`);
-                    element?.scrollIntoView({ behavior: "auto" });
-                  }, 100);
-                }}
+                onClick={() => navigate(`/#${scrollToId}`)}
                 className="bg-[#d9653a] hover:bg-[#c25532] dark:bg-[#d9653a] dark:hover:bg-[#c25532] text-white"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />

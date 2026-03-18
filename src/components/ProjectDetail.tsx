@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router";
+import { useParams, Link, useNavigate, useLocation } from "react-router";
 import { projectsData } from "../data/projects";
 import { Badge } from "./ui/badge";
 import { Calendar, ArrowLeft, FileText } from "lucide-react";
@@ -10,8 +10,23 @@ import { SEOHelmet } from "./SEOHelmet";
 
 export function ProjectDetail() {
   const { projectId } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
   const project = projectsData.find(p => p.id === projectId);
-
+  
+  // Get the scrollTo value and filterMode from navigation state
+  const scrollToId = (location.state as { scrollTo?: string })?.scrollTo || `project-${projectId}`;
+  const filterMode = (location.state as { filterMode?: string })?.filterMode || sessionStorage.getItem("projectsFilterMode") || "all";
+  
+  // Handle back navigation: use state to pass filterMode back to Projects
+  const handleBack = () => {
+    if (filterMode === "publications") {
+      navigate(`/#project-${projectId}`, { state: { returnFilterMode: "publications" } });
+    } else {
+      navigate(`/#${scrollToId}`);
+    }
+  };
+  
   // Get related projects (exclude current)
   const relatedProjects = useMemo(() => {
     if (!project) return [];
@@ -23,9 +38,10 @@ export function ProjectDetail() {
         title: p.title,
         category: p.status,
         date: p.period,
-        linkPrefix: "project"
+        linkPrefix: "project",
+        filterMode: filterMode // Pass filterMode to related projects
       }));
-  }, [project]);
+  }, [project, filterMode]);
 
   // Create table of contents for projects
   const tableOfContents = useMemo(() => {
@@ -74,12 +90,13 @@ export function ProjectDetail() {
       {/* Header with back button */}
       <div className="bg-white dark:bg-[#3a3a3a] border-b dark:border-[#4a4a4a]">
         <div className="container mx-auto px-6 max-w-7xl py-8">
-          <Link to={`/#project-${project.id}`}>
-            <Button className="bg-[#d9653a] hover:bg-[#c25532] dark:bg-[#d9653a] dark:hover:bg-[#c25532] text-white">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Projects
-            </Button>
-          </Link>
+          <Button 
+            onClick={handleBack}
+            className="bg-[#d9653a] hover:bg-[#c25532] dark:bg-[#d9653a] dark:hover:bg-[#c25532] text-white"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            {filterMode === "publications" ? "Back to Publications" : "Back to Projects"}
+          </Button>
         </div>
       </div>
 
@@ -233,12 +250,13 @@ export function ProjectDetail() {
 
             {/* Bottom navigation */}
             <div className="pt-8 border-t dark:border-slate-700">
-              <Link to={`/#project-${project.id}`}>
-                <Button className="bg-[#d9653a] hover:bg-[#c25532] dark:bg-[#d9653a] dark:hover:bg-[#c25532] text-white">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back to Projects
-                </Button>
-              </Link>
+              <Button 
+                onClick={handleBack}
+                className="bg-[#d9653a] hover:bg-[#c25532] dark:bg-[#d9653a] dark:hover:bg-[#c25532] text-white"
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                {filterMode === "publications" ? "Back to Publications" : "Back to Projects"}
+              </Button>
             </div>
           </div>
 

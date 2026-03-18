@@ -2,11 +2,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { Badge } from "./ui/badge";
 import { Clock, ArrowRight, Heart, Search, Compass, Coffee, Plane, Lightbulb, User, BookOpen } from "lucide-react";
 import { Button } from "./ui/button";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { blogPostsData } from "../data/blogPosts";
 import { useState, useMemo, useRef, useEffect } from "react";
 
 export function PersonalBlog() {
+  const location = useLocation();
   const [showAll, setShowAll] = useState(() => {
     // Load showAll state from localStorage
     const saved = localStorage.getItem('blogShowAll');
@@ -22,6 +23,21 @@ export function PersonalBlog() {
   useEffect(() => {
     localStorage.setItem('blogShowAll', showAll.toString());
   }, [showAll]);
+
+  // Watch for hash changes to auto-expand if needed
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash.startsWith("#blog-")) {
+      // If navigating to a specific blog post, check if it's beyond the initial count
+      const postId = hash.replace("#blog-", "");
+      const postIndex = blogPostsData.findIndex(p => p.id === postId);
+      
+      // If the post is beyond the initial count, expand the list
+      if (postIndex >= initialCount) {
+        setShowAll(true);
+      }
+    }
+  }, [location]);
 
   // Get unique categories
   const categories = useMemo(() => {
@@ -152,6 +168,7 @@ export function PersonalBlog() {
                       {/* Read Story Link */}
                       <Link 
                         to={`/blog/${post.id}`}
+                        state={{ scrollTo: `blog-${post.id}` }}
                         className="inline-flex items-center gap-2 text-[#d9653a] hover:text-[#c25731] hover:underline hover:gap-3 transition-all duration-200 font-medium"
                       >
                         Read Story

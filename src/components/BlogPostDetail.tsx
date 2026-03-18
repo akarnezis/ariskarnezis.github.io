@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router";
+import { useParams, useNavigate, useLocation } from "react-router";
 import { blogPostsData } from "../data/blogPosts";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
@@ -110,8 +110,12 @@ function extractHeadings(content: string) {
 export function BlogPostDetail() {
   const { postId } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   
   const post = blogPostsData.find((p) => p.id === postId);
+  
+  // Get the scrollTo value from navigation state
+  const scrollToId = (location.state as { scrollTo?: string })?.scrollTo || `blog-${postId}`;
 
   // Get related posts (same category, excluding current)
   const relatedPosts = useMemo(() => {
@@ -174,13 +178,7 @@ export function BlogPostDetail() {
       <div className="bg-white dark:bg-[#3a3a3a] border-b dark:border-[#4a4a4a]">
         <div className="container mx-auto px-6 max-w-7xl py-8">
           <Button 
-            onClick={() => {
-              navigate("/");
-              setTimeout(() => {
-                const element = document.querySelector(`#blog-${postId}`);
-                element?.scrollIntoView({ behavior: "auto" });
-              }, 100);
-            }}
+            onClick={() => navigate(`/#${scrollToId}`)}
             className="bg-[#d9653a] hover:bg-[#c25532] dark:bg-[#d9653a] dark:hover:bg-[#c25532] text-white"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -278,13 +276,7 @@ export function BlogPostDetail() {
             {/* Footer */}
             <div className="flex justify-center mt-16">
               <Button
-                onClick={() => {
-                  navigate("/");
-                  setTimeout(() => {
-                    const element = document.querySelector(`#blog-${postId}`);
-                    element?.scrollIntoView({ behavior: "auto" });
-                  }, 100);
-                }}
+                onClick={() => navigate(`/#${scrollToId}`)}
                 className="bg-[#d9653a] hover:bg-[#c25532] dark:bg-[#d9653a] dark:hover:bg-[#c25532] text-white"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />

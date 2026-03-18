@@ -10,20 +10,20 @@ import { useLocation } from "react-router";
 export function Projects() {
   const location = useLocation();
   const initialCount = 4;
-  const [filterMode, setFilterMode] = useState<"all" | "publications">("all");
-  const [showAll, setShowAll] = useState(false);
+  const [filterMode, setFilterMode] = useState<"all" | "publications">(() => {
+    // Restore filter mode from sessionStorage if returning from a project detail page
+    const saved = sessionStorage.getItem("projectsFilterMode");
+    if (saved === "publications") return "publications";
+    return "all";
+  });
+  const [showAll, setShowAll] = useState(() => {
+    return sessionStorage.getItem("projectsFilterMode") === "publications";
+  });
 
-  // Watch for hash changes and update filter mode
+  // Persist filter mode to sessionStorage whenever it changes
   useEffect(() => {
-    const hash = window.location.hash;
-    if (hash === "#publications") {
-      setFilterMode("publications");
-      setShowAll(true);
-    } else if (hash === "#projects") {
-      setFilterMode("all");
-      setShowAll(false);
-    }
-  }, [location]);
+    sessionStorage.setItem("projectsFilterMode", filterMode);
+  }, [filterMode]);
 
   // Filter projects based on mode
   const filteredProjects = filterMode === "publications" 
@@ -34,6 +34,44 @@ export function Projects() {
         !project.publications[0].includes("MSc thesis")
       )
     : projectsData;
+
+  // Watch for hash, search params, and router state changes to update filter mode
+  useEffect(() => {
+    const returnFilterMode = (location.state as { returnFilterMode?: string })?.returnFilterMode;
+    const hash = window.location.hash;
+
+    // Check if we're returning from a publication detail page via router state
+    if (returnFilterMode === 'publications') {
+      setFilterMode('publications');
+      setShowAll(true);
+      // Scroll to the specific project card from the hash, or fallback to publications section
+      setTimeout(() => {
+        const targetId = hash ? hash.replace('#', '') : 'publications';
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          const fallback = document.getElementById('publications');
+          if (fallback) fallback.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 150);
+    } else if (hash === "#publications") {
+      setFilterMode("publications");
+      setShowAll(true);
+    } else if (hash === "#projects") {
+      setFilterMode("all");
+      setShowAll(false);
+    } else if (hash.startsWith("#project-")) {
+      // If navigating to a specific project, check if it's beyond the initial count
+      const projectId = hash.replace("#project-", "");
+      const projectIndex = projectsData.findIndex(p => p.id === projectId);
+      
+      // If the project is beyond the initial count, expand the list
+      if (projectIndex >= initialCount) {
+        setShowAll(true);
+      }
+    }
+  }, [location, initialCount]);
 
   const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, initialCount);
   const hasMore = filteredProjects.length > initialCount;
@@ -61,7 +99,10 @@ export function Projects() {
           <button
             onClick={() => {
               setFilterMode("all");
-              window.location.hash = "#projects";
+              setShowAll(false);
+              window.history.replaceState(null, "", "/#projects");
+              // Trigger navigation to update active section
+              window.dispatchEvent(new Event("scroll"));
             }}
             className={`px-6 py-2.5 rounded-full transition-all duration-200 ${
               filterMode === "all"
@@ -76,7 +117,10 @@ export function Projects() {
           <button
             onClick={() => {
               setFilterMode("publications");
-              window.location.hash = "#publications";
+              setShowAll(true);
+              window.history.replaceState(null, "", "/#publications");
+              // Trigger navigation to update active section
+              window.dispatchEvent(new Event("scroll"));
             }}
             className={`px-6 py-2.5 rounded-full transition-all duration-200 flex items-center gap-2 ${
               filterMode === "publications"
@@ -113,7 +157,7 @@ export function Projects() {
                       )}
                     </div>
                   </div>
-                  <CardDescription className="flex items-center gap-2 text-slate-600">
+                  <CardDescription className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
                     <Calendar className="w-4 h-4" />
                     {project.period}
                   </CardDescription>
@@ -133,7 +177,7 @@ export function Projects() {
                     </div>
                   </div>
                   
-                  <Link to={`/project/${project.id}`} className="inline-flex items-center gap-2 text-[#d9653a] hover:text-[#c25731] hover:underline hover:gap-3 transition-all duration-200 font-medium">
+                  <Link to={`/project/${project.id}`} state={{ scrollTo: `project-${project.id}`, filterMode: filterMode }} className="inline-flex items-center gap-2 text-[#d9653a] hover:text-[#c25731] hover:underline hover:gap-3 transition-all duration-200 font-medium">
                     Learn More
                     <ExternalLink className="w-4 h-4" />
                   </Link>

@@ -16,6 +16,7 @@ interface RelatedItem {
   date: string;
   readTime?: string;
   linkPrefix: string; // 'article', 'blog', or 'project'
+  filterMode?: string; // Optional filterMode for projects
 }
 
 interface ContentSidebarProps {
@@ -98,6 +99,10 @@ export function ContentSidebar({ tableOfContents, relatedItems, relatedTitle }: 
                 <Link
                   key={item.id}
                   to={`/${item.linkPrefix}/${item.id}`}
+                  state={{ 
+                    scrollTo: `${item.linkPrefix === 'project' ? 'project' : item.linkPrefix === 'article' ? 'article' : 'blog'}-${item.id}`,
+                    filterMode: item.filterMode || "all" // Pass filterMode for projects
+                  }}
                   className="block group"
                 >
                   <div className="space-y-2">

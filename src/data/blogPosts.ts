@@ -17,7 +17,7 @@ export const blogPostsData: BlogPost[] = [
     id: "being-stuck-research",
     title: "On Research, Patience, and the Art of Being Stuck",
     excerpt: "A reflection on what I've learned from months of staring at equations that refuse to work — and why that's the most important part.",
-    date: "December 28, 2024",
+    date: "December 28, 2025",
     readTime: "7 min read",
     category: "Personal",
     tags: ["Research", "Philosophy", "Problem-Solving"],
@@ -118,7 +118,7 @@ And maybe, someday, you'll write your own blog post about being stuck. I hope yo
     id: "finding-balance-life-as-researcher",
     title: "Finding Balance: Life as a Researcher",
     excerpt: "Thoughts on navigating the demands of academic life while maintaining perspective and personal well-being.",
-    date: "October 20, 2024",
+    date: "October 20, 2025",
     readTime: "7 min read",
     category: "Lifestyle",
     tags: ["Work-Life Balance", "Academia", "Mental Health"],
@@ -195,7 +195,7 @@ So here's to the messy, imperfect journey of being a human in academia. To the s
     id: "my-journey-into-research",
     title: "My Journey into Research: From Curiosity to Career",
     excerpt: "Reflecting on the unexpected path that led me to where I am today, and the moments that shaped my love for science.",
-    date: "November 8, 2024",
+    date: "November 8, 2025",
     readTime: "10 min read",
     category: "Personal",
     tags: ["Career", "Reflection", "Science"],
@@ -433,6 +433,7 @@ So if you're at the beginning of your research journey, don't worry too much abo
 After all, the most important scientific discoveries didn't come from people who had all the answers. They came from people who asked the right questions.
     `,
   },*/
+  /*
   {
     id: "france-waves2022",
     title: "Travel Diaries: France - The First Real Conference",
@@ -509,9 +510,7 @@ It gave me something no guidebook could have. I was not just seeing Paris; I was
 
 ## What the Conference Taught Me
 
-Waves2022 taught me things no textbook ever could.
-
-It taught me that the research community is far more welcoming than I had imagined. I had built senior researchers up in my mind as intimidating, distant figures. In reality, they were generous with their time, thoughtful in their questions, and genuinely interested in hearing what younger researchers had to say.
+Waves2022 taught me that the research community is far more welcoming than I had imagined. I had built senior researchers up in my mind as intimidating, distant figures. In reality, they were generous with their time, thoughtful in their questions, and genuinely interested in hearing what younger researchers had to say.
 
 It also taught me that presentation matters. Good ideas do not speak for themselves nearly as well as people like to pretend. I saw excellent work fail to connect because it was poorly communicated, and more modest work make a strong impression because it was explained clearly and confidently. Communicating research is not secondary to doing it; it is part of doing it.
 
@@ -532,6 +531,8 @@ That was the real significance of Waves2022. It was more than my first major con
 And in Paris, at my first real conference, I found that place.
     `,
   },
+  */
+  /*
   {
     id: "glasgow-2021-pandemic",
     title: "Travel Diaries: Glasgow - Conferences in a Pandemic",
@@ -603,6 +604,8 @@ So when I think of BMC-BAMC Glasgow 2021, I think both of what was absent and of
 And one day, when I finally do make it to Glasgow, I think I will remember that conference too — the one that was meant to happen there, but instead unfolded from my desk at home.
     `,
   },
+  */
+  /*
   {
     id: "le-houches-alps-2020",
     title: "Travel Diaries: Les Houches - The Best Trip I Never Had",
@@ -700,6 +703,8 @@ Some trips change you when you take them.
 Others change you simply because you wanted them so badly.
     `,
   },
+  */
+  /*
   {
     id: "tokyo-iciam-2023",
     title: "Travel Diaries: Tokyo - Applied Math on a Global Stage",
@@ -765,6 +770,8 @@ It came at a moment of transition for me, immediately after the submission of my
 I came back tired, lighter in body, and much more aware of my limits. But I also came back with a deeper appreciation for good people, shared experiences, and the importance of looking after yourself when the world suddenly becomes much larger than your routine.
     `,
   },
+  */
+  /*
   {
     id: "cambridge-hackathon-2023",
     title: "Travel Diaries: Cambridge - Winning the Hackathon",
@@ -896,6 +903,7 @@ Winning was exciting, of course. But more than that, the experience reminded me 
 And this was exactly that kind of problem.
     `,
   },
+  */
   /*{
     id: "why-i-started-writing",
     title: "Why I Started Writing (And Why You Should Too)",

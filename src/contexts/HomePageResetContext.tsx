@@ -16,6 +16,9 @@ export function HomePageResetProvider({ children }: { children: ReactNode }) {
     localStorage.removeItem('blogShowAll');
     localStorage.removeItem('articlesShowAll');
     
+    // Clear sessionStorage filter state
+    sessionStorage.removeItem('projectsFilterMode');
+    
     // Increment key to force remount of HomePage and all its children
     setResetKey(prev => prev + 1);
     

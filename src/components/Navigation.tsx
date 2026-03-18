@@ -41,10 +41,11 @@ export function Navigation() {
         }
       }
 
-      // If we're in the projects section, check if hash says we should show publications
+      // If we're in the projects section, check if publications filter is active
       if (currentSection === "projects") {
         const currentHash = window.location.hash;
-        if (currentHash === "#publications") {
+        const savedFilter = sessionStorage.getItem("projectsFilterMode");
+        if (currentHash === "#publications" || savedFilter === "publications") {
           setActiveSection("#publications");
           return;
         }
@@ -66,7 +67,7 @@ export function Navigation() {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("hashchange", handleScroll);
     };
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   const navItems = [
     { label: "Home", href: "/", isRoute: true },
@@ -100,16 +101,20 @@ export function Navigation() {
     e.preventDefault();
     setIsOpen(false);
 
+    // Update sessionStorage for filter state when clicking Projects or Publications
+    if (href === "#projects") {
+      sessionStorage.setItem("projectsFilterMode", "all");
+    } else if (href === "#publications") {
+      sessionStorage.setItem("projectsFilterMode", "publications");
+    }
+
     if (location.pathname !== "/") {
-      // If not on home page, navigate to home first then scroll
-      navigate("/");
-      setTimeout(() => {
-        window.location.hash = href;
-        const element = document.querySelector(href);
-        element?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
+      // If not on home page, navigate to home with hash
+      // ScrollToTop component will handle the scrolling
+      navigate(`/${href}`);
     } else {
-      // If on home page, set hash and scroll
+      // If on home page, set hash and scroll smoothly
+      // ScrollToTop no longer scrolls to top for hash-only changes, so this is safe
       window.location.hash = href;
       const element = document.querySelector(href);
       element?.scrollIntoView({ behavior: "smooth" });

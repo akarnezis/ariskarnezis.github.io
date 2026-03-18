@@ -2,11 +2,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { Badge } from "./ui/badge";
 import { Clock, ArrowRight, Search, BookMarked, TrendingUp, FlaskConical, BrainCircuit, Binary, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { articlesData } from "../data/articles";
 import { useState, useMemo, useRef, useEffect } from "react";
 
 export function Articles() {
+  const location = useLocation();
   const [showAll, setShowAll] = useState(() => {
     // Load showAll state from localStorage
     const saved = localStorage.getItem('articlesShowAll');
@@ -21,6 +22,21 @@ export function Articles() {
   useEffect(() => {
     localStorage.setItem('articlesShowAll', showAll.toString());
   }, [showAll]);
+
+  // Watch for hash changes to auto-expand if needed
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash.startsWith("#article-")) {
+      // If navigating to a specific article, check if it's beyond the initial count
+      const articleId = hash.replace("#article-", "");
+      const articleIndex = articlesData.findIndex(a => a.id === articleId);
+      
+      // If the article is beyond the initial count, expand the list
+      if (articleIndex >= initialCount) {
+        setShowAll(true);
+      }
+    }
+  }, [location]);
 
   // Get unique categories
   const categories = useMemo(() => {
@@ -150,7 +166,8 @@ export function Articles() {
                     
                     {/* Read Article Link */}
                     <Link 
-                      to={`/article/${article.id}`} 
+                      to={`/article/${article.id}`}
+                      state={{ scrollTo: `article-${article.id}` }}
                       className="inline-flex items-center gap-2 text-[#d9653a] hover:text-[#c25731] hover:underline hover:gap-3 transition-all duration-200 font-medium"
                     >
                       Read Article

@@ -73,6 +73,10 @@ Using high-fidelity Monte-Carlo simulations, this work demonstrates that the inc
     period: "2023 – 2024",
     tags: [
       "Pair-correlations",
+      "Isotropic Distributions",
+      "Structure Factor",
+      "Gradient Optimisation",
+      
     ],
     image: "https://images.unsplash.com/photo-1633164530923-309fd4c02969?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXJ0aWNsZSUyMHBoeXNpY3MlMjBjb21wdXRhdGlvbmFsJTIwc2ltdWxhdGlvbiUyMG1hdGVyaWFsc3xlbnwxfHx8fDE3NzMwOTMxNzl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     pdfDownload: "https://drive.proton.me/urls/Q5V49PNSJ8#xfdedPjElG8Z",
@@ -106,10 +110,12 @@ Pair-correlation functions describe the probability of finding particle pairs at
     title: "Effective waves in random particulate materials",
     description:
       "Investigated how waves propagate through random particulate media by analysing reflection coefficients and effective wavenumbers in three dimensions.",
-    institution: "University of Sheffield",
+    institution: "Department of Mechanical Engineering, University of Sheffield",
     period: "2022 – 2023",
     tags: [
       "Scattering Theory",
+      "Reflection Coefficients",
+      "Effective waves",
     ],
     image: image_ed8b83a5d3520877a3c6541067cb8459b1a41222,
     pdfDownload:
@@ -147,7 +153,7 @@ By analysing reflection coefficients and deriving effective wavenumbers, this re
       "Optimising Monte-Carlo accuracy in simulations of random particle configurations",
     description:
       "Studied how to improve the numerical accuracy of Monte Carlo simulations of random particle configurations, with a focus on pair-correlation functions and boundary effects in finite domains.",
-    institution: "University of Sheffield",
+    institution: "Department of Mechanical Engineering, University of Sheffield",
     period: "2022 - 2023",
     tags: [
       "Monte-Carlo simulations",
@@ -209,6 +215,8 @@ By analysing reflection coefficients and deriving effective wavenumbers, this re
     period: "2024 – 2025",
     tags: [
       "LiDAR",
+      "Feature Detection",
+      "Decision Making",
     ],
     image: "https://images.unsplash.com/photo-1701111759812-b9a2da549c44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb2JvdGljcyUyMGxpZGFyJTIwc2Vuc29yJTIwaW5mcmFzdHJ1Y3R1cmUlMjBpbnNwZWN0aW9ufGVufDF8fHx8MTc3MzA5MzYyNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     pdfDownload: "https://drive.proton.me/urls/F25QXSGCTW#nWbPHHkmniPa",
@@ -243,7 +251,7 @@ This work addresses the critical challenge of enabling autonomous robotic naviga
     title: "Terahertz Superfocusing in Complex Scattering Media",
     description:
       "Used THz time-domain wavefront control to achieve spatio-temporal superfocusing through scattering media.",
-    institution: "University of Sussex",
+    institution: "Department of Physics & Astronomy, University of Sussex",
     period: "2018-2019",
     tags: ["terahertz (THz)", "Complex imaging", "Wavefront shaping", "Genetic algorithm"],
     pdfDownload: "https://drive.proton.me/urls/DSTBWRN4TC#oMdvHHGANdaj",
@@ -279,7 +287,7 @@ The thesis motivates THz complex imaging via the idea that scattering is "comple
     title: "Quantum Hydrodynamics near caustics",
     description:
       "Showed that near fold and cusp caustics the Bohmian trajectory initial value problem is ill posed, so trajectories fail to converge to geometric rays in the classical limit.",
-    institution: "University of Crete",
+    institution: "Department of Pure & Applied Mathematics, University of Crete",
     period: "2018",
     tags: [
       "Quantum hydrodynamics",
