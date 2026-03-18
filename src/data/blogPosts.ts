@@ -1,5 +1,3 @@
-import headerImage from "figma:asset/b949f04e85fe512f9d7535f88afb5972ec3e1fcb.png";
-
 export interface BlogPost {
   id: string;
   title: string;
@@ -21,7 +19,7 @@ export const blogPostsData: BlogPost[] = [
     readTime: "7 min read",
     category: "Personal",
     tags: ["Research", "Philosophy", "Problem-Solving"],
-    headerImage: "https://images.unsplash.com/photo-1758685845872-4edbf0e76014?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGlua2luZyUyMHJlc2VhcmNoJTIwcGF0aWVuY2UlMjBwcm9ibGVtJTIwc29sdmluZ3xlbnwxfHx8fDE3NzMwOTQ0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    headerImage: "https://images.unsplash.com/photo-1581089778245-3ce67677f718?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXRoZW1hdGljcyUyMHByb29mJTIwd2hpdGVib2FyZCUyMGNvbXBsZXglMjBlcXVhdGlvbnMlMjBhY2FkZW1pY3xlbnwxfHx8fDE3NzM4NzI1OTB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     content: `
 I spent months stuck on the proof of the extinction theorem. I knew the result had to be true — the Monte-Carlo simulations showed it clearly — but the mathematics wouldn't cooperate. Every approach I tried led to a dead end or a circular argument. The ensemble averaging seemed straightforward in principle, but when I tried to write it out rigorously, the boundary conditions kept creating inconsistencies.
 
@@ -37,7 +35,7 @@ During those months on the extinction theorem, I tried many different approaches
 
 Each failure was frustrating. I'd spend days developing an approach, convince myself it was going to work, only to hit a fundamental obstacle I couldn't resolve. And then I'd have to start over.
 
-> "If you're not confused, you're not paying attention." — Someone much smarter than me
+> "If you're not confused, you're not paying attention." — Someone much smarter than me.
 
 ## The Emotional Landscape of Being Stuck
 
@@ -49,7 +47,7 @@ I remember sitting at my desk, staring at pages of crossed-out derivations, feel
 
 The rational part of my brain knew this was normal — that being stuck is part of research, that everyone goes through it. But the emotional part didn't care about rationality. It just felt like failure.
 
-What helped was talking to my supervisor and colleagues. Turns out, everyone has their "stuck" stories. The senior researcher who spent six months on a problem before realizing their fundamental assumption was wrong. The postdoc who rewrote the same proof seven times before it finally worked. Knowing I wasn't alone made the frustration more bearable.
+What helped was talking to my supervisor and colleagues. Turns out, everyone has their "stuck" stories. A PhD student who spent six months on a problem before realizing their fundamental assumption was wrong. The postdoc who rewrote the same proof seven times before it finally worked. Knowing I wasn't alone made the frustration more bearable.
 
 ## What Being Stuck Teaches You
 
@@ -59,7 +57,11 @@ When the Green's function approach didn't work, I learned exactly which mathemat
 
 By the time the right idea appeared — connecting the ensemble boundary conditions with the background wave equation terms in a way that preserved causality — I had the context to recognize it. Without the failed attempts, I wouldn't have known what to look for. I needed to understand what *wouldn't* work before I could see what *would*.
 
-This is something you can't shortcut. You can't read about someone else's failed approaches and gain the same understanding. You have to struggle through them yourself. The knowledge isn't just intellectual — it's experiential. Your intuition gets calibrated through repeated failure.
+This is something you can't shortcut. You can't read about someone else's failed approaches and gain the same understanding. You have to struggle through them yourself.
+
+Your intuition gets calibrated through repeated failure. That sentence is easy to write and harder to fully appreciate until you've lived it. What it means, concretely, is that each dead end leaves a trace. Not a scar exactly — more like a small shift into how you think. After enough failed attempts, you stop reaching for certain tools not because you've consciously ruled them out, but because something in your reasoning quietly steers you away. The failures become embedded in your instincts.
+
+There's something almost counterintuitive here: the most useful thing about failing at something is not the lesson you consciously extract from it. It's the residue it leaves behind — the subtle retuning of judgment that happens without your full awareness. You become more calibrated not by cataloguing your mistakes, but simply by having made them.
 
 ## The Structure of Productive Struggle
 
@@ -122,7 +124,7 @@ And maybe, someday, you'll write your own blog post about being stuck. I hope yo
     readTime: "7 min read",
     category: "Lifestyle",
     tags: ["Work-Life Balance", "Academia", "Mental Health"],
-    headerImage: headerImage,
+    headerImage: "https://images.unsplash.com/photo-1587210489873-a1094e8868be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXNlYXJjaGVyJTIwcmVsYXhpbmclMjBjb3p5JTIwcmVhZGluZyUyMHBlYWNlZnVsJTIwY2FsbXxlbnwxfHx8fDE3NzM4NzMxNjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     content: `
 When people ask what it's like to be a researcher, I often struggle to give a simple answer. The reality is multifaceted. It's intellectually thrilling yet mentally exhausting, collaborative yet isolating, and deeply rewarding while sometimes feeling impossibly demanding. After years in academia, from my PhD at Sheffield to my current role as a Research Associate, I've learned that success in research isn't just about brilliance or productivity. It's about sustainability.
 
