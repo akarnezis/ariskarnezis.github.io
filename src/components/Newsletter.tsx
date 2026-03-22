@@ -2,12 +2,14 @@ import { useState } from "react";
 import { Button } from "./ui/button";
 import { Mail, CheckCircle2 } from "lucide-react";
 
+const FORMSPREE_NEWSLETTER_ID = "mvzwjrlq";
+
 export function Newsletter() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic email validation
@@ -18,24 +20,48 @@ export function Newsletter() {
       return;
     }
 
-    // Send email notification with subscriber's email
-    const subject = encodeURIComponent("New Newsletter Subscriber");
-    const body = encodeURIComponent(
-      `New subscriber to your newsletter:\n\nEmail: ${email}\n\nSubscribed on: ${new Date().toLocaleString()}`
-    );
-    
-    window.location.href = `mailto:a.karnezis@protonmail.com?subject=${subject}&body=${body}`;
+    setStatus("submitting");
 
-    // Show success message
-    setStatus("success");
-    setMessage("Thanks for subscribing! You'll receive updates about new research and insights.");
-    setEmail("");
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_NEWSLETTER_ID}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          _subject: "New Newsletter Subscriber",
+          subscribed_on: new Date().toLocaleString(),
+        }),
+      });
 
-    // Reset after 5 seconds
-    setTimeout(() => {
-      setStatus("idle");
-      setMessage("");
-    }, 5000);
+      if (response.ok) {
+        setStatus("success");
+        setMessage("Thanks for subscribing! You'll receive updates about new research and insights.");
+        setEmail("");
+
+        // Reset after 5 seconds
+        setTimeout(() => {
+          setStatus("idle");
+          setMessage("");
+        }, 5000);
+      } else {
+        setStatus("error");
+        setMessage("Something went wrong. Please try again.");
+        setTimeout(() => {
+          setStatus("idle");
+          setMessage("");
+        }, 5000);
+      }
+    } catch (err) {
+      setStatus("error");
+      setMessage("Something went wrong. Please try again.");
+      setTimeout(() => {
+        setStatus("idle");
+        setMessage("");
+      }, 5000);
+    }
   };
 
   return (
@@ -74,8 +100,9 @@ export function Newsletter() {
                 type="submit" 
                 size="lg" 
                 className="bg-white text-slate-900 hover:bg-slate-100 whitespace-nowrap"
+                disabled={status === "submitting"}
               >
-                Subscribe
+                {status === "submitting" ? "Subscribing..." : "Subscribe"}
               </Button>
             </div>
             
