@@ -1,7 +1,9 @@
 import { Card } from "./ui/card";
-import { Mail, Linkedin, Github, Twitter, Building2, MapPin } from "lucide-react";
+import { Mail, Linkedin, Github, Twitter, Building2, MapPin, CheckCircle2 } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
+
+const FORMSPREE_CONTACT_ID = "mwvrdbyn";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -9,18 +11,38 @@ export function Contact() {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Create mailto link with pre-filled information
-    const subject = encodeURIComponent(`Message from ${formData.name}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
-    
-    // Open email client
-    window.location.href = `mailto:a.karnezis@protonmail.com?subject=${subject}&body=${body}`;
+    setStatus("submitting");
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_CONTACT_ID}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 5000);
+      }
+    } catch (err) {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -60,7 +82,7 @@ export function Contact() {
     {
       icon: Github,
       label: "GitHub",
-      link: "https://github.com/akarnezis",
+      link: "https://github.com/ariskarnezis",
       color: "text-orange-600 hover:text-orange-700",
     },
   ];
@@ -122,56 +144,70 @@ export function Contact() {
             
             <div>
               <h3 className="text-xl mb-6 text-slate-900 dark:text-white">Send a Message</h3>
-              <form className="space-y-4" onSubmit={handleSubmit}>
-                <div>
-                  <label htmlFor="name" className="block text-sm mb-2 text-slate-700 dark:text-slate-300">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-slate-300 dark:border-[#4a4a4a] dark:bg-[#3a3a3a] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                    placeholder="Your name"
-                    required
-                  />
+              
+              {status === "success" ? (
+                <div className="bg-green-50 dark:bg-green-500/20 border border-green-200 dark:border-green-500/50 rounded-lg p-6">
+                  <div className="flex items-center gap-3 text-green-700 dark:text-green-200">
+                    <CheckCircle2 className="w-6 h-6" />
+                    <p className="font-medium">Message sent! I'll get back to you soon.</p>
+                  </div>
                 </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm mb-2 text-slate-700 dark:text-slate-300">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-slate-300 dark:border-[#4a4a4a] dark:bg-[#3a3a3a] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                    placeholder="your.email@example.com"
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm mb-2 text-slate-700 dark:text-slate-300">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-slate-300 dark:border-[#4a4a4a] dark:bg-[#3a3a3a] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                    placeholder="Your message..."
-                    required
-                  />
-                </div>
-                
-                <Button type="submit" className="w-full">
-                  Send Message
-                </Button>
-              </form>
+              ) : (
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                  <div>
+                    <label htmlFor="name" className="block text-sm mb-2 text-slate-700 dark:text-slate-300">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-slate-300 dark:border-[#4a4a4a] dark:bg-[#3a3a3a] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                      placeholder="Your name"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm mb-2 text-slate-700 dark:text-slate-300">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-slate-300 dark:border-[#4a4a4a] dark:bg-[#3a3a3a] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                      placeholder="your.email@example.com"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm mb-2 text-slate-700 dark:text-slate-300">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      rows={4}
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-slate-300 dark:border-[#4a4a4a] dark:bg-[#3a3a3a] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                      placeholder="Your message..."
+                      required
+                    />
+                  </div>
+                  
+                  {status === "error" && (
+                    <p className="text-red-500 text-sm">Something went wrong. Please try again or email me directly.</p>
+                  )}
+                  
+                  <Button type="submit" className="w-full" disabled={status === "submitting"}>
+                    {status === "submitting" ? "Sending..." : "Send Message"}
+                  </Button>
+                </form>
+              )}
             </div>
           </div>
         </Card>
