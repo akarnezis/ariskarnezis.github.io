@@ -274,10 +274,6 @@ The thesis motivates THz complex imaging via the idea that scattering is "comple
       "Simulations compare Binary Amplitude Modulation (THz) with Pseudorandom Phase Modulation (visible) and report higher enhancement for the phase-modulation case.",
       "A spatio-temporal pulse model is implemented to show how disorder broadens and distorts pulses, and how correlation/autocorrelation diagnostics help characterize speckle-pulse structure in complex media.",
     ],
-    additionalImages: [
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    ],
     publications: [
       "This work is part of the author's research and is included in the MSc thesis submitted to University of Sussex.",
     ],
@@ -317,6 +313,9 @@ Using semiclassical tools (WKB/geometrical optics and phase-space methods), the 
       "The Bohmian-trajectory initial value problem is not well posed near fold/cusp caustics due to singular behavior in the quantum potential and phase derivatives.",
       "In examples where caustics onset at $t = 0+$, initial data for the Burgers/Bohmian characteristic dynamics cannot be prescribed consistently.",
       "Consequently, after caustic onset, Bohmian trajectories fail to converge to geometrical-optics rays in the classical limit.",
+    ],
+    publications: [
+      "This work is part of the author's research and is included in the BSc thesis submitted to University of Crete.",
     ],
   },
 ];
