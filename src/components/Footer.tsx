@@ -45,7 +45,7 @@ export function Footer() {
               <li>
                 <Link to="/#articles" className="flex items-center hover:text-white transition-colors" onClick={() => handleLinkClick('articles')}>
                   <FileText className="inline-block mr-2" size={16} />
-                  Articles
+                  Explainable Science
                 </Link>
               </li>
               <li>

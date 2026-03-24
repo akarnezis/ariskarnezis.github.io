@@ -7,7 +7,7 @@ export function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-[#2d2d2d] dark:to-[#2d2d2d] pt-16">
       <SEOHelmet
-        title="About | Research Associate in Applied Mathematics"
+        title="About | Research Associate in Robot Navigation"
         description="Learn about my journey through mathematics, physics, and research in wave scattering, random media, and intelligent systems. Research Associate at the University of Sheffield."
       />
       <div className="container mx-auto px-6 py-24 max-w-4xl">
@@ -370,7 +370,7 @@ export function AboutPage() {
                 <div className="mb-1 text-slate-500 dark:text-slate-400">September 2019 - August 2023</div>
                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">PhD Researcher</h3>
                 <p className="text-slate-700 dark:text-white">
-                  University of Sheffield - Department of Applied Mathematics
+                  University of Sheffield - Department of Mechanical Engineering
                 </p>
                 <p className="text-slate-600 dark:text-slate-300 mt-2 text-sm">
                   Focused on wave propagation in disordered particulate materials with applications to inverse problems.

@@ -21,12 +21,12 @@ export function HomePage() {
   useEffect(() => {
     // Handle hash navigation when component mounts or hash changes
     if (location.hash) {
-      const elementId = location.hash.replace('#', '');
+      const elementId = location.hash.replace("#", "");
       // Small delay to ensure the page has rendered
       setTimeout(() => {
         const element = document.getElementById(elementId);
         if (element) {
-          element.scrollIntoView({ behavior: 'auto' });
+          element.scrollIntoView({ behavior: "auto" });
         }
       }, 100);
     }
